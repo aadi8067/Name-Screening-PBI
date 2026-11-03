@@ -1,36 +1,35 @@
-Aditya, I can see the issue clearly. Both calculated columns are created successfully, but Power BI is throwing a Circular Dependency error when you apply sorting.
-
-This happens because:
-- Outstanding_Aging_Bucket depends on Outstanding_Age_Working_Days.
-- Outstanding_Aging_Sort depends on Outstanding_Aging_Bucket.
-- Then you sort Outstanding_Aging_Bucket by Outstanding_Aging_Sort.
-Power BI detects a dependency loop.
-Step 1: Correct the sorting columns
-We will fix this directly without changing your aging calculations.
-
-Close the error window.
-
-Replace your existing Outstanding_Aging_Sort calculated column with:
-Outstanding_Aging_Sort =
-VAR Age =
-    Fact_Outstanding[Outstanding_Age_Working_Days]
+2. Pending Aging — Needs correction
+Your table currently shows:
+- 0–5 Days = 1
+- 6–10 Days = 1
+- 11–20 Days = 1
+- 21+ Days = 0
+- 21+ Days = 1
+The last two categories are duplicated, and the counts are not matching your Pending KPI (333K).
+3. Correct the Pending Aging bucket
+Go to Fact_Outstanding → select Pending_Aging_Bucket → replace its DAX with:
+Pending_Aging_Bucket =
+VAR Age = Fact_Outstanding[Pending_Age_Calendar_Days]
 RETURN
 SWITCH(
     TRUE(),
-    Age <= 5, 1,
-    Age <= 10, 2,
-    Age <= 20, 3,
-    4
+    ISBLANK(Age), "Not Available",
+    Age < 0, "Negative Age",
+    Age <= 5, "0-5 Days",
+    Age <= 10, "6-10 Days",
+    Age <= 20, "11-20 Days",
+    "21+ Days"
 )
 
 
-Now replace Pending_Aging_Sort with:
+Then update Pending_Aging_Sort:
 Pending_Aging_Sort =
-VAR Age =
-    Fact_Outstanding[Pending_Age_Calendar_Days]
+VAR Age = Fact_Outstanding[Pending_Age_Calendar_Days]
 RETURN
 SWITCH(
     TRUE(),
+    ISBLANK(Age), 5,
+    Age < 0, 6,
     Age <= 5, 1,
     Age <= 10, 2,
     Age <= 20, 3,
@@ -38,74 +37,15 @@ SWITCH(
 )
 
 
-Important: Both sorting columns now depend directly on the original age columns, not on the bucket columns.
-Step 2: Apply sorting
-1. Select Outstanding_Aging_Bucket.
-2. Column tools → Sort by column.
-3. Select Outstanding_Aging_Sort.
-Repeat:
-1. Select Pending_Aging_Bucket.
-2. Column tools → Sort by column.
-3. Select Pending_Aging_Sort.
-Expected result
-Aging bucket	Sort order
-0-5 Days	1
-6-10 Days	2
-11-20 Days	3
-21+ Days	4
+Keep the existing Sort by Column relationship.
+4. Verify again
+Your Pending table should contain:
+- 0–5 Days
+- 6–10 Days
+- 11–20 Days
+- 21+ Days
+- Not Available (if applicable)
+- Negative Age (if applicable)
+Important: Use the existing Pending Flags measure, but verify its definition before comparing it with the 333K KPI. The measure may be counting flagged rows rather than distinct alerts.
 
-Step 3: Validate
-Create a Table visual with:
-- Outstanding_Aging_Bucket
-- Outstanding_Aging_Sort
-- Count of alert_identifier (use distinct count if you want unique alerts).
-Check whether all four categories appear in the correct order.
-
-One important note: If your age columns can contain blank or negative values, we should handle those separately rather than automatically assigning them to 0-5 Days.
-
-Send me the screenshot after Step 2. Then we'll build the aging analysis visuals and verify their totals against your existing KPI cards.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Think
+Send me the next screenshot showing both tables. We'll reconcile the totals before moving forward.
