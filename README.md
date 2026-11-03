@@ -1,46 +1,85 @@
 # Name-Screening-PBI
 
-Outstanding_Age_Working_Days =
-VAR CreatedDate =
-    DATEVALUE(Fact_Outstanding[creation_date])
+1. Create Outstanding Aging Bucket
+Go to Data View → Fact_Outstanding → New Column.
 
-VAR ReportDate =
-    DATEVALUE(Fact_Outstanding[ReportingAsOfDate])
+Paste:
+Outstanding_Aging_Bucket =
+VAR Age =
+    Fact_Outstanding[Outstanding_Age_Working_Days]
 
 RETURN
-IF(
-    ISBLANK(CreatedDate) ||
-    ISBLANK(ReportDate) ||
-    CreatedDate >= ReportDate,
-    0,
-    COUNTROWS(
-        FILTER(
-            CALENDAR(
-                CreatedDate + 1,
-                ReportDate
-            ),
-            WEEKDAY([Date], 2) <= 5
-        )
-    )
+SWITCH(
+    TRUE(),
+    Age <= 5, "0-5 Days",
+    Age <= 10, "6-10 Days",
+    Age <= 20, "11-20 Days",
+    "21+ Days"
 )
 
 
-Pending_Age_Calendar_Days =
-VAR CreatedDate =
-    DATEVALUE(Fact_Outstanding[creation_date])
+What happens?
 
-VAR ReportDate =
-    DATEVALUE(Fact_Outstanding[ReportingAsOfDate])
+If an alert has 8 working days of age, it will be classified as 6-10 Days.
+2. Create Pending Aging Bucket
+Again, select New Column.
+Pending_Aging_Bucket =
+VAR Age =
+    Fact_Outstanding[Pending_Age_Calendar_Days]
 
 RETURN
-IF(
-    ISBLANK(CreatedDate) ||
-    ISBLANK(ReportDate) ||
-    CreatedDate >= ReportDate,
-    0,
-    DATEDIFF(
-        CreatedDate,
-        ReportDate,
-        DAY
-    )
+SWITCH(
+    TRUE(),
+    Age <= 5, "0-5 Days",
+    Age <= 10, "6-10 Days",
+    Age <= 20, "11-20 Days",
+    "21+ Days"
 )
+
+
+Here, an alert with 8 calendar days of age will also be classified as 6-10 Days.
+
+The difference is how the age was calculated.
+3. Create sorting columns
+Create another column:
+Outstanding_Aging_Sort =
+SWITCH(
+    Fact_Outstanding[Outstanding_Aging_Bucket],
+    "0-5 Days", 1,
+    "6-10 Days", 2,
+    "11-20 Days", 3,
+    "21+ Days", 4
+)
+
+
+And:
+Pending_Aging_Sort =
+SWITCH(
+    Fact_Outstanding[Pending_Aging_Bucket],
+    "0-5 Days", 1,
+    "6-10 Days", 2,
+    "11-20 Days", 3,
+    "21+ Days", 4
+)
+
+
+4. Apply sorting in Power BI
+Do this separately for both bucket columns.
+1. Open Data View.
+2. Select Outstanding_Aging_Bucket.
+3. Open Column tools.
+4. Select Sort by column.
+5. Choose Outstanding_Aging_Sort.
+Repeat for Pending_Aging_Bucket using Pending_Aging_Sort.
+5. Validate the result
+Create a temporary Table visual:
+Outstanding Aging Bucket	Alert Count
+0-5 Days	Dynamic
+6-10 Days	Dynamic
+11-20 Days	Dynamic
+21+ Days	Dynamic
+
+Use:
+- Rows: Outstanding_Aging_Bucket
+- Values: Distinct count of alert_identifier
+Create a second table for Pending using Pending_Aging_Bucket.
