@@ -23,3 +23,32 @@ Warning	#F2A900
 Critical	#D9363E
 
 Font: Segoe UI.
+AXA Global Name Screening & Sanctions Compliance
+
+Subtitle:
+
+Insurance Underwriting & Claims Factory Operations
+
+
+
+
+
+
+
+datapears.com
+
+
+4. Our implementation sequence
+We'll work in this order without skipping validation:
+1. Header and left navigation.
+2. Four report filters.
+3. Five KPI cards using your existing measures.
+4. Screening Volume Trend.
+5. Outstanding and Pending Aging charts.
+6. Alerts by Scenario.
+7. Alerts by Channel.
+8. Top 5 Entities.
+9. Final formatting, interactions and validation.
+Important: The sample figures and names in the mockup are illustrative. We'll use only your actual AXA dataset and existing measures.
+
+Your first task: Complete Page 1 setup and create the navy header. Send me a screenshot. I'll give you the exact next positioning, dimensions and formatting for the left navigation panel. We'll build it step by step to match Template 1.
