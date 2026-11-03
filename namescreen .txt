@@ -1,83 +1,111 @@
-1. Create Outstanding Aging Bucket
-Go to Data View → Fact_Outstanding → New Column.
+Aditya, I can see the issue clearly. Both calculated columns are created successfully, but Power BI is throwing a Circular Dependency error when you apply sorting.
 
-Paste:
-Outstanding_Aging_Bucket =
+This happens because:
+- Outstanding_Aging_Bucket depends on Outstanding_Age_Working_Days.
+- Outstanding_Aging_Sort depends on Outstanding_Aging_Bucket.
+- Then you sort Outstanding_Aging_Bucket by Outstanding_Aging_Sort.
+Power BI detects a dependency loop.
+Step 1: Correct the sorting columns
+We will fix this directly without changing your aging calculations.
+
+Close the error window.
+
+Replace your existing Outstanding_Aging_Sort calculated column with:
+Outstanding_Aging_Sort =
 VAR Age =
     Fact_Outstanding[Outstanding_Age_Working_Days]
-
 RETURN
 SWITCH(
     TRUE(),
-    Age <= 5, "0-5 Days",
-    Age <= 10, "6-10 Days",
-    Age <= 20, "11-20 Days",
-    "21+ Days"
+    Age <= 5, 1,
+    Age <= 10, 2,
+    Age <= 20, 3,
+    4
 )
 
 
-What happens?
-
-If an alert has 8 working days of age, it will be classified as 6-10 Days.
-2. Create Pending Aging Bucket
-Again, select New Column.
-Pending_Aging_Bucket =
+Now replace Pending_Aging_Sort with:
+Pending_Aging_Sort =
 VAR Age =
     Fact_Outstanding[Pending_Age_Calendar_Days]
-
 RETURN
 SWITCH(
     TRUE(),
-    Age <= 5, "0-5 Days",
-    Age <= 10, "6-10 Days",
-    Age <= 20, "11-20 Days",
-    "21+ Days"
+    Age <= 5, 1,
+    Age <= 10, 2,
+    Age <= 20, 3,
+    4
 )
 
 
-Here, an alert with 8 calendar days of age will also be classified as 6-10 Days.
+Important: Both sorting columns now depend directly on the original age columns, not on the bucket columns.
+Step 2: Apply sorting
+1. Select Outstanding_Aging_Bucket.
+2. Column tools → Sort by column.
+3. Select Outstanding_Aging_Sort.
+Repeat:
+1. Select Pending_Aging_Bucket.
+2. Column tools → Sort by column.
+3. Select Pending_Aging_Sort.
+Expected result
+Aging bucket	Sort order
+0-5 Days	1
+6-10 Days	2
+11-20 Days	3
+21+ Days	4
 
-The difference is how the age was calculated.
-3. Create sorting columns
-Create another column:
-Outstanding_Aging_Sort =
-SWITCH(
-    Fact_Outstanding[Outstanding_Aging_Bucket],
-    "0-5 Days", 1,
-    "6-10 Days", 2,
-    "11-20 Days", 3,
-    "21+ Days", 4
-)
+Step 3: Validate
+Create a Table visual with:
+- Outstanding_Aging_Bucket
+- Outstanding_Aging_Sort
+- Count of alert_identifier (use distinct count if you want unique alerts).
+Check whether all four categories appear in the correct order.
+
+One important note: If your age columns can contain blank or negative values, we should handle those separately rather than automatically assigning them to 0-5 Days.
+
+Send me the screenshot after Step 2. Then we'll build the aging analysis visuals and verify their totals against your existing KPI cards.
 
 
-And:
-Pending_Aging_Sort =
-SWITCH(
-    Fact_Outstanding[Pending_Aging_Bucket],
-    "0-5 Days", 1,
-    "6-10 Days", 2,
-    "11-20 Days", 3,
-    "21+ Days", 4
-)
 
 
-4. Apply sorting in Power BI
-Do this separately for both bucket columns.
-1. Open Data View.
-2. Select Outstanding_Aging_Bucket.
-3. Open Column tools.
-4. Select Sort by column.
-5. Choose Outstanding_Aging_Sort.
-Repeat for Pending_Aging_Bucket using Pending_Aging_Sort.
-5. Validate the result
-Create a temporary Table visual:
-Outstanding Aging Bucket	Alert Count
-0-5 Days	Dynamic
-6-10 Days	Dynamic
-11-20 Days	Dynamic
-21+ Days	Dynamic
 
-Use:
-- Rows: Outstanding_Aging_Bucket
-- Values: Distinct count of alert_identifier
-Create a second table for Pending using Pending_Aging_Bucket.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Think
