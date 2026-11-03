@@ -1,51 +1,25 @@
-2. Pending Aging — Needs correction
-Your table currently shows:
-- 0–5 Days = 1
-- 6–10 Days = 1
-- 11–20 Days = 1
-- 21+ Days = 0
-- 21+ Days = 1
-The last two categories are duplicated, and the counts are not matching your Pending KPI (333K).
-3. Correct the Pending Aging bucket
-Go to Fact_Outstanding → select Pending_Aging_Bucket → replace its DAX with:
-Pending_Aging_Bucket =
-VAR Age = Fact_Outstanding[Pending_Age_Calendar_Days]
-RETURN
-SWITCH(
-    TRUE(),
-    ISBLANK(Age), "Not Available",
-    Age < 0, "Negative Age",
-    Age <= 5, "0-5 Days",
-    Age <= 10, "6-10 Days",
-    Age <= 20, "11-20 Days",
-    "21+ Days"
-)
+1. Final dashboard structure
+We'll build the dashboard in this exact order:
+Section	Components
+Header	AXA title, reporting date, refresh status
+Navigation	Overview, Screening Queue, Triage, UBO, Analytics, Audit Trail
+Filters	Reporting Week, Entity, Business Scenario, Channel
+KPI cards	Total Alerts, L1 Processed, L2 Processed, Outstanding, Pending
+Row 1	Screening Volume Trend + Outstanding Aging + Pending Aging
+Row 2	Alerts by Scenario + Alerts by Channel + Top 5 Entities
 
+We'll retain your existing Aging Analysis page as a separate page.
+2. Design system
+Use this consistent theme throughout.
+Element	Color
+Primary navy	#002B7F
+Dark navy	#001B54
+AXA blue	#0055A4
+Background	#F3F6FB
+Card background	#FFFFFF
+Text	#172B4D
+Success	#16865C
+Warning	#F2A900
+Critical	#D9363E
 
-Then update Pending_Aging_Sort:
-Pending_Aging_Sort =
-VAR Age = Fact_Outstanding[Pending_Age_Calendar_Days]
-RETURN
-SWITCH(
-    TRUE(),
-    ISBLANK(Age), 5,
-    Age < 0, 6,
-    Age <= 5, 1,
-    Age <= 10, 2,
-    Age <= 20, 3,
-    4
-)
-
-
-Keep the existing Sort by Column relationship.
-4. Verify again
-Your Pending table should contain:
-- 0–5 Days
-- 6–10 Days
-- 11–20 Days
-- 21+ Days
-- Not Available (if applicable)
-- Negative Age (if applicable)
-Important: Use the existing Pending Flags measure, but verify its definition before comparing it with the 333K KPI. The measure may be counting flagged rows rather than distinct alerts.
-
-Send me the next screenshot showing both tables. We'll reconcile the totals before moving forward.
+Font: Segoe UI.
