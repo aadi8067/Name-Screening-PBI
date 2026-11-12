@@ -1,0 +1,2486 @@
+i want to build power bi project in the domain of insurance factory how i can build it what and how should i cover where i got data  which must be real-time data give basic idea steps how and what we can build
+1219 PM
+Copied
+
+
+Assuming by “insurance factory” you mean an insurer’s operational processes—such as policy issuance, underwriting, claims and payments—a strong first Power BI project is a Claims Operations & Fraud Monitoring Dashboard.
+
+What to build
+Create a dashboard that helps an operations team answer
+
+How many claims are arriving and being processed
+How long do claims take to settle
+Which claims are overdue or need attention
+How much has been paid, and what remains outstanding
+Are there unusual claims that should be reviewed
+Useful KPIs
+Claims received, open, closed and overdue
+Average time from claim submission to settlement
+Claims paid and outstanding amount
+Claims handled per employee or team
+Claims by product, region, channel and status
+Percentage settled within the target service time
+Potential fraud alerts for investigation—not a definitive fraud decision
+Data you’ll need
+For a realistic project, prepare these tables
+
+Claims claim ID, policy ID, date reported, claim type, status, amount claimed, amount paid, handler
+Policies policy ID, product, start date, customer ID, region
+Customers customer ID and only the attributes needed for analysis
+Payments payment ID, claim ID, date and amount
+Claim events claim ID, event type, event time—for example, “received,” “assigned,” “approved”
+Targets service-time targets by claim type or product
+Use IDs to connect the tables. In Power BI, a simple star schema works well claims and payments as fact tables, with policies, customers, dates, products and regions as lookup tables.
+
+Where to get data
+Real insurer claim and policy data is generally internal and confidential, so you may not be able to obtain genuine company data for a portfolio project.
+
+Good options are
+
+Ask your company’s data or operations team for approved, anonymised extracts and confirm what you’re permitted to use.
+Use public sample insurance data for a static prototype. Check its source and licence; many public datasets are historical, not real-time.
+Create synthetic data for a demo. Generate claims, status changes and payments with timestamps, and label the data clearly as simulated.
+For a portfolio project, synthetic data is often the safest option. You can simulate realistic claim events without exposing customer information.
+
+How to make it real-time
+Real-time data must arrive continuously from a source system; Power BI cannot make a static spreadsheet real-time by itself.
+
+A typical architecture is
+
+Claims system or event generator → streaming platform → Power BI
+
+For a Microsoft-based setup, possible components include Azure Event Hubs or Microsoft Fabric Real-Time Intelligence for incoming events, with Power BI connected to the resulting data. Ask your organisation’s data platform team which services and licences are available. Product features and licensing can vary, so check your organisation’s current setup.
+
+For a student or personal demo, create a small event generator that periodically sends simulated claim updates. If you only refresh a file or database every few minutes, describe it as near-real-time, not true real-time.
+
+Suggested build steps
+Choose a business question for example, “Which claims need attention today”
+Define the audience claims manager, team lead or operations analyst.
+Find or create the data begin with a small, clearly documented dataset.
+Clean it in Power Query fix data types, remove duplicates and handle missing values.
+Build the data model link claims to policy, date, product and region tables.
+Create measures open claims, overdue claims, paid amount, average settlement time and service-level percentage.
+Design report pages
+Overview key KPIs and claim trends
+Operations open, overdue and ageing claims by team or claim type
+Payments claimed versus paid amounts
+Claim detail a filtered table for authorised operational users
+Add filters and drill-through date, product, region, claim status and channel.
+Test the figures compare Power BI totals with the source data and ask a domain expert to validate the definitions.
+Add streaming only after the basic report works test the end-to-end delay and show the last event time on the report.
+Be careful with customer data use anonymised or synthetic records for development, restrict access to sensitive detail, and confirm that your design follows your organisation’s data-protection and access-control rules. A good first deliverable is a claims dashboard using synthetic data, followed by a real-time demo that streams simulated claim status updates.
+
+Copied
+
+
+research on dataset platforms search dataset we required and perfectly suitable and give project accordingly
+1223 PM
+Copied
+
+
+I can’t search or open dataset platforms from this chat, so I can’t verify which listings are live today. I can still give you a practical shortlist of known datasets to look up, explain how well each fits, and recommend a project design. Most public insurance datasets are historical—not real-time. For a real-time demonstration, you’ll need to simulate incoming claim events or connect to an approved live source.
+
+Recommended project Motor Claims Triage & Operations Dashboard
+Build a Power BI report for a claims team to monitor incoming claims, claim amounts, possible fraud indicators and processing workload.
+
+Dataset shortlist
+Copied
+
+
+Dataset to search for
+Platform to check
+Good for
+Important limitation
+“insurance_claims.csv” or “Insurance Fraud Detection”	Kaggle	A beginner-friendly claims dashboard claim typeseverity, reported fraud, and claimed amounts	Many copies appear to be small educational or synthetic datasets. Check the listing’s provenance and licence; don’t present it as genuine insurer data without evidence.
+Allstate Claims Severity	Kaggle competition	Exploring claim-loss amounts and building severity segments	Historical competition data; not a live claims workflow dataset.
+Porto Seguro’s Safe Driver Prediction	Kaggle competition	Policy-level risk and claim-prediction analysis	Historical, anonymised and designed for prediction—not claim handling or real-time operations.
+freMTPL2freq  freMTPL2sev	Search the names with CASdatasets or actuarial data sources	Motor insurance claim-frequency and claim-severity analysis	More actuarial than operational it does not provide a live stream of claim status changes. Check access and licence conditions.
+Best starting point Look first for insurance_claims.csv on Kaggle. It is often the easiest dataset for a first report because it commonly includes claim amounts, incident details, claim characteristics and a fraud label. Confirm the actual columns and documentation on the listing before building around it. Treat any fraud label as an existing dataset label—not as proof that a real claim is fraudulent.
+
+What to build from it
+Create three report pages
+
+Claims overview
+
+Number of claims
+Total and average claim amount
+Claims by incident type, severity, region or policy type
+Claim trends by incident or reporting date, if those dates exist
+Triage and review
+
+Claims grouped by severity and amount
+Claims with a fraud label or other review indicator
+A drill-through page showing individual claim records
+Label this page as review support, not an automated fraud decision.
+
+Real-time operations demo
+
+New claims arriving
+Claims by current status
+Claims awaiting review
+Latest event time and recent activity
+The public historical dataset likely won’t contain genuine workflow timestamps such as when a claim was received, assigned, approved and paid. Don’t calculate real processing times from dates that don’t represent those events. Instead, create a separate, clearly labelled simulated claim-events table for the demo.
+
+How to make the demo real-time
+Use the historical dataset for the report’s analysis, then generate simulated events such as
+
+Plain text 
+Copy codeCode copied
+Export
+Claim received → Assigned → Under review → Approved or declined → Paid
+Each event should have a claim ID, event type and event timestamp. A typical Microsoft-based architecture is
+
+Event generator → approved streaming service or Fabric real-time data platform → Power BI
+
+For a simpler prototype, you can periodically append simulated events to a data source and refresh the report. Call that near-real-time if there is a delay. Check with your organisation’s data platform team about available services, access and licensing before choosing a streaming setup.
+
+Dataset checks before you start
+On the platform listing, check
+
+Is the data real, anonymised, synthetic or competition-only
+What do the fields mean, and are dates actually available
+Does the dataset have a licence that permits your intended use
+Are there missing values, duplicates or obvious data-quality issues
+Does it contain customer or personal information Avoid using identifiable data unless your organisation has explicitly approved it.
+A good portfolio project can be transparent about its two sources “historical analysis uses a public educational dataset; live activity is simulated.” That gives you a credible Power BI project without implying that public sample data is real-time insurer data.
+
+Copied
+
+
+i have this 
+Saksham Ahluwalia · Updated a year ago
+Car Insurance Fraud Detection Dataset
+A realistic, machine-learning-ready dataset for detecting fraudulent car insuran
+
+Car Insurance Fraud Detection Dataset
+
+Code
+
+Download
+About Dataset
+Columns Overview
+
+policy_id Unique policy identifier
+
+policy_state State where the policy was issued
+
+policy_deductible Deductible amount in USD
+
+policy_annual_premium Annual premium paid
+
+insured_age Age of the insured
+
+insured_sex Gender of the insured
+
+insured_education_level Education level
+
+insured_occupation Occupation type
+
+insured_hobbies Hobby type
+
+incident_date Date of the incident
+
+incident_type Type of incident (collision, theft, etc.)
+
+collision_type Collision direction (frontrearside)
+
+incident_severity Level of damage
+
+authorities_contacted Who was contacted (PoliceFireetc.)
+
+incident_state State where incident occurred
+
+incident_city City name
+
+incident_hour_of_the_day Time of the incident
+
+number_of_vehicles_involved Vehicles involved
+
+bodily_injuries Injuries reported
+
+witnesses Number of witnesses
+
+police_report_available Whether a police report exists
+
+claim_amount Claimed amount (USD)
+
+total_claim_amount Estimated total damage (USD)
+
+fraud_reported Target label (Y for fraud, N for legitimate)
+1227 PM
+Copied
+
+
+This dataset is a good fit for a Car Insurance Claims & Fraud Insights Power BI project. It includes claim amounts, incident details and a fraud_reported label, so you can analyse patterns in the provided data.
+
+One important limitation it appears to be a static, machine-learning-oriented dataset, not a live feed from an insurer. Use it for historical analysis, and add simulated claim events if you want to demonstrate a real-time dashboard.
+
+Project goal
+Help a claims operations team understand
+
+Claim volumes and amounts
+How claims vary by incident type, severity and location
+What patterns appear among records labelled as fraud
+Which claims might merit further human review
+Use careful wording fraud_reported is the dataset’s existing label. Your dashboard should not present patterns as proof of fraud or automatically accuse a claimant.
+
+Suggested report pages
+1. Executive overview
+Show
+
+Total claims
+Total claimed amount
+Average claim amount
+Claims labelled fraud
+Fraud-label rate
+Claims by incident date
+Visuals KPI cards, monthly trend, claims by incident type, and a fraud-label split.
+
+2. Incident and severity analysis
+Explore claim counts and amounts by
+
+incident_type
+incident_severity
+collision_type
+incident_state
+incident_hour_of_the_day
+number_of_vehicles_involved
+bodily_injuries
+witnesses
+police_report_available
+Use slicers for date, state, incident type and severity. Compare fraud-labelled and non-fraud-labelled records, while making clear these are observed associations in this dataset, not causes.
+
+3. Claim amount analysis
+Show total and average claim_amount and total_claim_amount by incident type, severity and state. Check what the dataset documentation means by those two amount fields before interpreting or adding them together; they may overlap.
+
+4. Claim review table
+Create a searchable table with policy_id, incident date, location, incident type, severity, claim amounts, police report availability and the dataset’s fraud label. Restrict access to this detail if you publish the report in an organisation.
+
+Basic Power BI steps
+Import the file and inspect its row count, column names and data types.
+Set incident_date to Date and amount fields to Decimal number or Fixed decimal number.
+Check for blank values, duplicate rows, invalid dates and inconsistent category spelling.
+Rename the table to Claims.
+Add a proper calendar table and relate it to Claims[incident_date]. A calendar table makes date filtering and monthly trends easier.
+Build the pages above and test totals against the source file.
+Start with measures like these, adjusting the table name if needed
+
+ 
+Copy codeCode copied
+Export
+Total Claims =
+COUNTROWS(Claims)
+
+Total Claim Amount =
+SUM(Claims[claim_amount])
+
+Average Claim Amount =
+AVERAGE(Claims[claim_amount])
+
+Fraud-Label Claims =
+CALCULATE(
+    [Total Claims],
+    Claims[fraud_reported] = Y
+)
+
+Fraud-Label Rate =
+DIVIDE(
+    [Fraud-Label Claims],
+    [Total Claims]
+)
+Format Fraud-Label Rate as a percentage. These measures count rows as claims, so first confirm that each row represents one claim. Don’t assume policy_id is unique one policy could potentially have multiple claims.
+
+How to add a real-time demonstration
+Keep the original dataset as historical data. Separately create a simulated events table with fields such as
+
+claim_id or policy_id
+event_type — received, assigned, under review, approved, declined or paid
+event_timestamp
+event_amount
+current_status
+Generate new simulated events periodically and connect them through a streaming service or your organisation’s approved data platform. If you use periodic file or database refreshes, describe the result as near-real-time, not live insurer data. The dataset itself does not contain a history of claim-status changes, so you cannot calculate genuine handling or settlement times from it.
+
+Important project caveats
+Verify the dataset’s source, licence, field definitions and whether it is synthetic or otherwise constructed before describing it as “realistic.”
+Avoid using insured_sex, insured_age, insured_education_level, insured_occupation or insured_hobbies to flag individual claims. They are sensitive or personal attributes; using them for operational decisions can create fairness and compliance risks.
+If you show demographic breakdowns, keep them aggregated and clearly label them as exploratory—not evidence that a characteristic causes fraud.
+A good project description is “Historical dashboard using a public dataset; live claim activity, if shown, is simulated.”
+Copied
+
+
+policy_id	policy_state	policy_deductible	policy_annual_premium	insured_age	insured_sex	insured_education_level	insured_occupation	insured_hobbies	incident_date	incident_type	collision_type	incident_severity	authorities_contacted	incident_state	incident_city	incident_hour_of_the_day	number_of_vehicles_involved	bodily_injuries	witnesses	police_report_available	claim_amount	total_claim_amount	fraud_reported
+POL100000	GA	400	1430.78	74	OTHER	High School	Manager	reading	13-06-2024	Parked Car	Front	Total Loss	None	MI	Charlesville	6	1	4	0	Yes	8161.36	11677.6	Y
+POL100001	PA	300	854.49	74	MALE	College	Lawyer	chess	23-03-2025	Vehicle Theft	Rear	Total Loss	None	OH	Joshuaberg	0	3	4	5	No	18561.79	18027.81	N
+POL100002	MI	400	1247.28	28	OTHER	PhD	Doctor	reading	26-01-2025	Parked Car	Unknown	Total Loss	Police	MI	Reynoldsfurt	14	4	4	1	No	10734.61	10375.59	N
+POL100003	CA	600	622.42	37	MALE	PhD	Teacher	yachting	03-06-2024	Parked Car	Rear	Total Loss	Police	NC	Josephchester	22	3	3	5	No	13188.92	14204.34	N
+POL100004	MI	700	1458.17	31	OTHER	PhD	Sales	reading	21-05-2024	Single Vehicle Collision	Side	Minor Damage	Fire	NY	Caitlinfort	18	4	2	4	No	21864.69	24038.84	N
+POL100005	PA	700	1015.6	32	MALE	College	Manager	camping	11-03-2025	Parked Car	Unknown	Major Damage	Ambulance	FL	Bethfort	20	2	4	5	No	12483.84	11780.94	N
+POL100006	PA	300	1254.39	30	OTHER	High School	Doctor	reading	26-12-2024	Multi-vehicle Collision	Rear	Major Damage	Ambulance	PA	Masonport	16	4	0	3	Yes	16687.4	19045.75	N
+POL100007	MI	700	1288.08	29	FEMALE	PhD	Lawyer	reading	19-10-2025	Parked Car	Rear	Major Damage	Police	MI	North Randytown	5	1	3	5	No	7111.4	8272.63	N
+POL100008	NC	500	942.22	61	FEMALE	College	Clerk	yachting	19-11-2023	Parked Car	Unknown	Total Loss	Ambulance	NC	Jerryberg	22	1	4	5	Yes	1603.74	2549.55	N
+POL100009	GA	700	1277.15	19	OTHER	High School	Doctor	chess	07-05-2024	Vehicle Theft	Unknown	Major Damage	Ambulance	FL	Newtonshire	17	3	3	0	No	18778.37	15959.84	N
+POL100010	FL	700	839.16	46	OTHER	PhD	Sales	paintball	23-11-2023	Single Vehicle Collision	Front	Total Loss	Fire	IL	New William	6	4	3	3	No	17022.79	22383.95	N
+POL100011	MI	400	886.71	41	OTHER	College	Technician	paintball	22-11-2024	Vehicle Theft	Side	Total Loss	Police	CA	Port Vincentshire	4	4	4	5	Yes	935.88	936.22	N
+POL100012	NC	300	626.23	33	FEMALE	Masters	Doctor	chess	08-04-2024	Multi-vehicle Collision	Front	Minor Damage	None	TX	Brookston	3	1	0	3	No	9042.2	17788.89	N
+POL100013	FL	300	1288.93	59	FEMALE	College	Clerk	movies	12-08-2024	Single Vehicle Collision	Unknown	Major Damage	Ambulance	OH	Blairview	23	4	1	5	Yes	21442.46	24667.55	N
+POL100014	FL	700	1202.23	45	FEMALE	PhD	Lawyer	hiking	18-04-2024	Multi-vehicle Collision	Side	Total Loss	None	NC	Michaelview	12	3	2	1	No	2671.49	3132.11	N
+POL100015	FL	700	1356.73	33	MALE	PhD	Doctor	reading	03-10-2024	Vehicle Theft	Front	Major Damage	Fire	GA	Lake William	16	1	1	2	Yes	12704.15	17768.74	N
+POL100016	TX	700	1344.16	34	MALE	PhD	Manager	camping	06-01-2025	Multi-vehicle Collision	Unknown	Total Loss	Ambulance	OH	Emilyhaven	0	4	3	2	No	9643.23	12568.11	N
+POL100017	PA	400	1165.83	60	FEMALE	PhD	Clerk	movies	09-09-2025	Vehicle Theft	Front	Minor Damage	Police	FL	West Judymouth	9	2	3	1	Yes	11010.22	14253.03	N
+POL100018	FL	500	1116.42	71	MALE	College	Manager	paintball	01-08-2024	Multi-vehicle Collision	Front	Total Loss	Ambulance	GA	Jenniferport	20	3	1	4	No	2418.45	3294.48	N
+POL100019	NY	600	806.6	62	FEMALE	Masters	Sales	chess	16-04-2024	Multi-vehicle Collision	Front	Major Damage	Fire	FL	West Kayla	14	4	2	3	No	18352.24	18227.64	N
+POL100020	GA	500	688.68	70	OTHER	PhD	Clerk	yachting	25-03-2024	Parked Car	Unknown	Minor Damage	Fire	NY	Hebertfurt	14	4	1	3	Yes	20963.93	24203.5	N
+POL100021	PA	400	1106.37	25	OTHER	Masters	Manager	reading	16-11-2024	Multi-vehicle Collision	Side	Minor Damage	Police	NC	Richardberg	11	4	1	5	No	22634.14	22161.42	N
+POL100022	CA	600	1197.21	23	FEMALE	Masters	Clerk	movies	14-03-2025	Single Vehicle Collision	Unknown	Total Loss	None	NY	Garciaburgh	8	1	1	1	Yes	571.25	1104.58	Y
+POL100023	PA	1000	1455.1	41	MALE	Masters	Doctor	yachting	13-02-2025	Multi-vehicle Collision	Side	Minor Damage	Police	GA	New Benjamin	2	4	4	3	No	14782.66	15486.28	N
+POL100024	MI	200	773.47	58	OTHER	PhD	Lawyer	chess	27-07-2024	Parked Car	Rear	Major Damage	None	OH	Timothytown	3	1	1	0	No	5069.34	5616.48	N
+POL100025	IL	500	1010.2	49	MALE	High School	Teacher	chess	13-05-2024	Multi-vehicle Collision	Rear	Major Damage	Police	MI	Danielberg	20	2	4	5	Yes	12083.73	12744.23	N
+POL100026	NC	300	838.35	24	MALE	Masters	Technician	chess	28-11-2024	Multi-vehicle Collision	Unknown	Total Loss	None	GA	West Tamaraville	6	4	0	4	Yes	6450.68	9474.52	N
+POL100027	MI	1000	699.57	40	FEMALE	Masters	Technician	yachting	29-05-2024	Vehicle Theft	Unknown	Minor Damage	Fire	FL	Robertsmouth	1	4	1	0	Yes	26411.93	22495.12	N
+POL100028	GA	1000	634.82	69	OTHER	PhD	Engineer	camping	05-08-2024	Vehicle Theft	Side	Minor Damage	Police	OH	Nielsenmouth	6	4	4	4	Yes	5989.84	5383.95	N
+POL100029	NY	500	690.73	44	OTHER	Masters	Sales	chess	14-01-2025	Single Vehicle Collision	Front	Total Loss	Ambulance	NY	Lake Kimburgh	9	2	2	0	Yes	16077.18	17483.05	Y
+POL100030	PA	1000	679.34	72	OTHER	Masters	Teacher	chess	15-10-2025	Vehicle Theft	Front	Minor Damage	None	CA	New Lisaton	9	2	1	4	Yes	13547.72	19323.19	N
+POL100031	OH	400	1183.26	31	OTHER	High School	Clerk	hiking	19-02-2025	Single Vehicle Collision	Side	Minor Damage	Police	OH	East Andreaview	3	1	2	3	Yes	5641.83	5865.87	N
+POL100032	FL	600	1309.96	22	OTHER	High School	Teacher	movies	25-12-2023	Parked Car	Rear	Minor Damage	Ambulance	MI	Lake Kristine	2	3	2	0	Yes	20571.41	24615.06	N
+POL100033	FL	700	615.83	58	FEMALE	High School	Engineer	chess	13-04-2024	Parked Car	Unknown	Minor Damage	Police	NY	Port Paula	21	3	2	5	Yes	16101.64	18133.76	N
+POL100034	GA	800	634	75	OTHER	High School	Engineer	paintball	27-01-2025	Multi-vehicle Collision	Rear	Major Damage	Fire	GA	East Adammouth	6	2	3	4	No	3100.65	2587.12	N
+POL100035	GA	400	1260.39	66	FEMALE	High School	Lawyer	movies	17-06-2025	Multi-vehicle Collision	Front	Major Damage	Fire	NY	Hillfurt	19	4	0	2	Yes	22920.05	20770.55	N
+POL100036	MI	600	1434.52	30	MALE	Masters	Technician	chess	08-01-2025	Single Vehicle Collision	Rear	Minor Damage	None	MI	Mitchellfurt	21	2	3	0	Yes	15335.46	23303.11	N
+POL100037	TX	700	1329.06	35	FEMALE	PhD	Manager	yachting	14-03-2024	Multi-vehicle Collision	Unknown	Total Loss	Fire	OH	New Sabrina	12	1	2	5	No	5739.56	7526.2	N
+POL100038	FL	400	1009.01	54	OTHER	College	Manager	chess	05-02-2024	Multi-vehicle Collision	Side	Major Damage	Fire	OH	East Christopherland	3	1	3	4	No	24354.16	22114.92	N
+POL100039	CA	1000	850.73	44	FEMALE	Masters	Technician	reading	04-09-2024	Parked Car	Side	Major Damage	Police	FL	Harrisshire	21	2	0	1	No	5186.48	9399.79	N
+POL100040	TX	400	995.78	71	FEMALE	PhD	Sales	reading	02-01-2024	Parked Car	Rear	Total Loss	Ambulance	FL	Wuchester	3	4	1	3	Yes	6551.67	10704.78	N
+POL100041	NY	400	954.04	40	FEMALE	PhD	Lawyer	hiking	12-05-2025	Single Vehicle Collision	Front	Major Damage	Ambulance	MI	Coxfurt	22	4	0	5	No	5236.78	5117.5	N
+POL100042	OH	800	1232.61	61	FEMALE	College	Engineer	camping	23-08-2025	Multi-vehicle Collision	Side	Major Damage	None	OH	West Matthewmouth	8	1	4	5	Yes	23184.66	24000.58	N
+POL100043	NY	1000	793.87	37	OTHER	Masters	Doctor	chess	28-07-2025	Single Vehicle Collision	Front	Major Damage	Fire	GA	Julianview	3	4	3	2	No	5597.16	6281.51	N
+POL100044	FL	800	823.16	34	MALE	PhD	Lawyer	yachting	14-03-2024	Parked Car	Rear	Total Loss	None	NY	South Stephanie	11	4	1	4	Yes	13544.54	14355.74	Y
+POL100045	MI	500	862.32	74	MALE	High School	Manager	hiking	21-08-2025	Vehicle Theft	Front	Major Damage	Fire	FL	Lake Shelly	0	2	3	4	Yes	8855.64	7812.37	N
+POL100046	OH	700	1257.48	36	MALE	High School	Lawyer	camping	09-03-2024	Multi-vehicle Collision	Side	Minor Damage	None	TX	Andrewhaven	12	1	2	0	Yes	15210.9	20897.64	N
+POL100047	FL	300	791.67	69	MALE	Masters	Lawyer	yachting	29-10-2024	Single Vehicle Collision	Front	Minor Damage	Fire	FL	Lake Grantstad	12	1	1	5	No	17258.92	16402.53	N
+POL100048	MI	600	1277.59	48	MALE	Masters	Teacher	movies	14-12-2024	Parked Car	Front	Total Loss	Police	MI	Billychester	17	1	4	3	No	12201.78	10944.6	N
+POL100049	PA	1000	1467.71	56	OTHER	High School	Engineer	hiking	29-09-2025	Vehicle Theft	Rear	Major Damage	Police	NC	Lake Sharon	17	1	0	0	No	8353.3	9603.27	N
+POL100050	OH	500	1359.89	19	MALE	PhD	Clerk	hiking	10-06-2025	Single Vehicle Collision	Side	Major Damage	Police	NC	South Katherine	22	3	0	1	No	15483.38	24744.74	N
+POL100051	GA	200	936.15	65	MALE	Masters	Sales	reading	06-08-2024	Vehicle Theft	Front	Total Loss	Ambulance	NY	Paulmouth	9	4	3	4	No	13185.25	16823.59	N
+POL100052	OH	200	714.43	28	FEMALE	PhD	Teacher	hiking	28-01-2024	Vehicle Theft	Rear	Major Damage	Police	CA	Taylorshire	8	3	1	1	No	19649.1	21365.58	Y
+POL100053	CA	600	1114.46	25	FEMALE	High School	Technician	camping	13-01-2024	Single Vehicle Collision	Rear	Minor Damage	None	OH	South Christinechester	15	3	1	0	No	11112.34	21550	N
+POL100054	IL	700	638.59	55	OTHER	High School	Manager	yachting	04-02-2024	Multi-vehicle Collision	Side	Major Damage	Ambulance	NY	East Stevenberg	13	4	0	5	Yes	12656.03	17523.64	N
+POL100055	PA	500	1358.89	44	MALE	Masters	Lawyer	movies	31-12-2023	Single Vehicle Collision	Front	Major Damage	Fire	NC	Lake Valerie	5	1	0	2	No	20161.98	23395.88	N
+POL100056	IL	400	818.03	53	MALE	PhD	Teacher	reading	08-07-2025	Single Vehicle Collision	Front	Total Loss	Fire	MI	New Kennethchester	10	2	0	1	Yes	8989.77	8690.59	N
+POL100057	FL	400	762.92	32	OTHER	College	Engineer	movies	16-02-2025	Multi-vehicle Collision	Front	Major Damage	Fire	MI	Michaelton	18	4	2	4	No	4865.79	5200.56	N
+POL100058	FL	200	877.19	48	MALE	College	Lawyer	camping	12-09-2025	Single Vehicle Collision	Rear	Total Loss	None	OH	Georgechester	13	2	3	0	No	23708.52	21684.59	Y
+POL100059	CA	700	1207.76	73	FEMALE	College	Clerk	chess	18-01-2024	Multi-vehicle Collision	Side	Minor Damage	Police	TX	Chelseamouth	9	2	1	3	No	11107.46	21397.56	N
+POL100060	TX	500	998.5	29	OTHER	PhD	Sales	yachting	16-06-2025	Parked Car	Front	Total Loss	None	IL	Josephberg	8	4	4	0	No	4515.23	4649.8	Y
+POL100061	CA	600	853.47	52	OTHER	Masters	Doctor	movies	05-06-2025	Vehicle Theft	Unknown	Total Loss	None	OH	Chelseyview	16	2	4	1	Yes	6696.12	6414.39	N
+POL100062	PA	500	689.07	39	FEMALE	Masters	Doctor	yachting	09-01-2025	Vehicle Theft	Side	Total Loss	Police	NC	North Catherine	5	3	3	5	Yes	15751.72	24439.69	N
+POL100063	CA	400	1124.21	28	FEMALE	High School	Lawyer	hiking	19-08-2024	Parked Car	Front	Minor Damage	Fire	PA	Annaside	7	1	3	4	Yes	18668.58	19442.13	N
+POL100064	PA	400	644.74	62	OTHER	PhD	Clerk	hiking	14-09-2024	Single Vehicle Collision	Side	Total Loss	None	IL	North George	5	3	2	1	No	2109.06	3101.15	N
+POL100065	PA	700	953.39	72	MALE	College	Technician	paintball	16-12-2024	Parked Car	Unknown	Total Loss	None	PA	Drewborough	2	4	0	4	No	9759.26	14620.18	Y
+POL100066	TX	600	904.57	50	FEMALE	Masters	Manager	yachting	04-01-2025	Single Vehicle Collision	Rear	Major Damage	None	IL	Travisfort	21	1	3	3	No	25656.21	23385.74	N
+POL100067	OH	500	1235.52	20	OTHER	PhD	Doctor	yachting	13-03-2024	Multi-vehicle Collision	Rear	Total Loss	Fire	IL	Joshuaville	4	4	0	5	No	17343.43	20425.42	N
+POL100068	OH	700	1493.08	40	OTHER	Masters	Doctor	hiking	25-04-2024	Vehicle Theft	Front	Major Damage	Fire	IL	North Ronald	8	1	1	0	Yes	17623.84	19998.64	N
+POL100069	GA	300	1470.1	40	MALE	PhD	Clerk	camping	12-02-2025	Multi-vehicle Collision	Unknown	Minor Damage	None	IL	West Willieland	5	4	4	5	No	9559.17	14900.54	N
+POL100070	FL	300	642.54	71	MALE	High School	Engineer	hiking	26-05-2025	Parked Car	Front	Major Damage	None	CA	East Jaclynburgh	0	4	0	5	No	573.01	574.78	Y
+POL100071	MI	800	1141.88	54	OTHER	College	Manager	paintball	08-11-2024	Single Vehicle Collision	Front	Minor Damage	Ambulance	PA	West Dawn	11	1	1	5	Yes	13947.11	22359.84	N
+POL100072	NY	800	695.66	59	MALE	College	Manager	camping	17-01-2025	Parked Car	Front	Total Loss	Police	OH	Lake Tanya	22	4	3	0	No	5791.35	6758.86	N
+POL100073	NY	1000	858.7	21	OTHER	PhD	Teacher	paintball	17-06-2024	Single Vehicle Collision	Unknown	Major Damage	Ambulance	GA	Port Michaelstad	12	4	0	4	No	8493.67	14299.84	N
+POL100074	IL	700	643.29	21	OTHER	PhD	Technician	camping	15-10-2025	Parked Car	Unknown	Minor Damage	Fire	FL	West Barbara	6	4	2	3	Yes	3644.79	6352.93	N
+POL100075	IL	1000	1232.81	32	OTHER	Masters	Teacher	chess	11-07-2024	Single Vehicle Collision	Rear	Minor Damage	None	GA	Morrismouth	21	2	3	1	No	18345.28	15557.68	N
+POL100076	TX	1000	870.57	45	FEMALE	College	Technician	paintball	03-06-2024	Single Vehicle Collision	Rear	Major Damage	None	PA	Schultzmouth	11	1	3	5	Yes	26057.56	24211.89	N
+POL100077	NC	600	1230.91	43	OTHER	High School	Doctor	paintball	09-05-2024	Parked Car	Front	Total Loss	Fire	NC	Georgeton	18	2	4	4	No	6775.18	7030.24	N
+POL100078	IL	1000	1107.49	50	FEMALE	High School	Sales	yachting	22-02-2024	Multi-vehicle Collision	Rear	Minor Damage	Police	MI	West Grace	20	1	4	2	Yes	1055.48	889.5	N
+POL100079	NC	800	964.67	57	OTHER	Masters	Technician	paintball	13-08-2024	Multi-vehicle Collision	Side	Minor Damage	Fire	NC	Owensville	3	1	4	4	No	9308.13	8200.33	N
+POL100080	PA	300	1329.02	33	OTHER	Masters	Teacher	chess	25-06-2024	Multi-vehicle Collision	Side	Minor Damage	Police	TX	East Greggbury	20	4	1	2	Yes	11824.96	21875.96	N
+POL100081	CA	800	967.36	56	MALE	High School	Lawyer	yachting	03-12-2023	Single Vehicle Collision	Rear	Minor Damage	Ambulance	NY	West Tyler	3	3	0	5	Yes	11190.32	16483.76	N
+POL100082	TX	400	1204.67	33	MALE	Masters	Lawyer	movies	24-06-2025	Parked Car	Front	Minor Damage	Police	CA	Adamsfurt	2	4	3	5	No	2638.17	4743.52	N
+POL100083	GA	300	1366.97	72	OTHER	Masters	Engineer	hiking	02-09-2024	Single Vehicle Collision	Rear	Total Loss	Ambulance	CA	East Christopherville	12	1	0	5	Yes	6417.5	7399.03	N
+POL100084	GA	600	1251.25	20	OTHER	College	Doctor	reading	04-11-2024	Multi-vehicle Collision	Unknown	Total Loss	Ambulance	TX	West Charlesfort	17	1	0	3	Yes	10979.26	10995.14	Y
+POL100085	OH	300	816.28	60	MALE	High School	Doctor	chess	06-01-2024	Single Vehicle Collision	Rear	Major Damage	Ambulance	GA	West Staceyport	6	1	3	5	Yes	2628.79	3631.15	N
+POL100086	NY	1000	647.78	56	MALE	Masters	Technician	reading	15-05-2025	Multi-vehicle Collision	Side	Major Damage	None	GA	Burchborough	7	2	1	5	No	7304.63	11871.59	N
+POL100087	GA	400	1333.65	21	OTHER	Masters	Lawyer	camping	22-01-2024	Single Vehicle Collision	Side	Major Damage	None	NY	Heatherchester	22	4	4	2	Yes	7442.76	14800.49	N
+POL100088	OH	600	995.05	44	OTHER	PhD	Lawyer	hiking	19-01-2025	Single Vehicle Collision	Front	Minor Damage	Police	MI	Lake Troystad	17	3	2	0	Yes	3335.46	4192.63	Y
+POL100089	NY	700	690.43	71	FEMALE	College	Teacher	hiking	14-05-2024	Parked Car	Rear	Major Damage	Fire	GA	North Gina	2	3	2	3	Yes	18554.13	17309.76	N
+POL100090	PA	300	954.36	66	FEMALE	Masters	Lawyer	hiking	15-10-2025	Parked Car	Unknown	Major Damage	Ambulance	TX	Catherinefort	14	3	0	5	Yes	3743.77	3839.32	N
+POL100091	MI	300	914.66	42	MALE	PhD	Engineer	chess	20-07-2025	Vehicle Theft	Front	Major Damage	Fire	CA	Jonesside	17	4	0	0	No	10450.1	14121.89	N
+POL100092	GA	200	872.39	56	OTHER	College	Lawyer	movies	11-10-2024	Multi-vehicle Collision	Side	Total Loss	Ambulance	GA	Brianstad	15	3	2	3	No	10393.83	13952.76	N
+POL100093	CA	200	830.51	45	MALE	College	Technician	camping	30-03-2024	Vehicle Theft	Rear	Total Loss	Ambulance	PA	Collinsview	21	2	4	4	Yes	17239.85	20730.85	N
+POL100094	FL	200	1082.13	46	MALE	Masters	Technician	hiking	11-05-2025	Parked Car	Unknown	Major Damage	Fire	NY	Andersonstad	16	2	0	1	Yes	16026.19	13981.66	N
+POL100095	IL	200	1003.22	58	FEMALE	PhD	Lawyer	yachting	20-10-2025	Parked Car	Front	Major Damage	Ambulance	MI	Zacharyport	20	1	0	4	Yes	16436.13	15290.2	N
+POL100096	NY	800	1143.74	56	MALE	College	Lawyer	camping	09-04-2025	Single Vehicle Collision	Rear	Minor Damage	Police	OH	Deniseshire	22	1	0	2	No	16696.17	17634.53	N
+POL100097	TX	800	707.92	50	OTHER	High School	Doctor	movies	16-09-2025	Multi-vehicle Collision	Unknown	Major Damage	Police	NY	Leemouth	10	4	2	2	No	6814.39	6264.61	N
+POL100098	GA	200	1474.6	45	FEMALE	PhD	Manager	chess	13-07-2024	Vehicle Theft	Rear	Total Loss	None	GA	Aaronmouth	2	1	4	2	Yes	9744.55	17936.77	N
+POL100099	TX	200	1019.61	37	OTHER	Masters	Technician	yachting	25-02-2025	Vehicle Theft	Unknown	Total Loss	Fire	NC	Deborahmouth	3	3	0	0	No	911.17	924.05	Y
+POL100100	GA	400	1254.35	45	MALE	High School	Clerk	hiking	19-05-2024	Single Vehicle Collision	Front	Total Loss	Ambulance	NC	East Mitchellbury	8	3	3	0	No	10980.57	13469.03	Y
+POL100101	TX	500	637.53	73	OTHER	High School	Engineer	reading	07-04-2025	Vehicle Theft	Unknown	Total Loss	Fire	MI	North Phillip	2	1	1	3	Yes	1494.2	2441.68	N
+POL100102	CA	300	1486.3	19	MALE	High School	Teacher	movies	01-07-2025	Single Vehicle Collision	Front	Total Loss	None	OH	Christinastad	9	2	0	5	Yes	11755.97	9952.32	Y
+POL100103	PA	500	848.14	23	FEMALE	PhD	Teacher	paintball	20-07-2024	Parked Car	Rear	Major Damage	Fire	CA	Sheppardburgh	2	2	0	0	Yes	11876.35	20050.19	N
+POL100104	TX	400	1291.21	18	MALE	PhD	Sales	yachting	19-10-2025	Vehicle Theft	Side	Minor Damage	Fire	NY	Russellfort	9	1	4	4	Yes	28031.9	23532.72	N
+POL100105	MI	600	1498.39	35	MALE	Masters	Clerk	paintball	20-07-2025	Single Vehicle Collision	Rear	Minor Damage	Police	IL	North Mollymouth	8	3	1	0	No	7285.46	10207.43	N
+POL100106	PA	800	965.68	28	FEMALE	College	Doctor	reading	23-09-2025	Vehicle Theft	Front	Major Damage	Fire	MI	Patriciaberg	2	3	3	1	No	10984.27	10969.09	N
+POL100107	TX	800	1434.82	65	FEMALE	Masters	Manager	movies	01-11-2025	Vehicle Theft	Front	Total Loss	Fire	MI	Port Kevin	14	1	3	4	Yes	15117.66	16987.5	Y
+POL100108	CA	600	1486.19	38	FEMALE	College	Sales	movies	08-02-2025	Single Vehicle Collision	Unknown	Total Loss	Fire	GA	Lake Jeffreyfort	13	2	0	4	No	17817.09	14992.14	Y
+POL100109	GA	400	1110	34	MALE	High School	Lawyer	camping	05-07-2024	Vehicle Theft	Side	Major Damage	Fire	TX	Franklinport	22	4	1	0	No	12482.68	20660.1	Y
+POL100110	NY	200	1216.94	25	FEMALE	High School	Manager	hiking	15-01-2025	Parked Car	Rear	Minor Damage	Fire	GA	Heathershire	17	3	1	2	Yes	14865.83	16190.38	N
+POL100111	PA	600	1165.3	59	OTHER	High School	Teacher	chess	12-10-2025	Single Vehicle Collision	Side	Major Damage	Ambulance	PA	South Henryland	1	1	0	0	Yes	16019.76	15632.73	N
+POL100112	NC	1000	875.46	50	FEMALE	College	Sales	paintball	05-07-2024	Single Vehicle Collision	Front	Minor Damage	Fire	PA	North Kathleen	17	2	4	4	Yes	14582.5	16941.74	N
+POL100113	CA	400	652.56	57	OTHER	College	Manager	movies	17-12-2024	Vehicle Theft	Rear	Total Loss	None	PA	Santanabury	2	4	2	0	No	22889.37	21824.58	Y
+POL100114	TX	800	959.61	54	FEMALE	PhD	Technician	chess	06-12-2024	Single Vehicle Collision	Front	Major Damage	Fire	OH	Powellside	13	2	4	4	No	5879.66	6993.8	N
+POL100115	TX	700	1027.35	28	MALE	High School	Technician	reading	16-06-2024	Parked Car	Front	Major Damage	Fire	IL	Jasonview	23	1	2	4	Yes	7353.76	7150.81	N
+POL100116	IL	700	847.82	44	MALE	High School	Technician	camping	24-09-2024	Parked Car	Side	Minor Damage	None	TX	Lake Sarahton	5	1	3	3	Yes	21042.47	21521.31	Y
+POL100117	NY	500	1064.33	22	MALE	Masters	Manager	yachting	30-08-2024	Single Vehicle Collision	Front	Minor Damage	Fire	NY	Mariamouth	3	4	4	2	Yes	7264.16	7176.75	N
+POL100118	PA	1000	1298.7	60	MALE	PhD	Teacher	paintball	11-10-2025	Parked Car	Unknown	Minor Damage	Ambulance	NC	East Gerald	21	4	0	0	No	8526.2	13122.44	N
+POL100119	OH	400	1291.64	61	OTHER	PhD	Lawyer	reading	25-10-2025	Multi-vehicle Collision	Side	Minor Damage	Police	GA	Lake Kimberlyton	8	4	2	5	Yes	5555.9	9048.76	N
+POL100120	IL	700	1008.87	37	MALE	College	Doctor	yachting	23-07-2025	Multi-vehicle Collision	Front	Minor Damage	None	FL	Snowfurt	16	3	2	2	Yes	4082.59	7397.25	N
+POL100121	NY	700	1370.98	24	MALE	Masters	Teacher	yachting	15-12-2024	Parked Car	Front	Minor Damage	Police	IL	New Eric	13	1	2	0	Yes	1273.74	1461.84	N
+POL100122	CA	700	827.51	37	FEMALE	PhD	Manager	paintball	07-07-2025	Parked Car	Unknown	Minor Damage	None	NY	Port Ericamouth	4	2	3	2	No	3564.95	3922.89	Y
+POL100123	CA	600	873.35	54	OTHER	College	Doctor	reading	21-06-2025	Parked Car	Side	Major Damage	Ambulance	MI	Port John	0	3	3	2	No	7576.92	14597.43	N
+POL100124	PA	500	721.33	25	MALE	College	Manager	yachting	18-10-2025	Multi-vehicle Collision	Side	Total Loss	Police	NY	Port Andrewmouth	3	4	4	4	Yes	5419.62	7198.84	N
+POL100125	NY	500	673.29	67	OTHER	Masters	Sales	hiking	10-01-2024	Multi-vehicle Collision	Front	Minor Damage	Police	NY	Carloschester	14	4	4	5	Yes	24361.3	21589.92	N
+POL100126	IL	300	1192.16	40	MALE	High School	Engineer	movies	10-11-2023	Parked Car	Rear	Minor Damage	None	FL	Greenchester	21	4	0	1	Yes	20319.37	21585.85	Y
+POL100127	NY	500	1302.64	68	OTHER	College	Lawyer	chess	29-01-2024	Multi-vehicle Collision	Rear	Minor Damage	Police	TX	Romeroport	14	4	4	4	No	7241.34	10174.43	N
+POL100128	NC	500	786.94	35	FEMALE	High School	Teacher	reading	21-04-2025	Multi-vehicle Collision	Front	Total Loss	None	MI	Lake Dale	11	4	4	4	No	17306.55	15879.71	N
+POL100129	FL	200	759.34	56	MALE	Masters	Technician	camping	22-01-2024	Parked Car	Rear	Minor Damage	Ambulance	NC	Bentonhaven	23	2	4	5	No	20751.81	17887.87	Y
+POL100130	CA	1000	1070.74	46	OTHER	Masters	Clerk	yachting	03-08-2025	Multi-vehicle Collision	Rear	Total Loss	Police	NY	Howeshire	14	3	3	2	No	2002.32	2917.15	N
+POL100131	MI	800	1073.58	56	OTHER	High School	Technician	hiking	04-10-2025	Parked Car	Front	Total Loss	Ambulance	GA	Carolburgh	1	4	1	2	Yes	12644.97	12538.19	N
+POL100132	NC	600	1223.4	41	OTHER	College	Teacher	yachting	24-01-2025	Multi-vehicle Collision	Unknown	Minor Damage	Ambulance	MI	Boydborough	18	3	3	4	No	2382.54	4499.82	N
+POL100133	PA	200	1489.33	23	MALE	High School	Sales	camping	22-08-2024	Single Vehicle Collision	Front	Total Loss	Ambulance	NY	Hallfurt	3	4	2	4	Yes	6063.85	5851.18	Y
+POL100134	OH	500	669.42	56	OTHER	High School	Lawyer	paintball	20-10-2025	Parked Car	Front	Minor Damage	Police	GA	North Danamouth	1	2	2	1	Yes	11005.26	10613.56	N
+POL100135	FL	500	1002.81	58	OTHER	Masters	Technician	hiking	24-01-2025	Multi-vehicle Collision	Rear	Major Damage	Ambulance	PA	North Bryanfurt	19	3	1	1	Yes	14698.9	17555.28	N
+POL100136	CA	700	798.81	65	FEMALE	Masters	Manager	reading	23-05-2024	Parked Car	Rear	Major Damage	Police	OH	Lake Scott	4	1	1	5	No	21853.07	20598.21	N
+POL100137	PA	600	1325.84	46	MALE	College	Engineer	chess	01-11-2024	Vehicle Theft	Front	Major Damage	Ambulance	PA	Aliciatown	1	3	4	5	Yes	18054.46	23713.2	N
+POL100138	OH	400	605.46	37	MALE	Masters	Lawyer	chess	26-07-2025	Multi-vehicle Collision	Rear	Total Loss	Ambulance	PA	Maryfort	18	1	3	4	Yes	1563.24	1310.34	N
+POL100139	NC	500	1238.7	34	MALE	PhD	Manager	chess	11-01-2025	Parked Car	Front	Major Damage	Fire	NC	Danielberg	23	4	3	1	Yes	1217.75	1563.22	N
+POL100140	FL	700	1078.96	32	FEMALE	High School	Doctor	yachting	14-05-2025	Multi-vehicle Collision	Unknown	Minor Damage	Police	CA	Kingport	8	4	0	2	Yes	5627	8284.47	N
+POL100141	FL	300	690.49	67	OTHER	College	Lawyer	movies	18-07-2024	Multi-vehicle Collision	Rear	Minor Damage	None	TX	New Scotthaven	1	2	0	1	No	3773.47	4954.57	N
+POL100142	NC	800	663.53	39	OTHER	High School	Sales	hiking	13-01-2024	Single Vehicle Collision	Rear	Total Loss	Ambulance	IL	Billyhaven	0	3	0	1	No	2689.81	4619.55	N
+POL100143	TX	700	659.65	49	FEMALE	Masters	Doctor	movies	01-02-2024	Single Vehicle Collision	Rear	Total Loss	Ambulance	GA	Colemanport	13	3	0	0	No	15452.64	23613.87	N
+POL100144	IL	300	1029.02	71	FEMALE	High School	Teacher	movies	26-05-2024	Vehicle Theft	Front	Major Damage	Fire	NC	Lake Eric	2	4	3	0	No	11648.66	15758.55	N
+POL100145	TX	1000	1319.84	20	OTHER	PhD	Sales	paintball	25-02-2025	Vehicle Theft	Rear	Minor Damage	Ambulance	TX	North Troy	0	4	0	5	No	16914.37	24595.55	N
+POL100146	CA	300	1017.21	27	OTHER	PhD	Technician	hiking	23-08-2024	Single Vehicle Collision	Unknown	Major Damage	Ambulance	FL	Wallaceburgh	9	1	1	0	Yes	20077.7	21700.93	N
+POL100147	TX	300	669.92	21	FEMALE	Masters	Technician	hiking	09-06-2024	Vehicle Theft	Side	Minor Damage	Fire	GA	Curtisport	21	2	1	4	Yes	10790.89	16591.36	N
+POL100148	NY	200	955.74	22	OTHER	College	Lawyer	paintball	24-07-2025	Single Vehicle Collision	Unknown	Major Damage	Fire	FL	Grahamburgh	0	2	0	1	No	1576.69	1995.86	N
+POL100149	FL	800	930.9	74	FEMALE	High School	Lawyer	paintball	16-01-2025	Parked Car	Rear	Major Damage	None	NY	New Meganside	9	3	0	4	Yes	11851.78	14482.02	N
+POL100150	GA	500	749.34	52	MALE	PhD	Lawyer	hiking	14-10-2025	Multi-vehicle Collision	Unknown	Total Loss	Police	PA	Lake Danielle	0	2	3	4	Yes	12566.46	15823.87	N
+POL100151	FL	600	1170.09	27	MALE	College	Engineer	movies	09-09-2024	Single Vehicle Collision	Unknown	Total Loss	None	GA	Stewarttown	3	1	1	3	No	8978.61	17922.55	N
+POL100152	MI	400	1241.15	62	MALE	College	Doctor	hiking	18-09-2024	Parked Car	Front	Total Loss	Fire	CA	New Ann	7	1	0	4	Yes	14288.8	20338.2	N
+POL100153	PA	500	1444.87	47	MALE	High School	Doctor	yachting	10-04-2024	Single Vehicle Collision	Rear	Major Damage	None	TX	Port Brenda	2	4	4	0	Yes	18018.53	23191.42	N
+POL100154	MI	800	713.3	36	OTHER	Masters	Teacher	yachting	12-07-2024	Parked Car	Rear	Minor Damage	Ambulance	OH	Barnettberg	18	3	2	1	Yes	8032.13	16030.57	N
+POL100155	TX	600	626.48	60	OTHER	High School	Doctor	yachting	21-08-2024	Single Vehicle Collision	Rear	Major Damage	Fire	OH	New Michelle	21	2	4	4	No	8450.29	9588.31	Y
+POL100156	NY	1000	751.09	73	MALE	PhD	Teacher	paintball	10-09-2024	Parked Car	Rear	Minor Damage	Fire	TX	Michelleview	5	2	1	4	Yes	9118.12	9865.8	N
+POL100157	GA	300	759.12	48	MALE	High School	Manager	hiking	15-06-2024	Multi-vehicle Collision	Side	Major Damage	Ambulance	GA	Garciaside	6	1	1	5	Yes	1194.78	2050.82	N
+POL100158	OH	200	1200.45	51	MALE	Masters	Lawyer	hiking	25-04-2025	Parked Car	Rear	Major Damage	Ambulance	TX	South Shelia	19	4	0	3	No	1022.3	923	N
+POL100159	GA	500	1339.73	44	FEMALE	High School	Teacher	movies	23-03-2024	Single Vehicle Collision	Side	Total Loss	Police	GA	Tiffanybury	7	3	0	0	No	11765.99	16823.76	Y
+POL100160	TX	700	1372.07	64	OTHER	High School	Engineer	movies	04-04-2025	Single Vehicle Collision	Unknown	Minor Damage	None	NC	New Keith	13	4	1	5	Yes	22274.15	19095.9	N
+POL100161	FL	1000	877.45	41	FEMALE	Masters	Lawyer	movies	22-01-2025	Multi-vehicle Collision	Side	Total Loss	Ambulance	FL	Ashleystad	17	3	2	4	Yes	12106.17	15083.84	N
+POL100162	NC	700	1453.87	20	MALE	PhD	Sales	chess	23-03-2024	Single Vehicle Collision	Rear	Major Damage	Police	NY	New Teresa	16	4	0	2	Yes	20350.04	20280.6	Y
+POL100163	OH	500	1201.79	40	FEMALE	PhD	Lawyer	yachting	09-01-2025	Parked Car	Front	Minor Damage	Ambulance	GA	Mercadoland	12	4	2	5	No	6380.47	11084.5	N
+POL100164	TX	500	827.12	21	OTHER	High School	Lawyer	reading	20-03-2024	Single Vehicle Collision	Front	Total Loss	Police	PA	Fletcherborough	21	2	4	5	No	17817.81	19882.64	N
+POL100165	NY	800	1004.22	73	MALE	High School	Technician	hiking	07-02-2025	Single Vehicle Collision	Unknown	Total Loss	Police	TX	Hernandezmouth	0	2	3	0	No	16440.42	13933.13	Y
+POL100166	PA	400	852.86	30	FEMALE	High School	Technician	hiking	24-08-2025	Parked Car	Rear	Total Loss	Fire	NY	North Brandyfort	22	2	3	3	No	17282.68	19318.28	N
+POL100167	GA	800	731.41	65	FEMALE	Masters	Doctor	camping	13-06-2024	Vehicle Theft	Unknown	Major Damage	Ambulance	OH	East Gregoryfurt	3	3	4	5	Yes	11639.4	20368.76	N
+POL100168	NC	600	1327.8	35	MALE	PhD	Clerk	movies	08-08-2025	Multi-vehicle Collision	Side	Minor Damage	None	CA	Boothfurt	11	3	0	2	Yes	20783	22868.68	N
+POL100169	IL	1000	1030.38	31	OTHER	High School	Lawyer	movies	11-02-2025	Vehicle Theft	Unknown	Major Damage	Police	FL	Patrickbury	16	2	0	3	Yes	10958.35	11612.89	N
+POL100170	NY	600	1238.29	34	OTHER	High School	Engineer	reading	12-08-2025	Multi-vehicle Collision	Side	Minor Damage	Ambulance	PA	Colemanville	15	3	0	2	Yes	11321.93	15088.44	N
+POL100171	NC	300	1234.78	28	FEMALE	College	Manager	reading	01-09-2025	Multi-vehicle Collision	Front	Minor Damage	None	IL	Port Christina	18	3	3	3	No	14567.65	19262.09	N
+POL100172	TX	500	1018.36	37	MALE	College	Clerk	movies	31-12-2024	Parked Car	Rear	Total Loss	Fire	FL	South Christopher	2	2	2	2	No	13785.09	23901.46	N
+POL100173	PA	700	1070.99	36	MALE	College	Technician	movies	04-03-2025	Parked Car	Unknown	Minor Damage	Ambulance	IL	Lake Jennifer	8	3	3	3	Yes	13947.47	14054.41	N
+POL100174	GA	500	671	68	FEMALE	High School	Manager	camping	29-09-2024	Parked Car	Unknown	Major Damage	Fire	IL	Johnsonhaven	7	3	3	0	Yes	22343.46	19399.12	N
+POL100175	IL	500	1032.1	20	FEMALE	Masters	Manager	hiking	22-06-2024	Multi-vehicle Collision	Side	Major Damage	Fire	NY	South Jose	18	1	2	3	Yes	4562.65	4848.87	N
+POL100176	FL	500	687.06	29	MALE	Masters	Engineer	hiking	26-04-2024	Multi-vehicle Collision	Side	Major Damage	Ambulance	MI	Sweeneyport	10	4	4	3	Yes	1508.31	1564.47	N
+POL100177	TX	400	672.53	19	OTHER	High School	Clerk	paintball	18-07-2025	Multi-vehicle Collision	Side	Total Loss	None	NC	Lake Ashleyshire	1	1	2	1	Yes	7287.09	7209.28	Y
+POL100178	FL	600	626.88	20	MALE	College	Manager	movies	02-06-2025	Vehicle Theft	Side	Minor Damage	Fire	OH	West Allisonburgh	14	1	2	2	No	9817.96	14367.92	N
+POL100179	OH	300	1243.02	55	FEMALE	Masters	Sales	paintball	24-03-2025	Multi-vehicle Collision	Rear	Minor Damage	Ambulance	IL	East Daniellemouth	10	1	1	3	No	5268.98	4910.64	N
+POL100180	MI	800	1363.8	35	MALE	College	Lawyer	movies	11-10-2025	Vehicle Theft	Front	Total Loss	Police	GA	South Charlesside	11	1	0	0	Yes	17398.11	18767.89	Y
+POL100181	MI	500	751.22	27	OTHER	PhD	Clerk	chess	25-10-2024	Multi-vehicle Collision	Side	Minor Damage	Fire	TX	Port Kelly	23	3	0	2	No	22243.21	20825.82	N
+POL100182	TX	500	1277.73	39	OTHER	Masters	Lawyer	camping	12-04-2024	Single Vehicle Collision	Rear	Major Damage	Fire	OH	Kramerfurt	14	1	3	4	No	15645.98	15500.79	N
+POL100183	IL	500	911.86	52	MALE	Masters	Engineer	hiking	16-04-2025	Parked Car	Unknown	Minor Damage	Fire	FL	North Carol	14	4	0	0	No	27384.57	24784.2	N
+POL100184	TX	400	1273.27	34	MALE	College	Technician	movies	02-01-2024	Single Vehicle Collision	Side	Total Loss	Police	IL	Maryhaven	20	4	0	4	Yes	6972.01	10115.34	N
+POL100185	FL	600	1161.76	45	FEMALE	High School	Doctor	hiking	13-06-2025	Multi-vehicle Collision	Rear	Major Damage	Ambulance	MI	South Stephen	22	4	4	2	Yes	15658.59	13914.98	N
+POL100186	TX	700	781.44	20	OTHER	High School	Doctor	paintball	30-12-2023	Vehicle Theft	Side	Total Loss	Police	IL	New Danielhaven	23	1	2	5	No	23322.69	22013	N
+POL100187	NY	700	750.25	45	MALE	High School	Engineer	reading	22-12-2024	Multi-vehicle Collision	Rear	Minor Damage	Ambulance	NC	Garciaborough	7	2	4	2	No	8306.96	12349.58	N
+POL100188	GA	400	876.38	30	MALE	College	Lawyer	paintball	06-11-2024	Multi-vehicle Collision	Unknown	Total Loss	Police	NY	Donnamouth	11	4	2	4	No	20644.92	21579.52	N
+POL100189	NC	1000	775.84	74	OTHER	High School	Clerk	chess	20-11-2024	Parked Car	Side	Minor Damage	Police	OH	Lake Ryan	10	3	3	4	No	10899.5	10644.05	N
+POL100190	FL	500	1059	41	FEMALE	Masters	Engineer	hiking	15-11-2023	Vehicle Theft	Side	Minor Damage	Police	CA	Annaberg	4	4	1	3	Yes	11910.46	22808.13	N
+POL100191	NC	600	913.05	26	MALE	Masters	Clerk	camping	13-02-2024	Parked Car	Rear	Minor Damage	Police	OH	New Lisa	20	1	1	0	No	6310.71	5292.3	N
+POL100192	NY	700	1115.91	62	MALE	High School	Lawyer	yachting	13-01-2025	Parked Car	Rear	Major Damage	None	NC	Roblesshire	17	4	3	4	No	7149.66	12481.43	N
+POL100193	CA	500	1475.13	28	OTHER	High School	Teacher	paintball	26-04-2024	Vehicle Theft	Unknown	Minor Damage	Police	FL	Wadeside	22	2	1	3	No	17444.79	24840.08	Y
+POL100194	NY	200	786.55	57	FEMALE	College	Clerk	chess	24-10-2024	Single Vehicle Collision	Rear	Major Damage	Fire	IL	Port Kathrynborough	20	1	4	5	Yes	15956.5	14463.91	N
+POL100195	NC	700	901.43	58	MALE	PhD	Doctor	paintball	31-01-2024	Single Vehicle Collision	Unknown	Minor Damage	Fire	IL	Lake Ronaldmouth	12	4	1	3	No	10828.71	11290.38	N
+POL100196	NY	300	1184.82	72	MALE	High School	Clerk	movies	03-05-2024	Parked Car	Front	Total Loss	Ambulance	CA	Sanchezchester	9	4	4	4	Yes	10811.29	10699.05	N
+POL100197	PA	300	1019.39	39	FEMALE	High School	Lawyer	yachting	17-06-2024	Parked Car	Rear	Total Loss	Fire	FL	Veronicabury	19	4	0	5	No	377.41	638.05	N
+POL100198	FL	400	1411.8	73	MALE	Masters	Clerk	chess	23-03-2025	Single Vehicle Collision	Side	Major Damage	None	OH	South Briana	11	2	3	0	Yes	14796.93	17930.13	N
+POL100199	NC	500	611.67	47	OTHER	College	Manager	camping	27-02-2024	Multi-vehicle Collision	Side	Total Loss	Fire	CA	Port Jonathan	4	3	0	0	Yes	6564.15	11463.36	Y
+POL100200	IL	200	737.89	38	FEMALE	College	Manager	chess	11-12-2024	Vehicle Theft	Rear	Minor Damage	Police	IL	Joneschester	7	4	0	1	Yes	7866.35	8168.18	Y
+POL100201	NY	200	902.03	58	FEMALE	Masters	Doctor	movies	26-08-2025	Single Vehicle Collision	Unknown	Total Loss	Ambulance	NC	Sancheztown	12	1	0	3	No	7257.12	12913.65	N
+POL100202	NC	500	1095.65	71	MALE	PhD	Engineer	yachting	05-05-2025	Vehicle Theft	Rear	Minor Damage	Ambulance	IL	Longmouth	22	4	0	4	No	6215.18	8194.43	N
+POL100203	TX	500	1304.39	46	MALE	Masters	Doctor	reading	03-05-2024	Single Vehicle Collision	Side	Total Loss	None	CA	Lake Catherine	16	1	4	1	Yes	18410.84	15862.46	N
+POL100204	CA	800	1284.29	52	MALE	College	Engineer	yachting	19-03-2025	Single Vehicle Collision	Rear	Total Loss	Police	NY	Melissaville	7	1	4	4	No	11929.51	14400.71	Y
+POL100205	GA	600	1342.89	32	OTHER	Masters	Engineer	paintball	29-09-2024	Vehicle Theft	Front	Total Loss	None	CA	Jerryberg	14	1	1	3	Yes	11343.44	15826.56	N
+POL100206	GA	400	983.9	71	OTHER	High School	Manager	camping	21-12-2024	Multi-vehicle Collision	Rear	Minor Damage	Fire	NY	Port Gilberttown	8	2	1	1	No	12618.8	14408.23	N
+POL100207	NY	400	953.93	51	OTHER	Masters	Sales	movies	18-07-2024	Parked Car	Unknown	Major Damage	Fire	CA	Lake Jonathon	1	2	0	1	Yes	10621.62	9269.18	N
+POL100208	CA	400	1392.42	70	MALE	High School	Doctor	yachting	28-05-2025	Parked Car	Rear	Total Loss	None	TX	Port Anthonymouth	0	3	0	5	Yes	12753.7	21925.77	N
+POL100209	CA	700	1403.69	71	OTHER	College	Manager	chess	09-12-2024	Parked Car	Rear	Minor Damage	Police	CA	New Maryport	16	2	4	0	Yes	27083.52	22724.48	N
+POL100210	MI	1000	1246.25	35	MALE	Masters	Technician	hiking	14-05-2025	Parked Car	Rear	Major Damage	None	FL	North Matthewtown	18	3	1	2	Yes	10913.61	9101.55	N
+POL100211	IL	1000	1133.67	71	FEMALE	College	Lawyer	paintball	02-11-2024	Parked Car	Front	Major Damage	Fire	OH	West Sarah	23	4	1	1	No	1670.21	1583.98	N
+POL100212	MI	800	1424.91	61	FEMALE	Masters	Technician	hiking	06-09-2024	Parked Car	Front	Major Damage	Ambulance	GA	Richardhaven	9	1	1	2	No	12831.54	11691.89	N
+POL100213	GA	300	1209.99	26	FEMALE	College	Technician	movies	23-10-2024	Parked Car	Rear	Minor Damage	Ambulance	PA	East Christine	3	4	1	3	No	15790.64	18862.33	N
+POL100214	TX	200	1017.1	40	OTHER	Masters	Doctor	reading	11-09-2025	Vehicle Theft	Front	Major Damage	Fire	FL	Walshfort	8	4	1	2	No	1894.33	2546.13	N
+POL100215	OH	400	1009.31	35	FEMALE	High School	Teacher	yachting	27-08-2025	Parked Car	Unknown	Total Loss	Fire	IL	Thomasberg	22	2	1	1	No	12126.07	10995.1	N
+POL100216	TX	600	1155.89	43	FEMALE	College	Lawyer	reading	01-10-2024	Vehicle Theft	Rear	Total Loss	Police	TX	East Williamville	17	4	3	1	Yes	9965.09	12370.92	N
+POL100217	NY	600	993.74	25	OTHER	College	Manager	reading	25-09-2024	Parked Car	Side	Minor Damage	Police	FL	Yorkchester	7	2	3	2	Yes	14438.04	23930.67	N
+POL100218	IL	500	882.28	32	FEMALE	PhD	Teacher	yachting	16-11-2023	Single Vehicle Collision	Side	Minor Damage	Fire	FL	New Cynthiachester	20	3	2	5	No	10939.64	11551.84	N
+POL100219	MI	800	1381.72	74	OTHER	High School	Sales	reading	02-01-2025	Parked Car	Rear	Total Loss	Ambulance	PA	Charlesland	7	1	2	5	No	18862.96	17275.04	N
+POL100220	GA	200	1342.33	18	FEMALE	PhD	Lawyer	yachting	15-07-2024	Multi-vehicle Collision	Unknown	Minor Damage	Fire	CA	Lake Deanhaven	22	2	4	2	Yes	15517.74	24845.35	N
+POL100221	GA	200	1247.7	54	OTHER	Masters	Clerk	paintball	15-01-2025	Vehicle Theft	Front	Total Loss	Fire	OH	Katieton	19	4	2	4	Yes	27772.55	24836.4	N
+POL100222	PA	1000	718.33	31	FEMALE	PhD	Engineer	yachting	23-05-2025	Single Vehicle Collision	Front	Total Loss	None	FL	North Sharon	9	2	0	4	No	3409.62	5911.7	N
+POL100223	TX	700	1350.67	18	MALE	PhD	Manager	camping	17-10-2025	Single Vehicle Collision	Front	Minor Damage	None	GA	New Amyburgh	19	2	3	1	Yes	15521.69	19319.23	N
+POL100224	CA	700	1320.85	44	FEMALE	High School	Doctor	yachting	29-08-2025	Vehicle Theft	Unknown	Total Loss	Ambulance	FL	New Mary	10	2	1	2	Yes	11691.33	14639.93	N
+POL100225	GA	400	904.54	54	MALE	PhD	Doctor	chess	23-09-2025	Vehicle Theft	Side	Major Damage	None	NC	New Mariahmouth	3	3	1	1	Yes	1283.45	2466.8	N
+POL100226	PA	1000	660.42	45	MALE	High School	Clerk	reading	12-01-2024	Single Vehicle Collision	Unknown	Total Loss	Fire	NC	Moorefurt	2	2	3	4	No	13471.59	15912.32	N
+POL100227	OH	600	1152.95	23	MALE	College	Clerk	reading	29-11-2023	Single Vehicle Collision	Rear	Minor Damage	Ambulance	FL	Johnsonhaven	4	2	4	2	Yes	5221.73	6730.67	N
+POL100228	CA	300	836.62	42	FEMALE	College	Teacher	movies	20-06-2024	Vehicle Theft	Front	Total Loss	Fire	NC	Sanchezport	22	2	1	5	Yes	15782.45	13671.26	N
+POL100229	CA	600	1459.93	48	OTHER	Masters	Doctor	reading	24-05-2025	Vehicle Theft	Side	Minor Damage	Ambulance	TX	East Andreberg	14	2	1	0	Yes	7556.45	12408.95	N
+POL100230	IL	1000	938.29	61	MALE	High School	Doctor	movies	21-08-2025	Multi-vehicle Collision	Side	Major Damage	Police	CA	West Alexanderborough	14	1	3	2	Yes	12209.7	24021.99	N
+POL100231	TX	500	1385.11	54	OTHER	College	Sales	reading	15-07-2024	Parked Car	Unknown	Major Damage	Fire	PA	North Rachelhaven	21	3	2	3	No	14641.83	15343.41	N
+POL100232	NC	400	1069.9	50	OTHER	High School	Technician	yachting	04-06-2025	Parked Car	Side	Total Loss	Ambulance	FL	New Colin	18	2	2	1	No	16748.96	23619.21	N
+POL100233	PA	500	1401.85	38	MALE	College	Teacher	camping	21-07-2024	Parked Car	Front	Major Damage	Police	MI	New Amberbury	3	2	3	4	Yes	10300.01	9259.93	N
+POL100234	MI	300	1343.54	40	OTHER	High School	Sales	paintball	23-07-2024	Parked Car	Rear	Major Damage	Police	CA	South Sharon	2	3	3	5	Yes	16279.52	15542.71	N
+POL100235	NC	500	1435.36	64	OTHER	College	Sales	chess	30-08-2024	Parked Car	Front	Major Damage	Fire	IL	Singhport	9	3	2	3	No	12115.27	15343.27	N
+POL100236	IL	200	988.91	27	MALE	PhD	Lawyer	chess	29-08-2024	Parked Car	Rear	Total Loss	Ambulance	NC	Cortezport	9	3	1	5	No	6153.56	6352.72	N
+POL100237	MI	700	1321.11	47	OTHER	College	Manager	movies	09-07-2024	Vehicle Theft	Unknown	Major Damage	Ambulance	CA	West Jasonburgh	1	2	0	1	Yes	12433.53	20595.37	N
+POL100238	OH	200	995.89	74	MALE	PhD	Teacher	camping	15-11-2023	Multi-vehicle Collision	Side	Total Loss	Police	CA	Port Gabriel	17	1	1	0	Yes	14865.32	17905.93	N
+POL100239	FL	300	1204.85	48	FEMALE	Masters	Clerk	chess	11-09-2024	Single Vehicle Collision	Side	Total Loss	Fire	GA	West Edwardside	10	3	2	3	No	15536.87	15918.87	N
+POL100240	TX	200	1150.49	19	MALE	High School	Technician	paintball	28-07-2025	Parked Car	Rear	Major Damage	None	NY	Briannaville	16	1	4	5	No	10013.26	12635.52	N
+POL100241	NC	700	1216.42	59	FEMALE	PhD	Doctor	reading	30-03-2024	Single Vehicle Collision	Front	Total Loss	Ambulance	PA	West Craig	16	1	3	5	No	6881.73	8083.04	N
+POL100242	TX	800	1444.11	71	MALE	Masters	Manager	camping	27-08-2025	Single Vehicle Collision	Unknown	Minor Damage	Fire	IL	Leahtown	21	4	1	3	Yes	9559.02	15299.74	N
+POL100243	PA	500	1373.86	46	MALE	PhD	Engineer	paintball	03-05-2024	Single Vehicle Collision	Rear	Minor Damage	Fire	MI	Port Henryport	15	3	1	0	No	8485.69	9428.83	N
+POL100244	OH	300	727.38	37	OTHER	PhD	Teacher	movies	03-03-2024	Parked Car	Unknown	Total Loss	Ambulance	OH	West Vanessa	9	3	3	4	Yes	8177.77	12495.72	N
+POL100245	NC	600	1432.25	44	FEMALE	Masters	Clerk	camping	05-03-2025	Parked Car	Front	Minor Damage	None	IL	Sotoberg	6	4	0	1	No	6917.91	11909.82	N
+POL100246	PA	700	700.6	69	MALE	PhD	Technician	movies	17-03-2025	Parked Car	Rear	Major Damage	None	MI	East William	14	1	2	1	Yes	3116.05	3451.47	Y
+POL100247	IL	500	778.67	35	FEMALE	PhD	Teacher	reading	03-01-2024	Vehicle Theft	Unknown	Major Damage	None	MI	Thompsonview	10	2	0	4	Yes	14020.53	13110.99	Y
+POL100248	FL	300	750.13	66	FEMALE	College	Sales	yachting	26-08-2025	Parked Car	Rear	Minor Damage	None	PA	East Phillipland	3	3	0	5	Yes	12838.54	16096.69	N
+POL100249	IL	800	1158.49	18	OTHER	Masters	Teacher	paintball	31-08-2025	Single Vehicle Collision	Rear	Major Damage	Fire	PA	East Christopher	5	2	1	4	Yes	11508.93	17131.03	N
+POL100250	PA	200	780.53	49	MALE	PhD	Manager	hiking	25-03-2025	Parked Car	Rear	Minor Damage	Fire	NC	Lake Dianaport	21	2	1	1	No	28519.74	24213.16	N
+POL100251	PA	400	743.94	31	OTHER	College	Clerk	paintball	19-09-2025	Vehicle Theft	Side	Minor Damage	Police	MI	Mejiafurt	6	2	2	0	No	9294.83	8494.13	N
+POL100252	TX	200	882.65	53	MALE	Masters	Lawyer	movies	13-09-2024	Vehicle Theft	Unknown	Minor Damage	None	GA	Victoriafort	20	1	0	4	Yes	13414.67	20293.27	N
+POL100253	OH	1000	1443.5	49	OTHER	High School	Engineer	yachting	10-04-2025	Multi-vehicle Collision	Side	Minor Damage	Fire	NC	South Nicolechester	19	2	3	3	No	16702.13	17540.68	N
+POL100254	TX	400	817.54	43	OTHER	High School	Lawyer	hiking	04-12-2023	Multi-vehicle Collision	Unknown	Major Damage	Fire	MI	North Joshuamouth	13	3	4	5	No	15612.19	13951.67	N
+POL100255	OH	800	1459.31	22	FEMALE	College	Lawyer	chess	18-03-2025	Single Vehicle Collision	Unknown	Minor Damage	Police	CA	Ryanshire	19	1	2	0	No	5739.13	7710.8	N
+POL100256	PA	200	1422.84	45	FEMALE	High School	Lawyer	paintball	19-02-2025	Single Vehicle Collision	Rear	Minor Damage	Police	FL	Jennifershire	1	1	4	5	Yes	18467.02	20521.33	N
+POL100257	PA	200	1272.28	47	MALE	Masters	Technician	yachting	27-10-2025	Parked Car	Side	Total Loss	Police	GA	Port Cynthiaview	21	1	4	1	Yes	2354.17	4435.43	N
+POL100258	IL	400	615.5	47	OTHER	PhD	Technician	paintball	21-05-2024	Vehicle Theft	Front	Major Damage	None	NY	Christinafort	16	1	4	5	Yes	23318.82	24222.56	N
+POL100259	GA	800	1470.78	66	FEMALE	PhD	Sales	paintball	20-12-2024	Single Vehicle Collision	Unknown	Major Damage	None	GA	North Marisahaven	6	2	2	3	Yes	23617.76	21720.17	Y
+POL100260	TX	200	747.14	40	OTHER	Masters	Engineer	movies	27-11-2023	Parked Car	Side	Total Loss	Ambulance	IL	West Samanthaborough	8	3	2	0	Yes	18393.5	21201.08	N
+POL100261	MI	600	1285.23	44	OTHER	Masters	Clerk	reading	29-07-2025	Vehicle Theft	Unknown	Total Loss	Ambulance	PA	Lake Sylvia	10	1	4	4	No	11950.67	22383.44	N
+POL100262	OH	600	1043.26	28	OTHER	Masters	Engineer	yachting	26-05-2025	Single Vehicle Collision	Unknown	Minor Damage	None	NY	South Zacharyburgh	5	4	1	5	No	13547.79	16221.78	N
+POL100263	NC	400	1005.9	43	MALE	College	Sales	camping	20-09-2024	Multi-vehicle Collision	Unknown	Minor Damage	Fire	MI	Emmatown	11	4	3	2	Yes	16886.1	18860.63	N
+POL100264	GA	500	1444.96	45	OTHER	PhD	Manager	reading	25-01-2025	Single Vehicle Collision	Unknown	Minor Damage	Police	FL	Nicholasport	19	4	0	5	Yes	19720.4	18273.61	N
+POL100265	IL	700	1066.07	68	MALE	High School	Technician	reading	17-08-2024	Vehicle Theft	Unknown	Minor Damage	Ambulance	IL	North Katherine	23	1	2	4	Yes	11741.37	13321.57	N
+POL100266	GA	400	1460.99	34	MALE	College	Technician	chess	08-04-2025	Multi-vehicle Collision	Unknown	Minor Damage	Ambulance	NC	Victoriachester	2	3	1	0	No	9123.13	9928.85	N
+POL100267	IL	300	923.16	48	OTHER	PhD	Clerk	hiking	11-02-2025	Multi-vehicle Collision	Side	Minor Damage	Fire	MI	New Kristinamouth	5	3	4	0	No	22275.08	23928.12	N
+POL100268	NC	500	1325.19	19	FEMALE	Masters	Lawyer	camping	07-12-2023	Multi-vehicle Collision	Front	Total Loss	Fire	OH	Brianfort	20	4	3	1	No	12995.44	16588.27	N
+POL100269	MI	1000	1106.71	62	FEMALE	College	Teacher	chess	26-08-2025	Parked Car	Rear	Total Loss	Fire	NY	Port Luismouth	4	1	0	0	No	2136.12	3862.33	N
+POL100270	MI	700	1018.48	49	OTHER	PhD	Engineer	yachting	21-01-2024	Single Vehicle Collision	Front	Total Loss	Police	CA	Vincentberg	16	2	0	3	Yes	18498.52	21215.51	N
+POL100271	NC	800	1375.59	25	FEMALE	Masters	Clerk	yachting	04-05-2024	Vehicle Theft	Rear	Major Damage	Police	TX	Hunterfurt	14	4	3	2	Yes	3883.57	6201.81	N
+POL100272	MI	400	1225.8	47	OTHER	Masters	Doctor	paintball	18-05-2024	Multi-vehicle Collision	Front	Major Damage	Ambulance	CA	Hortonmouth	3	4	1	4	Yes	8559.62	9765.83	N
+POL100273	CA	800	989.18	57	MALE	Masters	Lawyer	camping	04-03-2024	Multi-vehicle Collision	Rear	Total Loss	Ambulance	TX	Rebeccaville	15	1	2	5	Yes	19201.38	20592.26	N
+POL100274	MI	500	1079.02	65	FEMALE	PhD	Clerk	movies	18-12-2024	Vehicle Theft	Rear	Major Damage	Ambulance	FL	Hinesshire	19	3	4	5	No	2726.95	4631.42	N
+POL100275	FL	600	1085.69	39	OTHER	College	Clerk	yachting	19-11-2024	Vehicle Theft	Unknown	Major Damage	Police	NC	Lake Loriport	6	1	2	1	Yes	8363.57	7873.41	N
+POL100276	GA	500	1024.83	67	MALE	Masters	Sales	movies	05-08-2024	Multi-vehicle Collision	Rear	Total Loss	Fire	NC	East Joshua	12	2	2	1	Yes	1978.86	1834.58	Y
+POL100277	OH	600	1271.62	63	MALE	Masters	Manager	yachting	21-12-2023	Vehicle Theft	Unknown	Minor Damage	None	PA	Gabrielatown	13	3	0	1	Yes	6381.96	8398	N
+POL100278	FL	1000	1025.17	65	FEMALE	Masters	Technician	yachting	26-05-2024	Single Vehicle Collision	Unknown	Minor Damage	None	TX	Port Danielle	15	2	0	2	Yes	14860.96	18099.22	N
+POL100279	GA	300	884.69	61	OTHER	College	Teacher	camping	23-06-2024	Multi-vehicle Collision	Rear	Total Loss	Police	IL	South Edwardmouth	14	1	3	5	Yes	8598.41	7222.87	N
+POL100280	MI	200	1234.87	73	FEMALE	High School	Lawyer	hiking	12-02-2024	Single Vehicle Collision	Side	Major Damage	None	GA	Smithbury	2	4	1	1	Yes	16280.23	16363.97	N
+POL100281	NC	1000	811.94	34	FEMALE	Masters	Teacher	hiking	24-04-2025	Parked Car	Rear	Total Loss	Police	MI	Lake Alicia	7	4	4	5	No	18535.81	22139.3	N
+POL100282	CA	1000	1014.76	61	OTHER	High School	Engineer	paintball	29-09-2025	Vehicle Theft	Unknown	Minor Damage	Fire	NC	Gregoryland	17	3	3	5	Yes	3678.61	4113.49	N
+POL100283	NC	400	792.14	64	MALE	PhD	Technician	yachting	04-02-2025	Multi-vehicle Collision	Front	Minor Damage	Ambulance	MI	Rollinstown	1	4	1	0	No	15239.61	21259.49	N
+POL100284	OH	800	1021.05	53	OTHER	High School	Lawyer	reading	30-07-2025	Vehicle Theft	Front	Major Damage	Fire	FL	Dawnmouth	11	2	2	2	No	3596.25	6749.91	N
+POL100285	NC	700	625.84	55	OTHER	High School	Teacher	movies	21-05-2025	Multi-vehicle Collision	Front	Major Damage	Ambulance	FL	Port Heatherfort	17	1	1	1	No	6398.91	5505.09	N
+POL100286	CA	1000	1477.84	19	MALE	PhD	Clerk	yachting	16-04-2025	Multi-vehicle Collision	Unknown	Total Loss	None	NC	Lake Stephaniebury	9	3	4	0	No	18083.23	17165.55	N
+POL100287	CA	400	770.44	28	FEMALE	College	Manager	paintball	10-03-2024	Single Vehicle Collision	Unknown	Major Damage	Ambulance	FL	New Charles	23	2	1	5	Yes	328.23	523.78	N
+POL100288	NY	300	763.37	53	FEMALE	College	Engineer	paintball	01-06-2024	Single Vehicle Collision	Unknown	Major Damage	Police	CA	East Stephaniefort	22	3	3	4	No	1830.82	2080.83	N
+POL100289	IL	800	1472.57	50	MALE	High School	Technician	movies	31-05-2024	Multi-vehicle Collision	Side	Minor Damage	None	OH	Laurieborough	16	2	1	1	Yes	2815.87	4589.72	N
+POL100290	NC	500	1433.36	39	OTHER	High School	Technician	reading	05-08-2024	Vehicle Theft	Front	Minor Damage	None	CA	Millerstad	2	1	2	2	No	11197.64	11842.67	N
+POL100291	NC	300	861.46	55	OTHER	Masters	Sales	camping	27-07-2024	Single Vehicle Collision	Rear	Major Damage	Ambulance	PA	Gonzalezchester	20	1	2	0	Yes	5000.02	7837.59	N
+POL100292	NY	600	608.59	75	OTHER	Masters	Manager	yachting	02-08-2024	Single Vehicle Collision	Unknown	Total Loss	None	OH	Heatherfort	4	4	0	5	Yes	23981.89	22231.04	Y
+POL100293	MI	500	706.1	70	FEMALE	Masters	Doctor	camping	18-02-2025	Parked Car	Front	Total Loss	Police	GA	Port Tiffanybury	14	1	4	5	No	17890.02	17193.49	N
+POL100294	PA	1000	701.49	20	OTHER	College	Manager	hiking	28-07-2025	Parked Car	Side	Total Loss	Ambulance	NC	South Jennifershire	9	1	4	2	No	10568.01	12097.73	Y
+POL100295	TX	600	1060.24	54	FEMALE	College	Manager	movies	20-03-2025	Vehicle Theft	Unknown	Major Damage	Fire	NY	Heatherhaven	16	4	0	2	Yes	13925.47	18095.31	N
+POL100296	IL	600	862.33	61	MALE	College	Lawyer	hiking	24-02-2025	Vehicle Theft	Unknown	Total Loss	Police	NC	Lake Tylerburgh	23	3	3	2	Yes	6456.74	9699.11	N
+POL100297	PA	800	892.59	24	MALE	High School	Clerk	reading	28-07-2024	Parked Car	Front	Major Damage	Ambulance	GA	Ashleychester	21	1	1	5	No	954.66	825.98	Y
+POL100298	IL	1000	1436.4	74	MALE	Masters	Engineer	movies	19-04-2025	Multi-vehicle Collision	Side	Major Damage	Fire	GA	East Mariabury	23	1	3	2	No	8845.42	13658.24	N
+POL100299	OH	700	774.59	57	MALE	High School	Technician	hiking	31-08-2024	Vehicle Theft	Front	Total Loss	Police	MI	North Brianport	5	4	2	5	Yes	3700.96	4894.14	N
+POL100300	GA	800	941.58	72	MALE	PhD	Manager	hiking	23-01-2024	Parked Car	Front	Total Loss	Ambulance	NC	New Seanfort	3	1	1	4	No	18071.97	23190.98	N
+POL100301	NC	200	846.19	71	FEMALE	Masters	Doctor	camping	22-04-2025	Multi-vehicle Collision	Front	Total Loss	Ambulance	NY	Andrewville	11	3	1	5	No	3091.92	4603.91	N
+POL100302	MI	700	1289.44	44	MALE	College	Manager	reading	27-06-2024	Single Vehicle Collision	Unknown	Total Loss	Ambulance	IL	West William	11	1	0	3	No	1771.29	1569.43	N
+POL100303	CA	300	910.78	68	MALE	College	Sales	hiking	15-12-2024	Vehicle Theft	Front	Major Damage	None	PA	Port Rachelborough	11	3	1	0	No	13268.15	12782.67	Y
+POL100304	CA	700	1334.74	53	OTHER	High School	Manager	movies	18-12-2024	Multi-vehicle Collision	Front	Major Damage	Ambulance	NC	Hannahhaven	0	2	3	3	No	15375.01	15328.52	N
+POL100305	OH	400	1136.37	72	FEMALE	High School	Lawyer	camping	24-04-2025	Vehicle Theft	Rear	Minor Damage	Police	NY	North Shelly	2	4	0	4	No	12036.42	23312.88	N
+POL100306	CA	1000	695.66	34	MALE	College	Teacher	reading	11-04-2025	Multi-vehicle Collision	Unknown	Total Loss	Fire	GA	Lake Collin	21	4	1	3	Yes	17482.46	21343.24	N
+POL100307	TX	300	811.7	71	OTHER	College	Teacher	paintball	26-06-2024	Single Vehicle Collision	Side	Minor Damage	Fire	TX	Loveshire	2	2	0	2	No	19475.1	19299.17	N
+POL100308	GA	800	998.71	21	FEMALE	College	Sales	chess	05-12-2024	Vehicle Theft	Unknown	Minor Damage	None	IL	South Chloechester	10	4	2	0	No	7517.53	13431.94	Y
+POL100309	NC	800	1087.95	32	FEMALE	Masters	Lawyer	movies	29-12-2023	Parked Car	Front	Major Damage	Ambulance	CA	Christopherview	0	4	2	2	No	1933.73	2104.24	N
+POL100310	GA	500	1118.56	75	MALE	Masters	Technician	yachting	27-04-2024	Single Vehicle Collision	Front	Total Loss	Police	TX	Mossland	4	2	3	2	Yes	13050.4	23791.69	N
+POL100311	MI	600	885.77	64	FEMALE	PhD	Engineer	paintball	09-06-2024	Multi-vehicle Collision	Unknown	Total Loss	Ambulance	PA	West Matthew	10	3	3	3	No	6116.74	8997.53	N
+POL100312	NY	500	836.96	37	OTHER	PhD	Engineer	hiking	04-10-2024	Parked Car	Front	Major Damage	Police	NY	New Stephaniemouth	12	3	4	3	No	11814.92	12043.77	N
+POL100313	OH	700	1364.32	70	MALE	College	Sales	hiking	15-03-2024	Vehicle Theft	Rear	Minor Damage	Ambulance	IL	Ryanland	0	2	2	1	No	7346.58	8317.18	N
+POL100314	NC	600	626.57	52	FEMALE	College	Engineer	hiking	24-11-2024	Parked Car	Unknown	Total Loss	Fire	IL	Haleyport	17	4	4	5	No	11111.56	20533.38	N
+POL100315	GA	400	713.24	33	OTHER	PhD	Engineer	yachting	23-10-2025	Parked Car	Side	Minor Damage	Police	NY	North Ryanfurt	22	4	4	4	Yes	9625.27	9032.23	N
+POL100316	NY	1000	778.14	34	MALE	PhD	Lawyer	yachting	04-10-2025	Multi-vehicle Collision	Front	Total Loss	None	NC	Michaelland	7	4	2	3	No	7607.5	7699.97	N
+POL100317	OH	200	858.78	30	OTHER	PhD	Sales	hiking	07-05-2024	Single Vehicle Collision	Unknown	Major Damage	Ambulance	PA	Morrisonshire	16	4	1	5	No	13993.27	19771.51	N
+POL100318	NC	600	1268.38	45	MALE	High School	Doctor	hiking	04-04-2024	Multi-vehicle Collision	Rear	Major Damage	Ambulance	PA	Geraldchester	23	1	0	3	Yes	23471.73	23957.92	N
+POL100319	GA	500	670.67	30	MALE	Masters	Manager	chess	10-12-2023	Parked Car	Front	Minor Damage	None	OH	Garciaton	8	4	4	5	Yes	11200.31	21778.56	N
+POL100320	NC	300	862.07	31	OTHER	College	Teacher	chess	13-10-2025	Multi-vehicle Collision	Front	Minor Damage	None	MI	Port Meganfurt	21	4	3	2	No	6289.83	9450.06	N
+POL100321	TX	300	1371.69	34	OTHER	College	Lawyer	yachting	09-01-2024	Single Vehicle Collision	Side	Total Loss	Ambulance	PA	New Felicia	17	4	2	1	Yes	7128.34	11609.44	N
+POL100322	NC	600	675.6	33	MALE	Masters	Lawyer	hiking	10-06-2025	Vehicle Theft	Side	Total Loss	Police	GA	Jonesside	7	4	2	0	No	6112.58	10963.51	N
+POL100323	GA	600	1435.34	71	MALE	Masters	Teacher	movies	13-10-2025	Vehicle Theft	Side	Total Loss	Fire	GA	South Taylortown	21	1	0	0	Yes	5253.84	5052.51	Y
+POL100324	IL	200	1109.63	21	FEMALE	High School	Sales	yachting	06-07-2025	Single Vehicle Collision	Side	Total Loss	Police	GA	Underwoodchester	2	3	1	0	No	16873.82	15610.55	N
+POL100325	TX	200	1356.09	43	OTHER	College	Teacher	chess	11-12-2023	Multi-vehicle Collision	Rear	Minor Damage	Ambulance	TX	Youngchester	3	3	4	0	No	13901.06	15178.07	N
+POL100326	NY	200	1306.38	51	OTHER	College	Technician	reading	18-02-2024	Vehicle Theft	Unknown	Minor Damage	None	IL	West Rubenside	7	3	3	4	Yes	15407.92	22365.26	N
+POL100327	PA	400	1179.05	42	OTHER	Masters	Technician	chess	14-08-2025	Single Vehicle Collision	Front	Total Loss	Fire	PA	East Aprilton	7	4	0	3	No	15659.26	18503.98	N
+POL100328	FL	600	988.77	34	OTHER	High School	Engineer	reading	12-04-2024	Vehicle Theft	Unknown	Minor Damage	Police	OH	North Heather	16	3	3	5	Yes	1532.39	1611.43	N
+POL100329	FL	200	654.8	66	MALE	College	Teacher	paintball	06-10-2025	Single Vehicle Collision	Front	Minor Damage	Fire	GA	Mccarthystad	7	1	4	1	No	8658.53	13748.82	N
+POL100330	IL	600	984.92	40	MALE	High School	Teacher	hiking	03-06-2024	Parked Car	Rear	Total Loss	Fire	NY	Tamaraburgh	16	3	4	4	No	5727.99	8232.74	N
+POL100331	NY	500	1221.39	75	OTHER	Masters	Technician	hiking	28-09-2024	Multi-vehicle Collision	Front	Minor Damage	Police	PA	Maryland	19	1	3	2	Yes	21032.47	21616.25	N
+POL100332	GA	300	1417.81	50	OTHER	Masters	Engineer	camping	10-05-2025	Vehicle Theft	Rear	Minor Damage	Police	IL	Clarkmouth	16	3	1	2	No	17736.26	17395.34	N
+POL100333	NY	200	845.57	44	OTHER	PhD	Manager	hiking	05-02-2024	Parked Car	Side	Minor Damage	None	MI	East Georgebury	19	4	2	3	No	22029.1	23497.69	N
+POL100334	FL	700	1420.66	19	FEMALE	PhD	Engineer	camping	13-08-2025	Single Vehicle Collision	Side	Major Damage	Ambulance	TX	North Davidburgh	5	4	0	0	No	5131.44	6492	N
+POL100335	IL	300	723.65	60	OTHER	High School	Technician	paintball	19-11-2024	Vehicle Theft	Unknown	Minor Damage	Ambulance	TX	New Philip	2	2	1	3	Yes	7623.6	12987.65	N
+POL100336	NY	700	1258.21	67	FEMALE	High School	Doctor	movies	27-04-2025	Vehicle Theft	Rear	Minor Damage	None	NY	Reynoldsville	10	4	2	2	Yes	10726.43	13123.24	N
+POL100337	PA	700	975.68	70	MALE	High School	Engineer	yachting	11-09-2024	Parked Car	Unknown	Total Loss	None	FL	Port Sarahton	5	1	1	0	Yes	6554.18	6083.31	Y
+POL100338	OH	800	1412.65	38	MALE	College	Teacher	movies	01-01-2025	Single Vehicle Collision	Rear	Total Loss	Fire	CA	West Zachary	11	3	1	2	Yes	7324.2	7512.57	N
+POL100339	FL	400	630.7	74	FEMALE	PhD	Lawyer	paintball	26-06-2024	Parked Car	Unknown	Minor Damage	Fire	FL	Port Thomasbury	0	2	2	2	No	16955.32	14186.82	N
+POL100340	IL	200	1102.14	24	OTHER	Masters	Clerk	paintball	24-09-2025	Multi-vehicle Collision	Front	Major Damage	Police	PA	Lovebury	22	2	4	1	No	8253.81	10927.61	Y
+POL100341	TX	200	856.47	44	OTHER	Masters	Sales	hiking	01-05-2024	Parked Car	Front	Minor Damage	Fire	OH	Blakeland	14	1	0	5	Yes	11703.94	22339.04	N
+POL100342	OH	300	992.92	24	FEMALE	College	Manager	reading	07-02-2025	Vehicle Theft	Unknown	Minor Damage	Ambulance	MI	Anthonybury	9	3	3	5	Yes	8526.18	9897	N
+POL100343	MI	200	872.84	61	MALE	PhD	Clerk	yachting	05-11-2025	Vehicle Theft	Rear	Total Loss	Ambulance	OH	Lake Andreahaven	9	4	0	5	Yes	2698.48	3996.53	N
+POL100344	TX	200	639.88	18	MALE	College	Clerk	camping	07-02-2024	Multi-vehicle Collision	Front	Total Loss	Fire	TX	New Christopherberg	17	3	2	5	Yes	17222.52	22470.42	Y
+POL100345	OH	700	838.39	33	FEMALE	College	Doctor	movies	02-01-2025	Multi-vehicle Collision	Front	Total Loss	None	MI	North Mark	19	1	3	0	No	23592.27	24284.83	N
+POL100346	FL	800	877.61	43	MALE	College	Doctor	chess	13-03-2025	Parked Car	Unknown	Major Damage	None	GA	Rhodesville	3	3	2	4	No	19256.1	20670.64	Y
+POL100347	NY	200	626.53	73	OTHER	Masters	Manager	paintball	10-11-2023	Vehicle Theft	Side	Major Damage	Police	MI	Lake Desiree	7	2	0	3	Yes	940.98	1691.02	N
+POL100348	PA	600	1049.63	48	FEMALE	College	Manager	movies	05-01-2024	Single Vehicle Collision	Rear	Minor Damage	Ambulance	OH	Samanthatown	1	1	2	2	No	10265.15	18060.36	N
+
+  this is sample dataset somepart assume it and go with this understand it and now go through the attached dataset we have to build pbi project report on this only give step by step details when i finished i`ll inform you then proceed httpswww.kaggle.comdatasetsahluwaliasakshamcar-insurance-fraud-detection-datasetresource=download  Car Insurance Fraud Detection Dataset
+
+Code
+
+Download
+About Dataset
+Columns Overview
+
+policy_id Unique policy identifier
+
+policy_state State where the policy was issued
+
+policy_deductible Deductible amount in USD
+
+policy_annual_premium Annual premium paid
+
+insured_age Age of the insured
+
+insured_sex Gender of the insured
+
+insured_education_level Education level
+
+insured_occupation Occupation type
+
+insured_hobbies Hobby type
+
+incident_date Date of the incident
+
+incident_type Type of incident (collision, theft, etc.)
+
+collision_type Collision direction (frontrearside)
+
+incident_severity Level of damage
+
+authorities_contacted Who was contacted (PoliceFireetc.)
+
+incident_state State where incident occurred
+
+incident_city City name
+
+incident_hour_of_the_day Time of the incident
+
+number_of_vehicles_involved Vehicles involved
+
+bodily_injuries Injuries reported
+
+witnesses Number of witnesses
+
+police_report_available Whether a police report exists
+
+claim_amount Claimed amount (USD)
+
+total_claim_amount Estimated total damage (USD)
+
+fraud_reported Target label (Y for fraud, N for legitimate)
+
+
+View less
+Usability
+8.82
+
+License
+MIT
+
+Expected update frequency
+Quarterly
+
+Tags
+Classification
+Beginner
+Intermediate
+Insurance
+Binary Classification
+car_insurance_fraud_dataset.csv(4.76 MB)
+
+
+10 of 24 columns
+
+About this file
+This dataset simulates 30,000 car insurance claim records, containing demographic, policy, and incident information. The goal is to predict whether a given claim is fraudulent (fraud_reported = 'Y' or 'N').
+
+
+policy_id
+
+policy_state
+
+policy_deductible
+
+policy_annual_premium
+
+insured_age
+
+insured_sex
+
+insured_education_level
+
+insured_occupation
+
+insured_hobbies
+
+incident_date
+30000
+
+unique values
+GA
+10%
+NY
+10%
+Other (23833)
+79%
+Label	Count
+200.00 - 240.00	3,771
+280.00 - 320.00	3,761
+400.00 - 440.00	3,768
+480.00 - 520.00	3,694
+600.00 - 640.00	3,674
+680.00 - 720.00	3,794
+800.00 - 840.00	3,757
+960.00 - 1000.00	3,781
+200
+1000
+Label	Count
+600.02 - 645.02	1,489
+645.02 - 690.02	1,488
+690.02 - 735.01	1,502
+735.01 - 780.01	1,491
+780.01 - 825.01	1,485
+825.01 - 870.01	1,524
+870.01 - 915.01	1,487
+915.01 - 960.00	1,535
+960.00 - 1005.00	1,461
+1005.00 - 1050.00	1,490
+1050.00 - 1095.00	1,496
+1095.00 - 1140.00	1,486
+1140.00 - 1184.99	1,513
+1184.99 - 1229.99	1,475
+1229.99 - 1274.99	1,470
+1274.99 - 1319.99	1,533
+1319.99 - 1364.99	1,524
+1364.99 - 1409.98	1,495
+1409.98 - 1454.98	1,490
+1454.98 - 1499.98	1,566
+600
+1.5k
+Label	Count
+18.00 - 20.85	1,556
+20.85 - 23.70	1,502
+23.70 - 26.55	1,557
+26.55 - 29.40	1,549
+29.40 - 32.25	1,575
+32.25 - 35.10	1,502
+35.10 - 37.95	1,015
+37.95 - 40.80	1,568
+40.80 - 43.65	1,654
+43.65 - 46.50	1,619
+46.50 - 49.35	1,561
+49.35 - 52.20	1,557
+52.20 - 55.05	1,484
+55.05 - 57.90	988
+57.90 - 60.75	1,546
+60.75 - 63.60	1,559
+63.60 - 66.45	1,537
+66.45 - 69.30	1,582
+69.30 - 72.15	1,511
+72.15 - 75.00	1,578
+18
+75
+OTHER
+34%
+MALE
+33%
+Other (9875)
+33%
+High School
+25%
+PhD
+25%
+Other (14932)
+50%
+Teacher
+13%
+Doctor
+13%
+Other (22423)
+75%
+paintball
+14%
+hiking
+14%
+Other (21327)
+71%
+DateTime	Count
+11092023 - 12152023	1,479
+12152023 - 01212024	1,513
+01212024 - 02262024	1,523
+02262024 - 04032024	1,434
+04032024 - 05092024	1,530
+05092024 - 06152024	1,457
+06152024 - 07212024	1,458
+07212024 - 08272024	1,536
+08272024 - 10022024	1,494
+10022024 - 11082024	1,491
+11082024 - 12142024	1,515
+12142024 - 01202025	1,483
+01202025 - 02252025	1,611
+02252025 - 04032025	1,506
+04032025 - 05092025	1,481
+05092025 - 06152025	1,456
+06152025 - 07212025	1,444
+07212025 - 08272025	1,556
+08272025 - 10022025	1,485
+10022025 - 11082025	1,548
+2023-11-09
+2025-11-08
+POL100000
+GA
+400
+1430.78
+74
+OTHER
+High School
+Manager
+reading
+2024-06-13
+POL100001
+PA
+300
+854.49
+74
+MALE
+College
+Lawyer
+chess
+2025-03-23
+POL100002
+MI
+400
+1247.28
+28
+OTHER
+PhD
+Doctor
+reading
+2025-01-26
+POL100003
+CA
+600
+622.42
+37
+MALE
+PhD
+Teacher
+yachting
+2024-06-03
+POL100004
+MI
+700
+1458.17
+31
+OTHER
+PhD
+Sales
+reading
+2024-05-21
+POL100005
+PA
+700
+1015.6
+32
+MALE
+College
+Manager
+camping
+2025-03-11
+POL100006
+PA
+300
+1254.39
+30
+OTHER
+High School
+Doctor
+reading
+2024-12-26
+POL100007
+MI
+700
+1288.08
+29
+FEMALE
+PhD
+Lawyer
+reading
+2025-10-19
+POL100008
+NC
+500
+942.22
+61
+FEMALE
+College
+Clerk
+yachting
+2023-11-19
+POL100009
+GA
+700
+1277.15
+19
+OTHER
+High School
+Doctor
+chess
+2024-05-07
+POL100010
+FL
+700
+839.16
+
+ policy_id
+30000
+
+unique values
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Unique
+30.0k
+Most Common
+POL100000
+0%
+policy_state
+GA
+10%
+NY
+10%
+Other (23833)
+79%
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Unique
+10
+Most Common
+GA
+10%
+policy_deductible
+Label	Count
+200.00 - 240.00	3,771
+280.00 - 320.00	3,761
+400.00 - 440.00	3,768
+480.00 - 520.00	3,694
+600.00 - 640.00	3,674
+680.00 - 720.00	3,794
+800.00 - 840.00	3,757
+960.00 - 1000.00	3,781
+200
+1000
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Mean
+563
+Std. Deviation
+250
+Quantiles
+200
+Min
+300
+25%
+600
+50%
+800
+75%
+1000
+Max
+policy_annual_premium
+Label	Count
+600.02 - 645.02	1,489
+645.02 - 690.02	1,488
+690.02 - 735.01	1,502
+735.01 - 780.01	1,491
+780.01 - 825.01	1,485
+825.01 - 870.01	1,524
+870.01 - 915.01	1,487
+915.01 - 960.00	1,535
+960.00 - 1005.00	1,461
+1005.00 - 1050.00	1,490
+1050.00 - 1095.00	1,496
+1095.00 - 1140.00	1,486
+1140.00 - 1184.99	1,513
+1184.99 - 1229.99	1,475
+1229.99 - 1274.99	1,470
+1274.99 - 1319.99	1,533
+1319.99 - 1364.99	1,524
+1364.99 - 1409.98	1,495
+1409.98 - 1454.98	1,490
+1454.98 - 1499.98	1,566
+600
+1.5k
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Mean
+1.05k
+Std. Deviation
+260
+Quantiles
+600
+Min
+826
+25%
+1.05k
+50%
+1.28k
+75%
+1.5k
+Max
+insured_age
+Label	Count
+18.00 - 20.85	1,556
+20.85 - 23.70	1,502
+23.70 - 26.55	1,557
+26.55 - 29.40	1,549
+29.40 - 32.25	1,575
+32.25 - 35.10	1,502
+35.10 - 37.95	1,015
+37.95 - 40.80	1,568
+40.80 - 43.65	1,654
+43.65 - 46.50	1,619
+46.50 - 49.35	1,561
+49.35 - 52.20	1,557
+52.20 - 55.05	1,484
+55.05 - 57.90	988
+57.90 - 60.75	1,546
+60.75 - 63.60	1,559
+63.60 - 66.45	1,537
+66.45 - 69.30	1,582
+69.30 - 72.15	1,511
+72.15 - 75.00	1,578
+18
+75
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Mean
+46.5
+Std. Deviation
+16.7
+Quantiles
+18
+Min
+32
+25%
+46
+50%
+61
+75%
+75
+Max
+insured_sex
+OTHER
+34%
+MALE
+33%
+Other (9875)
+33%
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Unique
+3
+Most Common
+OTHER
+34%
+insured_education_level
+High School
+25%
+PhD
+25%
+Other (14932)
+50%
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Unique
+4
+Most Common
+High School
+25%
+insured_occupation
+Teacher
+13%
+Doctor
+13%
+Other (22423)
+75%
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Unique
+8
+Most Common
+Teacher
+13%
+insured_hobbies
+paintball
+14%
+hiking
+14%
+Other (21327)
+71%
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Unique
+7
+Most Common
+paintball
+14%
+incident_date
+DateTime	Count
+11092023 - 12152023	1,479
+12152023 - 01212024	1,513
+01212024 - 02262024	1,523
+02262024 - 04032024	1,434
+04032024 - 05092024	1,530
+05092024 - 06152024	1,457
+06152024 - 07212024	1,458
+07212024 - 08272024	1,536
+08272024 - 10022024	1,494
+10022024 - 11082024	1,491
+11082024 - 12142024	1,515
+12142024 - 01202025	1,483
+01202025 - 02252025	1,611
+02252025 - 04032025	1,506
+04032025 - 05092025	1,481
+05092025 - 06152025	1,456
+06152025 - 07212025	1,444
+07212025 - 08272025	1,556
+08272025 - 10022025	1,485
+10022025 - 11082025	1,548
+2023-11-09
+2025-11-08
+Valid
+30.0k
+100%
+Mismatched
+0
+0%
+Missing
+0
+0%
+Minimum
+9Nov23
+Mean
+8Nov24
+Maximum
+8Nov25  give step by step if i complete 1 step then give next
+1238 PM
+Copied
+
+
+Perfect! You have a solid dataset with 30,000 records spanning from November 2023 to November 2025. This is ideal for building a comprehensive Power BI project.
+
+Let me break this down into clear, sequential steps. Complete each step and let me know when you're ready for the next one.
+
+STEP 1 Prepare Your Environment & Download the Data
+What you need to do
+Download Power BI Desktop (if you don't have it)
+
+Go to powerbi.microsoft.com
+Download the free version
+Install it on your computer
+Download the dataset
+
+Go to the Kaggle link you provided
+Click Download (you may need a free Kaggle account)
+Save the file car_insurance_fraud_dataset.csv to a folder on your computer
+Example CPowerBI_ProjectsCarInsurance
+Create a project folder
+
+Create a new folder on your computer CPowerBI_ProjectsCarInsurance
+Place the CSV file inside
+Create a subfolder called Backups (to save your work)
+Verify the file
+
+Open the CSV file in Excel or Notepad to confirm
+It has 30,000 rows (plus 1 header row)
+All 24 columns are present
+Data looks clean (dates, numbers, text)
+Checklist
+✅ Power BI Desktop installed
+✅ CSV file downloaded
+✅ Project folder created
+✅ File verified
+Once you've completed these tasks, reply and I'll give you STEP 2 Loading the data into Power BI.
+
+Copied
+
+
+next
+1240 PM
+Copied
+
+
+STEP 2 Load the Data into Power BI & Initial Inspection
+What you need to do
+Open Power BI Desktop
+
+Launch Power BI Desktop from your computer
+You'll see a blank report canvas
+Load the CSV file
+
+Click Home tab (top left)
+Click Get Data → TextCSV
+Navigate to your CSV file car_insurance_fraud_dataset.csv
+Click Open
+A preview window appears showing the first few rows
+Click Load (bottom right of the preview)
+Wait 10–30 seconds for Power BI to import all 30,000 rows
+Rename the table
+
+In the Data view (left panel), right-click the table name
+Rename it from car_insurance_fraud_dataset to Claims
+Press Enter
+Inspect the data in Power BI
+
+Click the Data tab (bottom left) to see the table
+Scroll right and left to confirm all 24 columns are present
+Check a few rows to ensure data looks reasonable
+Check the Fields pane
+
+On the right side, you'll see a Fields pane listing all columns
+Verify these key fields are there
+policy_id, policy_state, policy_deductible, policy_annual_premium
+insured_age, insured_sex, incident_date, incident_type
+claim_amount, total_claim_amount, fraud_reported
+What the screen should look like
+A table with 30,000 rows and 24 columns
+Fields pane on the right showing all column names
+No error messages
+Checklist
+✅ CSV file loaded into Power BI
+✅ Table renamed to Claims
+✅ Data view shows all 24 columns
+✅ Fields pane displays all field names
+Once you've completed these tasks and can see the data in Power BI, reply and I'll give you STEP 3 Data type corrections and quality checks.
+
+Copied
+
+
+nect
+1243 PM
+Copied
+
+
+STEP 3 Fix Data Types & Data Quality Checks
+What you need to do
+Switch to the Model view
+
+Click the Model tab (bottom left, between Data and Report)
+You'll see a table called Claims with all columns listed
+Check and fix data types
+
+For each column below, verify the data type icon (shown on the left of the column name)
+
+Should be Text
+
+policy_id ✓
+policy_state ✓
+insured_sex ✓
+insured_education_level ✓
+insured_occupation ✓
+insured_hobbies ✓
+incident_type ✓
+collision_type ✓
+incident_severity ✓
+authorities_contacted ✓
+incident_state ✓
+incident_city ✓
+police_report_available ✓
+fraud_reported ✓ (YN values)
+Should be Whole Number
+
+policy_deductible → Click it, change to Whole Number
+insured_age → Click it, change to Whole Number
+incident_hour_of_the_day → Click it, change to Whole Number
+number_of_vehicles_involved → Click it, change to Whole Number
+bodily_injuries → Click it, change to Whole Number
+witnesses → Click it, change to Whole Number
+Should be Decimal Number
+
+policy_annual_premium → Click it, change to Decimal Number
+claim_amount → Click it, change to Decimal Number
+total_claim_amount → Click it, change to Decimal Number
+Should be Date
+
+incident_date → Click it, change to Date (format MMddyyyy)
+How to change a data type
+
+Click on a column name in the Model view
+At the top, you'll see a Data Type dropdown (currently shows the type)
+Click it and select the correct type from the list
+Repeat for all columns above
+Check for missing or invalid values
+
+Click the Data tab to return to table view
+Scroll through a few columns to visually inspect
+Are there any blank cells
+Do dates look reasonable (2023–2025)
+Do amounts look reasonable (positive numbers)
+Note The dataset appears clean, but report any obvious issues
+Create a quick validation
+
+Go back to Model view
+Look for any columns showing a warning icon (⚠️)
+If you see one, click it to see the issue
+Most likely Power BI couldn't auto-detect the type correctly
+Expected result
+All 24 columns have the correct data type
+No error messages or warnings
+Dates are recognized as dates
+Numbers are recognized as numbers
+Text is recognized as text
+Checklist
+✅ All data types corrected
+✅ No warning icons visible
+✅ Dates in incident_date are formatted as dates
+✅ Amounts (claim_amount, total_claim_amount) are decimal numbers
+✅ Age, deductible, and counts are whole numbers
+Once data types are fixed, reply and I'll give you STEP 4 Create a Calendar table and relationships.
+
+Copied
+
+
+next
+1247 PM
+Copied
+
+
+STEP 4 Create a Calendar Table & Set Up Relationships
+What you need to do
+PART A Create a Calendar Table
+
+Go to the Model view
+
+Click the Model tab (bottom left)
+Create a new table using DAX
+
+Click Home tab (top)
+Click New Table (in the ribbon)
+A formula bar appears at the top
+Delete any existing text and paste this formula
+ 
+Copy codeCode copied
+Export
+Calendar = 
+VAR MinDate = MIN(Claims[incident_date])
+VAR MaxDate = MAX(Claims[incident_date])
+RETURN
+ADDCOLUMNS(
+    CALENDAR(MinDate, MaxDate),
+    Year, YEAR([Date]),
+    Month Number, MONTH([Date]),
+    Month Name, FORMAT([Date], MMMM),
+    Quarter, Q & ROUNDUP(MONTH([Date])3, 0),
+    Day of Week, FORMAT([Date], DDDD),
+    Week Number, WEEKNUM([Date])
+)
+Press Enter
+
+Power BI creates a new table called Calendar
+It will have dates from the minimum to maximum incident date in your data
+You'll see columns Date, Year, Month Number, Month Name, Quarter, Day of Week, Week Number
+Verify the Calendar table
+
+Click the Data tab
+Scroll down in the Fields pane and click Calendar to expand it
+You should see 7 columns (Date, Year, Month Number, etc.)
+Click on the table to view a few rows
+PART B Create Relationships
+
+Return to Model view
+
+Click Model tab (bottom left)
+You'll see two tables Claims and Calendar
+Link the Calendar to Claims
+
+Drag Calendar[Date] to Claims[incident_date]
+A line appears connecting the two tables
+A relationship dialog may pop up—click OK to confirm
+The relationship should show Calendar[Date] ← → Claims[incident_date] (one-to-many)
+Verify the relationship
+
+You should see a line connecting the two tables
+The line shows a 1 on the Calendar side and an ∞ (infinity) on the Claims side
+This means one date can have many claims
+Check the relationship details
+
+Double-click the line between the tables
+Confirm
+From table Calendar
+From column Date
+To table Claims
+To column incident_date
+Cardinality One to Many
+Click OK
+PART C Mark the Date Table
+
+Tell Power BI that Calendar is a date table
+Right-click the Calendar table (in Model view)
+Select Mark as date table
+A dialog appears asking to confirm the date column
+Select Date from the dropdown
+Click OK
+The Calendar table icon changes to a calendar icon 📅
+What the screen should look like
+Two tables in Model view Claims and Calendar
+A line connecting Calendar[Date] to Claims[incident_date]
+Calendar table marked with a calendar icon
+No error messages
+Checklist
+✅ Calendar table created with 7 columns
+✅ Calendar table contains dates from Nov 2023 to Nov 2025
+✅ Relationship created between Calendar and Claims
+✅ Calendar marked as date table
+✅ Relationship shows 1-to-many (1 on Calendar side, ∞ on Claims side)
+Once relationships are set up, reply and I'll give you STEP 5 Create key measures (KPIs).
+
+Copied
+
+
+next
+1252 PM
+Copied
+
+
+STEP 5 Create Key Measures (KPIs)
+What you need to do
+Measures are calculations that summarize your data. We'll create measures for the main KPIs your dashboard will display.
+
+PART A Create a Measures table
+
+Go to Model view
+
+Click Model tab (bottom left)
+Create a new blank table for measures
+
+Click Home → New Table
+Paste this formula and press Enter
+ 
+Copy codeCode copied
+Export
+Measures = ROW(Measure, 1)
+This creates a simple table called Measures (we'll use it to organize all our formulas)
+PART B Create individual measures
+
+Create measure Total Claims
+Right-click the Measures table
+Select New measure
+Name it Total Claims
+Paste this formula
+ 
+Copy codeCode copied
+Export
+Total Claims = COUNTROWS(Claims)
+Press Enter
+Create measure Total Claimed Amount
+Right-click Measures → New measure
+Name it Total Claimed Amount
+Paste
+ 
+Copy codeCode copied
+Export
+Total Claimed Amount = SUM(Claims[claim_amount])
+Press Enter
+Create measure Total Estimated Damage
+Right-click Measures → New measure
+Name it Total Estimated Damage
+Paste
+ 
+Copy codeCode copied
+Export
+Total Estimated Damage = SUM(Claims[total_claim_amount])
+Press Enter
+Create measure Average Claim Amount
+Right-click Measures → New measure
+Name it Average Claim Amount
+Paste
+ 
+Copy codeCode copied
+Export
+Average Claim Amount = AVERAGE(Claims[claim_amount])
+Press Enter
+Create measure Fraud Claims Count
+Right-click Measures → New measure
+Name it Fraud Claims Count
+Paste
+ 
+Copy codeCode copied
+Export
+Fraud Claims Count = CALCULATE(
+    COUNTROWS(Claims),
+    Claims[fraud_reported] = Y
+)
+Press Enter
+Create measure Legitimate Claims Count
+Right-click Measures → New measure
+Name it Legitimate Claims Count
+Paste
+ 
+Copy codeCode copied
+Export
+Legitimate Claims Count = CALCULATE(
+    COUNTROWS(Claims),
+    Claims[fraud_reported] = N
+)
+Press Enter
+Create measure Fraud Rate (%)
+Right-click Measures → New measure
+Name it Fraud Rate %
+Paste
+ 
+Copy codeCode copied
+Export
+Fraud Rate % = 
+DIVIDE(
+    [Fraud Claims Count],
+    [Total Claims],
+    0
+)  100
+Press Enter
+Create measure Average Fraud Claim Amount
+Right-click Measures → New measure
+Name it Average Fraud Claim Amount
+Paste
+ 
+Copy codeCode copied
+Export
+Average Fraud Claim Amount = CALCULATE(
+    AVERAGE(Claims[claim_amount]),
+    Claims[fraud_reported] = Y
+)
+ 
+Copy codeCode copied
+Export
+- Press Enter
+Create measure Average Legitimate Claim Amount
+Right-click Measures → New measure
+Name it Average Legitimate Claim Amount
+Paste
+ 
+Copy codeCode copied
+Export
+Average Legitimate Claim Amount = CALCULATE(
+    AVERAGE(Claims[claim_amount]),
+    Claims[fraud_reported] = N
+)
+ 
+Copy codeCode copied
+Export
+- Press Enter
+Create measure Claims with Police Report
+Right-click Measures → New measure
+Name it Claims with Police Report
+Paste
+ 
+Copy codeCode copied
+Export
+Claims with Police Report = CALCULATE(
+    COUNTROWS(Claims),
+    Claims[police_report_available] = Yes
+)
+ 
+Copy codeCode copied
+Export
+- Press Enter
+Create measure Average Claim Age (Days)
+Right-click Measures → New measure
+Name it Average Claim Age Days
+Paste
+ 
+Copy codeCode copied
+Export
+Average Claim Age Days = 
+AVERAGE(
+    DATEDIFF(
+        Claims[incident_date],
+        TODAY(),
+        DAY
+    )
+)
+ 
+Copy codeCode copied
+Export
+- Press Enter
+PART C Verify measures
+
+Check the Measures table
+
+Click Data tab (bottom left)
+In the Fields pane, expand Measures
+You should see all 13 measures listed
+Total Claims
+Total Claimed Amount
+Total Estimated Damage
+Average Claim Amount
+Fraud Claims Count
+Legitimate Claims Count
+Fraud Rate %
+Average Fraud Claim Amount
+Average Legitimate Claim Amount
+Claims with Police Report
+Average Claim Age Days
+Format the measures (optional but recommended)
+
+Go back to Model view
+Click on Total Claimed Amount measure
+In the properties pane (right side), set
+Format Currency
+Decimal places 2
+Repeat for
+Total Estimated Damage → Currency
+Average Claim Amount → Currency
+Average Fraud Claim Amount → Currency
+Average Legitimate Claim Amount → Currency
+For Fraud Rate % → set Format to Percentage with 2 decimal places
+What the screen should look like
+A Measures table in Model view
+13 measures listed under the Measures table
+No error messages
+Measures show in the Fields pane on the right
+Checklist
+✅ Measures table created
+✅ All 13 measures created without errors
+✅ Measures visible in Fields pane
+✅ Currency and percentage formats applied
+✅ No red error icons on measures
+Once all measures are created and formatted, reply and I'll give you STEP 6 Create the first report page (Executive Overview).
+
+Copied
+
+
+image.png
+check
+128 PM
+Copied
+
+
+Good! I can see your Power BI setup. I notice there's an error in the Average Claim Age Days measure (shown in red at the top left).
+
+The error says The AVERAGE function only accepts a column reference as an argument.
+
+This is because DATEDIFF returns a calculated value, not a column, so AVERAGE can't work with it directly.
+
+Quick Fix for the Average Claim Age Days Measure
+Click on the red error message or find the measure in the Fields pane on the right
+Click the measure to edit it
+Replace the formula with this corrected version
+ 
+Copy codeCode copied
+Export
+Average Claim Age Days = 
+VAR TodayDate = TODAY()
+RETURN
+AVERAGEX(
+    Claims,
+    DATEDIFF(Claims[incident_date], TodayDate, DAY)
+)
+Press Enter
+The error should disappear
+The measure should now work correctly
+Verify all measures are working
+Looking at your Data pane on the right, I can see you have these measures (excellent!)
+
+✅ Average Claim Age Days (now fixed)
+✅ Average Claim Amount
+✅ Average Fraud Claim Amount
+✅ Average Legitimate Claim Amount
+✅ Claims with Police Report
+✅ Fraud Claims Count
+✅ Fraud Rate %
+✅ Legitimate Claims Count
+✅ Total Claimed Amount
+✅ Total Claims
+✅ Total Estimated Damage
+✅ Calendar table
+Checklist before moving forward
+✅ Average Claim Age Days error fixed
+✅ All 13 measures showing in Fields pane without red error icons
+✅ Calendar table visible in Fields pane
+Once the error is fixed and all measures are clean, reply FIXED and I'll give you STEP 6 Create the Executive Overview report page.
+
+Copied
+
+
+Next
+133 PM
+Copied
+
+
+STEP 6 Create the Executive Overview Report Page
+What you need to do
+PART A Set up the report canvas
+
+Switch to Report view
+
+Click the Report tab (bottom left, next to Model)
+You'll see a blank white canvas
+Rename the page
+
+Right-click the page tab at the bottom (currently Page 1)
+Select Rename page
+Name it Executive Overview
+Press Enter
+Set the page size (optional but recommended)
+
+Click File → Options and settings → Options
+Go to Current file → Report settings
+Set Page size to 169 (widescreen)
+Click OK
+PART B Add title and KPI cards
+
+Add a title
+
+Click Insert tab (top ribbon)
+Click Text box
+Draw a text box at the top of the canvas
+Type Car Insurance Claims Dashboard
+Format it
+Font size 28
+Font color Dark blue or Black
+Make it Bold
+Add KPI Card 1 Total Claims
+
+Click Insert → Card (or Multi-row card)
+Drag it below the title on the left side
+In the Fields pane (right), drag Total Claims measure into the card
+The card should display a large number (should be around 30,000)
+Add a title to the card Click the card → in Properties pane, add title Total Claims
+Add KPI Card 2 Total Claimed Amount
+
+Click Insert → Card
+Drag it to the right of Card 1
+Drag Total Claimed Amount measure into it
+Add title Total Claimed Amount
+Format as currency (should show ~$300M or similar)
+Add KPI Card 3 Fraud Claims Count
+
+Click Insert → Card
+Drag it to the right of Card 2
+Drag Fraud Claims Count measure into it
+Add title Fraud Claims
+(Should be ~3,000 or 10% of total)
+Add KPI Card 4 Fraud Rate %
+
+Click Insert → Card
+Drag it to the right of Card 3
+Drag Fraud Rate % measure into it
+Add title Fraud Rate %
+Format to show 2 decimal places with % symbol
+PART C Add visualizations
+
+Add Chart 1 Claims by Month (Line Chart)
+
+Click Insert → Line chart (or Line and clustered column chart)
+Drag it to the canvas (below the KPI cards, taking up left half)
+In the Fields pane
+Drag Calendar[Month Name] to X-axis
+Drag Total Claims to Y-axis
+Add title Claims Over Time
+The chart should show a trend line from Nov 2023 to Nov 2025
+Add Chart 2 Claims by Incident Type (Bar Chart)
+
+Click Insert → Stacked bar chart
+Drag it to the right of Chart 1 (right half, below KPI cards)
+In the Fields pane
+Drag incident_type to Y-axis
+Drag Total Claims to X-axis
+Drag fraud_reported to Legend (this will show fraud vs. legitimate side-by-side)
+Add title Claims by Incident Type
+The chart should show Parked Car, Vehicle Theft, Single Vehicle Collision, Multi-vehicle Collision
+Add Chart 3 Fraud vs. Legitimate Claims (PieDonut Chart)
+
+Click Insert → Pie chart (or Donut chart)
+Drag it to the bottom left
+In the Fields pane
+Drag fraud_reported to Legend
+Drag Total Claims to Values
+Add title Fraud vs. Legitimate Claims
+The chart should show 2 slices Y (fraud) and N (legitimate)
+Add Chart 4 Average Claim Amount by Fraud Status (Column Chart)
+
+Click Insert → Clustered column chart
+Drag it to the bottom right
+In the Fields pane
+Drag fraud_reported to X-axis
+Drag Average Claim Amount to Y-axis
+Add title Average Claim Amount Fraud vs. Legitimate
+You should see 2 columns Y and N, with fraud claims typically higher
+PART D Add slicers (filters)
+
+Add Slicer 1 Date Range
+
+Click Insert → Slicer → Date slicer
+Drag it to the top right area
+Connect it to Calendar[Date]
+This allows users to filter by date range
+Add Slicer 2 Incident Type
+
+Click Insert → Slicer
+Drag it below the date slicer
+In Fields, drag incident_type into it
+Users can now filter by incident type
+Add Slicer 3 Policy State
+
+Click Insert → Slicer
+Drag it below incident type slicer
+In Fields, drag policy_state into it
+Users can filter by state
+PART E Arrange and format
+
+Arrange all elements neatly
+
+Move cards and charts so they don't overlap
+Suggested layout
+Top Title + 4 KPI cards in a row
+Middle 2 large charts (line chart left, bar chart right)
+Bottom 2 charts (pie left, column right)
+Right side 3 slicers stacked vertically
+Format colors (optional but professional)
+
+Select each chart
+Click Format (paintbrush icon on the right)
+Adjust colors to match your company branding
+Suggestion Use blue for legitimate claims, red for fraud
+Test the slicers
+
+Click on a date range in the date slicer
+All charts should update to show only data from that date range
+Try selecting an incident type—all charts should filter accordingly
+What the page should look like
+Title at top Car Insurance Claims Dashboard
+4 KPI cards showing key numbers
+Line chart showing claims trend over time
+Bar chart showing claims by incident type
+Pie chart showing fraud split
+Column chart comparing fraud vs. legitimate amounts
+3 slicers on the right for filtering
+Checklist
+✅ Page renamed to Executive Overview
+✅ Title added at top
+✅ 4 KPI cards created and displaying correct numbers
+✅ Line chart showing claims over time
+✅ Bar chart showing incident types
+✅ Pie chart showing fraud vs. legitimate
+✅ Column chart showing average amounts
+✅ 3 slicers added and working
+✅ All charts update when you use a slicer
+Once the Executive Overview page is complete and all visualizations are working, reply and I'll give you STEP 7 Create the Incident & Severity Analysis page.
+
+Copied
+
+
+image.png
+use this template and give exact formatting
+154 PM
+Copied
+
+
+Perfect! I can see the template design. It has a professional layout with a left sidebar, clean header, KPI cards, and organized visualizations. Let me give you the exact formatting for your Car Insurance Claims Dashboard following this template style.
+
+STEP 6 (REVISED) Create Executive Overview with Template Design
+PART A Set up the page background and layout
+Go to Report view
+
+Click Report tab (bottom left)
+Rename the page
+
+Right-click Page 1 → Rename page
+Name it Executive Overview
+Set page background color
+
+Click anywhere on the blank canvas (not on any visual)
+On the right side, click Format page (paintbrush icon)
+Expand Page background
+Set Color Light blue-gray (#E8F0F5 or similar)
+Click Apply
+PART B Create a left sidebar
+Add a rectangle for the sidebar
+
+Click Insert → Shapes → Rectangle
+Draw a tall rectangle on the left side (width ~200px, height full page)
+Format it
+Fill color Dark blue (#1F4E78 or #2C3E50)
+Border None
+Send to back Right-click → Send to back
+Add sidebar text elements
+
+Click Insert → Text box
+Add INSURANCE at the top (white text, bold, size 16)
+Add menu items below (white text, size 11)
+Dashboard
+Claims Analysis
+Fraud Detection
+Reports
+Settings
+PART C Add header section
+Add page title
+
+Click Insert → Text box
+Position it in the top center (right of sidebar)
+Type Car Insurance Claims Dashboard
+Format
+Font size 36
+Font color Dark blue (#1F4E78)
+Bold
+Alignment Center
+Add yeardate in top right
+
+Click Insert → Text box
+Position in top right corner
+Type 2024-2025
+Format
+Font size 20
+Font color Dark blue
+Alignment Right
+PART D Add KPI cards (4 in a row)
+Add KPI Card 1 Total Claims
+
+Click Insert → Card
+Position below the title, left side
+Drag Total Claims measure into it
+Format
+Background White (#FFFFFF)
+Border Light gray, 1px
+Corner radius 8px (rounded)
+Add title label above Total Claims
+Font size for number 28, Bold, Dark blue
+Add KPI Card 2 Total Claimed Amount
+
+Click Insert → Card
+Position right of Card 1
+Drag Total Claimed Amount into it
+Same formatting as Card 1
+Title Total Claimed Amount
+Format as Currency ($)
+Add KPI Card 3 Fraud Claims
+
+Click Insert → Card
+Position right of Card 2
+Drag Fraud Claims Count into it
+Title Fraud Claims
+Font color for number Red (#E74C3C)
+Add KPI Card 4 Fraud Rate %
+
+Click Insert → Card
+Position right of Card 3
+Drag Fraud Rate % into it
+Title Fraud Rate %
+Format Percentage with 1 decimal place
+Font color Orange (#F39C12)
+PART E Add main visualizations (2 rows)
+ROW 1 Top visualizations
+
+Add Chart 1 Claims Over Time (Line Chart) - LEFT
+
+Click Insert → Line chart
+Position below KPI cards, left side (takes ~50% width)
+Fields
+X-axis Calendar[Month Name]
+Y-axis Total Claims
+Title Claims Trend (Monthly)
+Format
+Line color Dark blue
+Background White
+Border Light gray
+Add Chart 2 Claims by Incident Type (Bar Chart) - RIGHT
+
+Click Insert → Stacked bar chart
+Position right of Chart 1 (takes ~50% width)
+Fields
+Y-axis incident_type
+X-axis Total Claims
+Legend fraud_reported (YN)
+Title Claims by Incident Type
+Legend colors
+Y (Fraud) Red (#E74C3C)
+N (Legitimate) Green (#27AE60)
+ROW 2 Bottom visualizations
+
+Add Chart 3 Fraud vs. Legitimate (Donut Chart) - LEFT
+
+Click Insert → Donut chart
+Position below Chart 1 (takes ~50% width)
+Fields
+Legend fraud_reported
+Values Total Claims
+Title Fraud vs. Legitimate Claims
+Donut colors
+Y Red (#E74C3C)
+N Green (#27AE60)
+Add data labels showing percentages
+Add Chart 4 Average Claim Amount (Column Chart) - RIGHT
+
+Click Insert → Clustered column chart
+Position right of Chart 3 (takes ~50% width)
+Fields
+X-axis fraud_reported
+Y-axis Average Claim Amount
+Title Average Claim Amount
+Column colors
+Y (Fraud) Red
+N (Legitimate) Green
+Format as Currency
+PART F Add slicers on the right side
+Add Slicer 1 Date Range
+
+Click Insert → Slicer → Date slicer
+Position on far right (vertical stack)
+Connect to Calendar[Date]
+Title Date Range
+Format
+Background White
+Border Light gray
+Font size 11
+Add Slicer 2 Incident Type
+
+Click Insert → Slicer
+Position below Date slicer
+Connect to incident_type
+Title Incident Type
+Same formatting
+Add Slicer 3 Policy State
+
+Click Insert → Slicer
+Position below Incident Type slicer
+Connect to policy_state
+Title Policy State
+Same formatting
+PART G Final formatting and alignment
+Align all elements
+
+Use View → Snap to grid for precise alignment
+All cards should be same height and evenly spaced
+All charts should have consistent borders and rounded corners (4-8px)
+Color scheme summary
+
+Sidebar Dark blue (#1F4E78)
+Title Dark blue (#1F4E78)
+Cards White with light gray border
+Fraud Red (#E74C3C)
+Legitimate Green (#27AE60)
+Accent Orange (#F39C12)
+Background Light blue-gray (#E8F0F5)
+Test interactivity
+
+Click on date slicer → all charts should update
+Click on incident type → all charts should filter
+Click on state → all charts should filter
+Layout Summary
+ 
+Copy codeCode copied
+Export
+┌─────────────────────────────────────────────────────────┐
+│ SIDEBAR │  Car Insurance Claims Dashboard        2024-2025
+│         ├─────────────────────────────────────────────────┤
+│         │ [Total Claims] [Total Amount] [Fraud] [Fraud %] │
+│  Menu   ├──────────────────────────────────┬──────────────┤
+│  Items  │                                  │ Date Slicer  │
+│         │  Claims Trend (Line Chart)      │              │
+│         │                                  │ Incident     │
+│         │                                  │ Type Slicer  │
+│         ├──────────────────────────────────┤              │
+│         │                                  │ State Slicer │
+│         │ Fraud vs Legit (Donut)          │              │
+│         │                                  │              │
+│         │  Avg Amount (Column)            │              │
+│         │                                  │              │
+└─────────────────────────────────────────────────────────┘
+Checklist
+✅ Left sidebar created (dark blue)
+✅ Page title Car Insurance Claims Dashboard centered at top
+✅ 4 KPI cards in a row (white, rounded borders)
+✅ 4 charts arranged in 2x2 grid
+✅ 3 slicers stacked on right side
+✅ Color scheme applied (red for fraud, green for legitimate)
+✅ All slicers working (charts update when filtered)
+✅ Professional appearance with consistent spacing
+Once the Executive Overview page is complete with this template design, reply COMPLETE and I'll give you STEP 7 Create the Incident & Severity Analysis page.
+
+Copied
+
+
+image.png
+and use exactly same theme and colours
+203 PM
+Copied
+
+
+Perfect! I can see the exact theme. Let me give you the precise color codes and formatting from this template for your Car Insurance Claims Dashboard.
+
+STEP 6 (FINAL) Executive Overview with Exact Template Theme
+COLOR PALETTE (From Template)
+Copied
+
+
+Element
+Color
+Hex Code
+Sidebar Background	Dark TealNavy	#2C5F7F or #34657F
+Page Background	Light Blue-Gray	#D4E5F0 or #D9E8F2
+Card Background	White	#FFFFFF
+Card Border	Light Gray	#E0E0E0
+Primary Text	Dark Teal	#2C5F7F
+Accent (Green)	TealGreen	#4CAF50 or #5DADE2
+Accent (Orange)	Warm Orange	#FF9800 or #F4A460
+Accent (Red)	Coral Red	#E74C3C or #FF6B6B
+Chart Lines	Multiple (Teal, Orange, Gray)	See below
+PART A Set up page background
+Go to Report view
+
+Click Report tab
+Rename page
+
+Right-click Page 1 → Rename page → Executive Overview
+Set page background
+
+Click on blank canvas area
+Right panel → Format page (paintbrush icon)
+Expand Page background
+Set Color #D9E8F2 (light blue-gray from template)
+Click Apply
+PART B Create left sidebar
+Add sidebar rectangle
+
+Click Insert → Shapes → Rectangle
+Draw on left side Width ~180px, Height = full page height
+Format
+Fill color #34657F (dark teal from template)
+Border None
+Right-click → Send to back
+Add sidebar text Dashboard
+
+Click Insert → Text box
+Position at top of sidebar
+Type Dashboard
+Format
+Font Segoe UI or Calibri, size 12
+Color White (#FFFFFF)
+Bold
+Alignment Left
+Add sidebar menu items (white text, size 11, left-aligned)
+
+🏠 Dashboard
+📊 Claims Analysis
+🚨 Fraud Detection
+📈 Reports
+⚙️ Settings
+PART C Add header section
+Add Dashboard label (top left)
+
+Click Insert → Text box
+Position top left (right of sidebar)
+Type Dashboard
+Format
+Font size 14
+Color #2C5F7F (dark teal)
+Normal weight (not bold)
+Add main title (center)
+
+Click Insert → Text box
+Position top center
+Type Car Insurance Claims Dashboard
+Format
+Font size 32
+Font Segoe UI, Bold
+Color #2C5F7F (dark teal)
+Alignment Center
+Add year (top right)
+
+Click Insert → Text box
+Position top right
+Type 2024
+Format
+Font size 14
+Color #2C5F7F
+Alignment Right
+PART D Add KPI cards (exactly like template)
+Add KPI Card 1 Total Claims
+
+Click Insert → Card
+Position below title, left (first position)
+Drag Total Claims measure into it
+Format
+Background #FFFFFF (white)
+Border #E0E0E0, 1px
+Corner radius 6px
+Add icon Green circle with checkmark (✓)
+Number font size 24, Bold, #2C5F7F
+Label Total Claims, size 11, #2C5F7F
+Add KPI Card 2 Total Claimed Amount
+
+Click Insert → Card
+Position right of Card 1
+Drag Total Claimed Amount into it
+Format Same as Card 1
+Icon Green circle with dollar sign ($)
+Label Total Claimed Amount
+Format number as Currency with commas
+Add KPI Card 3 Fraud Claims
+
+Click Insert → Card
+Position right of Card 2
+Drag Fraud Claims Count into it
+Format Same as Card 1
+Icon RedOrange circle with alert symbol (⚠️)
+Label Fraud Claims
+Number color #E74C3C (red)
+Add KPI Card 4 Fraud Rate %
+
+Click Insert → Card
+Position right of Card 3
+Drag Fraud Rate % into it
+Format Same as Card 1
+Icon Orange circle with percentage (%)
+Label Fraud Rate %
+Number color #FF9800 (orange)
+Format X.XX%
+PART E Add visualizations (exactly like template layout)
+LEFT COLUMN (Lower left section)
+
+Add Chart 1 No of Claims (Large Card with number)
+
+Click Insert → Card
+Position lower left
+Drag Total Claims into it
+Add icon People icon
+Format
+Background #E8F4F8 (very light blue)
+Number size 28, Bold
+Label No of Claims, size 12
+Add Chart 2 Claims Trend (Line Chart)
+
+Click Insert → Line chart
+Position below the card
+Fields
+X-axis Calendar[Month Name]
+Y-axis Total Claims
+Title Claims Trend
+Format
+Line colors Use 2-3 lines (Teal #5DADE2, Orange #FF9800, Gray #BDBDBD)
+Background White #FFFFFF
+Border Light gray #E0E0E0
+Grid lines Light gray, dotted
+CENTER COLUMN (Center sections)
+
+Add Chart 3 Fraud vs. Legitimate (PieDonut)
+Click Insert → Pie chart
+Position center
+Fields
+Legend fraud_reported
+Values Total Claims
+Title Fraud Status Distribution
+Format
+Slice colors
+Y (Fraud) #E74C3C (red)
+N (Legitimate) #5DADE2 (teal)
+Data labels Show percentages
+Legend position Bottom
+RIGHT COLUMN (Right side - Top to Bottom)
+
+Add Chart 4 Claims by Incident Type (Horizontal Bar)
+
+Click Insert → Stacked bar chart
+Position upper right
+Fields
+Y-axis incident_type
+X-axis Total Claims
+Legend fraud_reported
+Title Claims by Incident Type
+Format
+Bar colors
+Fraud (Y) #E74C3C
+Legitimate (N) #5DADE2
+Background White
+Border Light gray
+Add Chart 5 Average Claim Amount (Column)
+
+Click Insert → Clustered column chart
+Position lower right
+Fields
+X-axis fraud_reported
+Y-axis Average Claim Amount
+Title Average Claim Amount
+Format
+Column colors
+Y (Fraud) #E74C3C
+N (Legitimate) #5DADE2
+Format as Currency
+PART F Add slicers (right side panel)
+Add Slicer 1 Date Range
+
+Click Insert → Slicer → Date slicer
+Position far right, top
+Connect to Calendar[Date]
+Title Date Range
+Format
+Background #FFFFFF
+Border #E0E0E0
+Font Size 11, #2C5F7F
+Selected item color #5DADE2
+Add Slicer 2 Incident Type
+
+Click Insert → Slicer
+Position below Date slicer
+Connect to incident_type
+Title Incident Type
+Same formatting as Slicer 1
+Add Slicer 3 Policy State
+
+Click Insert → Slicer
+Position below Incident Type
+Connect to policy_state
+Title Policy State
+Same formatting
+PART G Final formatting
+Align all elements
+
+KPI Cards Same height (~80px), evenly spaced horizontally
+Charts
+Left 1 large chart (Claims Trend)
+Center 1 chart (Fraud Distribution)
+Right 2 stacked charts
+Slicers Stacked vertically on far right, same width
+Apply rounded corners
+
+Select each cardchart
+Format → Visual → Corner radius 6px
+Test all interactivity
+
+Click date range → all charts update
+Select incident type → charts filter
+Select state → charts filter
+EXACT COLOR REFERENCE TABLE
+ 
+Copy codeCode copied
+Export
+Sidebar           #34657F (Dark Teal)
+Background        #D9E8F2 (Light Blue-Gray)
+Cards             #FFFFFF (White)
+Borders           #E0E0E0 (Light Gray)
+Primary Text      #2C5F7F (Dark Teal)
+FraudAlert       #E74C3C (Red)
+LegitimateGood   #5DADE2 (Teal Blue)
+AccentWarning    #FF9800 (Orange)
+Checklist
+✅ Page background #D9E8F2
+✅ Sidebar #34657F
+✅ Title Dark teal, size 32, bold
+✅ 4 KPI cards White background, proper icons
+✅ Charts with correct colors (RedTeal)
+✅ Slicers on right side working
+✅ All rounded corners (6px)
+✅ Professional appearance matching template
+Once complete, reply EXECUTIVE OVERVIEW COMPLETE and I'll give you STEP 7 Create the Incident & Severity Analysis page.
+
+Copied
+
+
