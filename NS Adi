@@ -1,0 +1,3860 @@
+
+NIS_VIT(1).pdf
+PDF
+
+NIS_VIT_Network Security · Unit 1 Introduction to Security.pdf
+PDF
+
+NIS_VIT_Network Security · Unit 2 Introduction to Security.pdf
+PDF
+
+NIS_VIT_Network Security · Unit 3 Introduction to Security.pdf
+PDF
+
+NIS_VIT_Network Security · Unit 4 Introduction to Security.pdf
+PDF
+
+NIS_VIT_Network Security · Unit 5 Introduction to Security.pdf
+PDF
+
+NIS_VIT_Network Security · Unit 6 Introduction to Security.pdf
+PDF
+listen i have viva exam of network security that professor is very srtrict and talented so i have to prep accordingly go through syllabus and each units prep everthing in simple give all with viva perspective short definations purpose and with examples
+Bro, we'll prepare this as if you are facing a strict Network Security professor who can ask questions from any line of the syllabus. Our target is not just to memorize definitions. You should understand the concept, explain its purpose, give a practical example, and answer follow-up questions confidently.
+
+I've checked your official VIT AI 4015 Network Security syllabus and all six unit PDFs.
+
+Network Security Viva Preparation – Complete Syllabus
+AI 4015 – Network Security
+
+6 Units
+30
+CVV marks
+6
+Units to prepare
+Unit
+
+Topic
+
+Lectures
+
+1
+
+Introduction to Security
+
+5 hrs
+
+2
+
+Private Key Cryptography
+
+4 hrs
+
+3
+
+Public Key Cryptography
+
+5 hrs
+
+4
+
+Authentication and Access Control
+
+5 hrs
+
+5
+
+Security Applications and Design
+
+5 hrs
+
+6
+
+Cyber Security and Forensics
+
+4 hrs
+
+How we will prepare every topic
+For each concept, I'll cover:
+
+Definition: A short answer you can speak directly.
+
+Purpose: Why is it used?
+
+Working: How does it work?
+
+Example: A real-world example.
+
+Viva questions: Questions a strict professor might ask.
+
+Follow-up questions: The deeper questions that test understanding.
+
+I'll also include differences, formulas, algorithms, important steps and numerical examples wherever the syllabus requires them.
+
+Unit 1 – Introduction to Security
+Foundation unit 5 lecture hours · Section I
+
+Cybersecurity Basics, Threats, Tools, and Examples
+1.1 Basic security terminology
+These definitions are extremely important because professors often begin with them and ask you to differentiate between them.
+
+Term
+
+Viva-ready definition
+
+Example
+
+Asset
+
+Anything valuable that needs protection.
+
+Customer database
+
+Vulnerability
+
+A weakness in a system that can be exploited.
+
+Weak password
+
+Threat
+
+Anything that can potentially cause harm.
+
+Hacker
+
+Attack
+
+A deliberate attempt to exploit a vulnerability.
+
+Stealing a password
+
+Risk
+
+Possibility of loss due to a threat exploiting a vulnerability.
+
+Database theft
+
+Security control
+
+A safeguard used to reduce risk.
+
+Firewall
+
+Understand this example:
+
+Suppose a bank has an online banking application.
+
+Asset: Customer bank details.
+
+Vulnerability: Weak login password.
+
+Threat: Cybercriminal.
+
+Attack: Brute-force login attempt.
+
+Risk: Financial data theft.
+
+Control: MFA, strong passwords and account lockout.
+
+Important viva questions
+
+Q1. What is the difference between threat and vulnerability?
+
+A: Vulnerability is a weakness, whereas a threat is something that can exploit that weakness.
+
+Q2. Is every vulnerability a threat?
+
+A: No. A vulnerability is a weakness. A threat is a potential source of harm. Risk arises when a threat can exploit a vulnerability.
+
+Q3. What is risk assessment?
+
+A: It is the process of identifying risks and evaluating their likelihood and impact.
+
+1.2 Risk management
+Definition: Risk management is the process of identifying, evaluating and controlling security risks.
+
+Formula:
+
+R
+i
+s
+k
+=
+L
+i
+k
+e
+l
+i
+h
+o
+o
+d
+×
+I
+m
+p
+a
+c
+t
+Risk=Likelihood×Impact
+Four ways to handle risk:
+
+Avoid – Stop the risky activity.
+
+Reduce – Apply security controls.
+
+Transfer – Transfer financial consequences, such as through insurance.
+
+Accept – Accept the risk when it is reasonable to do so.
+
+Viva question: What is the difference between risk and impact?
+
+Risk: Overall possibility and consequence of an incident.
+
+Impact: Damage caused if the incident occurs.
+
+1.3 CIA Triad – Most important
+What Is Data Security Management? How to Manage Data Security - Palo Alto Networks
+CIA stands for Confidentiality, Integrity and Availability. These are the three fundamental goals of information security.
+
+Property
+
+Definition
+
+Example
+
+Attack
+
+Confidentiality
+
+Only authorised users can access information.
+
+Password-protected bank account
+
+Sniffing
+
+Integrity
+
+Information must not be modified without permission.
+
+Correct bank balance
+
+SQL injection or tampering
+
+Availability
+
+Information and services must be accessible when required.
+
+Banking server available 24/7
+
+SYN flooding
+
+Viva questions
+
+Q1. Why is CIA important?
+
+A: It protects information from unauthorised access, modification and service disruption.
+
+Q2. Give an example of an integrity violation.
+
+A: An attacker changes a bank transaction from ₹500 to ₹5,000.
+
+Q3. Can one attack affect multiple CIA properties?
+
+A: Yes. Ransomware can affect availability by locking files and confidentiality if it also steals data.
+
+Q4. Which CIA property is affected by a DDoS attack?
+
+A: Availability.
+
+1.4 Threat modelling
+Definition: Threat modelling is a systematic process of identifying possible security threats before or during system development.
+
+Purpose: To identify weaknesses early and design appropriate security controls.
+
+Four important questions:
+
+What are we building?
+
+What can go wrong?
+
+What will we do about it?
+
+Did we do a good enough job?
+
+STRIDE model
+STRIDE is a threat classification model.
+
+Letter
+
+Threat
+
+Simple meaning
+
+S
+
+Spoofing
+
+Pretending to be someone else
+
+T
+
+Tampering
+
+Unauthorised modification
+
+R
+
+Repudiation
+
+Denying an action
+
+I
+
+Information Disclosure
+
+Revealing confidential information
+
+D
+
+Denial of Service
+
+Making a service unavailable
+
+E
+
+Elevation of Privilege
+
+Getting higher permissions
+
+Example: An attacker uses someone else's login credentials. This is Spoofing.
+
+Viva question: What is the purpose of STRIDE?
+
+A: To systematically identify and classify security threats in a system.
+
+1.5 Types of security attacks
+There are two major categories.
+
+Passive attacks
+
+Observe only
+An attacker monitors communication without modifying the data.
+
+Release of message contents.
+
+Traffic analysis.
+
+Example: Listening to unencrypted Wi-Fi traffic.
+
+Active attacks
+
+Modify or disrupt
+An attacker changes data, impersonates someone or disrupts services.
+
+Masquerade.
+
+Replay.
+
+Message modification.
+
+Denial of Service.
+
+Example: Replaying a captured authentication message.
+
+Passive
+
+Active
+
+Observes communication
+
+Changes or disrupts communication
+
+Does not modify data
+
+May modify data
+
+Difficult to detect
+
+Often easier to detect
+
+Prevent mainly through encryption
+
+Detection, prevention and recovery
+
+Q. Which attack is more difficult to detect?
+
+A: Passive attacks, because the attacker may only observe communication without changing it.
+
+1.6 Security services
+Security services provide protection to information and communication systems.
+
+Service
+
+Definition
+
+Example
+
+Authentication
+
+Verifies identity
+
+Login OTP
+
+Access control
+
+Restricts resource access
+
+Admin-only dashboard
+
+Confidentiality
+
+Prevents information disclosure
+
+Encryption
+
+Integrity
+
+Detects unauthorised modification
+
+MAC
+
+Non-repudiation
+
+Prevents denial of an action
+
+Digital signature
+
+Availability
+
+Ensures service accessibility
+
+Redundant servers
+
+Q. Authentication vs Access Control?
+
+Authentication: Who are you?
+
+Access control: What are you allowed to do?
+
+1.7 Avoiding attacks
+Three stages of security defence:
+
+Prevention: Firewall, patching, encryption, strong authentication.
+
+Detection: Logs, monitoring, intrusion detection systems, antivirus.
+
+Response and recovery: Incident response, tested backups and recovery plans.
+
+Defence in depth: Using multiple layers of security so that if one security control fails, others can still protect the system.
+
+Example: A banking application uses a firewall, MFA, encryption, monitoring and backups.
+
+1.8 Software vulnerabilities and common attacks
+This is a very important viva section. Learn the definition, working and prevention of each.
+
+1. Phishing
+Definition: Phishing is a social engineering attack in which an attacker sends fraudulent messages pretending to be a trusted person or organisation to steal sensitive information.
+
+Example: A fake bank email asks you to verify your account using a fraudulent login page.
+
+Purpose of attack: Steal passwords, OTPs and banking details.
+
+Prevention: Verify URLs, use MFA and avoid suspicious links.
+
+2. Social engineering
+Definition: Manipulating people psychologically to reveal confidential information or perform unsafe actions.
+
+Example: An attacker calls an employee pretending to be IT support and asks for their password.
+
+Q. Phishing vs Social Engineering?
+
+A: Social engineering is the broader technique of manipulating people. Phishing is one method of social engineering.
+
+3. Buffer Overflow
+Definition: A buffer overflow occurs when a program writes more data into a fixed-size memory buffer than it can hold.
+
+Example: A program allocates 10 bytes but receives 100 bytes without proper validation.
+
+Effect: It may crash the application or allow malicious code execution.
+
+Prevention: Bounds checking, safe programming practices and memory protection.
+
+Professor may ask: Why does buffer overflow happen?
+
+A: Because the program does not properly validate the amount of data being written into a memory buffer.
+
+4. Cross-Site Scripting (XSS)
+Definition: XSS is a web security attack in which an attacker injects malicious scripts into a trusted website, which execute in another user's browser.
+
+Example: A comment field accepts malicious JavaScript and executes it when another user opens the page.
+
+Types:
+
+Stored XSS – Script is saved on the server.
+
+Reflected XSS – Script is reflected through a request or response.
+
+DOM-based XSS – Vulnerable client-side JavaScript modifies the page unsafely.
+
+Prevention: Input validation, output encoding and Content Security Policy.
+
+5. Virus
+Definition: A computer virus is malicious software that attaches itself to a legitimate file or program and spreads when that infected file is executed.
+
+Example: An infected document that spreads malware when opened.
+
+Important: A virus generally requires a host file and user action to spread.
+
+6. Worm
+Definition: A worm is standalone malicious software that can self-replicate and spread across networks without attaching itself to another program.
+
+Example: Morris Worm (1988).
+
+Virus vs Worm – Important
+
+Virus
+
+Worm
+
+Requires a host file
+
+Standalone program
+
+Usually needs user execution
+
+Can spread automatically
+
+Spreads through infected files
+
+Spreads through network vulnerabilities
+
+Can infect files
+
+Can consume network bandwidth
+
+7. Trojan Horse
+Definition: A Trojan horse is malicious software disguised as legitimate or useful software.
+
+Example: A fake software installer that secretly installs a backdoor.
+
+Important viva point: A Trojan does not self-replicate like a worm.
+
+8. Ransomware
+Definition: Ransomware is malware that encrypts or locks a victim's data and demands payment for restoring access.
+
+Example: A company cannot access its files and receives a ransom demand.
+
+Prevention: Offline backups, security updates, endpoint protection and MFA.
+
+9. SYN Flooding
+Definition: SYN flooding is a DoS attack in which an attacker sends many TCP SYN requests but does not complete the TCP handshake.
+
+TCP 3-Way Handshake
+Normal TCP three-way handshake:
+
+Client sends SYN.
+
+Server responds with SYN-ACK.
+
+Client sends ACK.
+
+In SYN flooding, the attacker leaves many connections half-open, consuming server resources.
+
+Prevention: SYN cookies, firewalls and rate limiting.
+
+10. SQL Injection
+Definition: SQL injection is an attack in which malicious SQL input is inserted into application queries to manipulate a database.
+
+Example: A poorly designed login form directly joins user input into an SQL query, allowing an attacker to alter its logic.
+
+Effect: Unauthorised access, modification or deletion of database records.
+
+Prevention:
+
+Parameterised queries.
+
+Prepared statements.
+
+Input validation.
+
+Least-privilege database accounts.
+
+Q. Why is parameterised SQL better?
+
+A: It separates SQL commands from user input, preventing input from being interpreted as executable SQL code.
+
+11. DNS Poisoning
+Definition: DNS poisoning is an attack in which false DNS information is introduced into a DNS cache, causing users to reach an incorrect IP address.
+
+Example: Typing a genuine banking website address redirects the user to a fake website because of poisoned DNS records.
+
+Prevention: DNSSEC, secure DNS resolvers and proper DNS configuration.
+
+12. Sniffing
+Definition: Sniffing is the process of capturing and monitoring network packets travelling across a network.
+
+Types:
+
+Passive sniffing – Observing network traffic.
+
+Active sniffing – Manipulating traffic or network behaviour to capture it.
+
+Example: Capturing unencrypted data on public Wi-Fi.
+
+Prevention: HTTPS, TLS, VPN and secure Wi-Fi.
+
+Unit 1 – Strict professor's rapid-fire questions
+Try answering these without looking at the notes.
+
+What is the difference between a threat, vulnerability and attack?
+
+Can a system have vulnerabilities without being attacked?
+
+What is the CIA triad?
+
+Which CIA property does ransomware affect?
+
+What is STRIDE?
+
+What is the difference between active and passive attacks?
+
+Why is phishing considered social engineering?
+
+Why doesn't a Trojan replicate itself?
+
+Why does a worm spread faster than a virus?
+
+What happens during a TCP three-way handshake?
+
+What is the difference between DNS poisoning and phishing?
+
+Why is SQL injection possible?
+
+How can buffer overflow lead to code execution?
+
+What is defence in depth?
+
+What is the difference between authentication and authorisation?
+
+Unit 2 – Private Key Cryptography
+Important for algorithms and numericals 4 lecture hours · Section I
+
+Differences between Encryption, Encoding, and Hashing｜ExplainThis
+2.1 Introduction to cryptography
+Cryptography: The science of protecting information by converting readable data into an unreadable form using mathematical techniques.
+
+Important terminology:
+
+Term
+
+Definition
+
+Plaintext
+
+Original readable message
+
+Ciphertext
+
+Encrypted unreadable message
+
+Encryption
+
+Converting plaintext into ciphertext
+
+Decryption
+
+Converting ciphertext back to plaintext
+
+Key
+
+Value used by the algorithm for encryption or decryption
+
+Cryptanalysis
+
+Studying methods to break or analyse cryptographic systems
+
+Example:
+
+Plaintext: HELLO
+
+Encryption: Apply Caesar cipher with key 3.
+
+Ciphertext: KHOOR
+
+Decryption: Apply reverse shift.
+
+Result: HELLO
+
+2.2 Private key cryptography
+Definition: Private key cryptography, also called symmetric key cryptography, is an encryption technique in which the sender and receiver use the same secret key for encryption and decryption.
+
+Purpose: To provide confidentiality and fast encryption of data.
+
+Example: AES encryption used to protect files.
+
+Advantages:
+
+Fast encryption and decryption.
+
+Suitable for large amounts of data.
+
+Less computationally expensive.
+
+Disadvantages:
+
+Secure key distribution is difficult.
+
+Both parties must protect the shared key.
+
+Key management becomes difficult with many users.
+
+Professor's question: Why is key distribution a problem?
+
+A: Because the sender must securely share the secret key with the receiver before communication.
+
+2.3 Types of classical ciphers
+There are two basic techniques:
+
+Substitution cipher
+
+Replaces characters with other characters while keeping their positions conceptually unchanged.
+
+Example: A becomes D in Caesar cipher.
+
+Transposition cipher
+
+Rearranges the positions of characters without changing the characters themselves.
+
+Example: HELLO becomes a rearranged sequence.
+
+2.4 Transposition techniques
+A. Rail Fence Cipher
+Definition: A transposition cipher in which plaintext is written in a zigzag pattern across multiple rails and read row by row.
+
+Example: HELLOWORLD, using 2 rails.
+
+H . L . O . O . L .
+. E . L . W . R . D
+Ciphertext: HLOOLELWRD
+
+Key: Number of rails.
+
+Purpose: Rearranges letters to hide their original positions.
+
+Viva question: Are letters changed in Rail Fence?
+
+A: No. Only their positions are changed.
+
+B. Columnar Transposition Cipher
+Definition: A cipher in which plaintext is written row-wise under a numbered key, and columns are read according to key order.
+
+Example from your notes:
+
+Plaintext: ATTACKATDAWN
+
+Key: 3 1 4 2
+
+3  1  4  2
+A  T  T  A
+C  K  A  T
+D  A  W  N
+Read columns in key order: 1, 2, 3, 4.
+
+Ciphertext: TKAATNACDTAW
+
+C. Double Columnar Transposition
+Definition: A transposition technique in which columnar transposition is applied twice to increase the difficulty of recovering the original message.
+
+Purpose: Makes the original character order harder to identify.
+
+Important: Letter frequencies remain unchanged because the same letters are only rearranged.
+
+2.5 Substitution techniques
+A. Caesar Cipher
+Definition: A monoalphabetic substitution cipher in which each plaintext letter is shifted by a fixed number of positions in the alphabet.
+
+Formula:
+
+C
+=
+(
+P
++
+K
+)
+ 
+m
+o
+d
+ 
+26
+C=(P+K)mod26
+Where:
+
+C = Ciphertext value
+
+P = Plaintext value
+
+K = Key/shift value
+
+Example:
+
+Plaintext: HELLO
+
+Key: 3
+
+H → K
+E → H
+L → O
+L → O
+O → R
+Ciphertext: KHOOR
+
+Decryption formula:
+
+P
+=
+(
+C
+−
+K
+)
+ 
+m
+o
+d
+ 
+26
+P=(C−K)mod26
+Viva questions
+
+Q. How many useful keys are there in Caesar cipher?
+
+A. 25, excluding the zero shift.
+
+Q. Why is Caesar cipher weak?
+
+A. It has a very small key space and can be broken using brute-force or frequency analysis.
+
+B. Simple Substitution Cipher
+Definition: Each plaintext letter is replaced with a corresponding letter from a fixed secret substitution alphabet.
+
+Example:
+
+Plain:  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Cipher: QWERTYUIOPASDFGHJKLZXCVBNM
+HELLO becomes ITSSG.
+
+Difference from Caesar: Caesar uses a fixed shift, whereas simple substitution can use any permutation of the alphabet.
+
+C. Vigenère Cipher
+Definition: A polyalphabetic substitution cipher that uses a repeating keyword to encrypt plaintext characters with different shifts.
+
+Formula:
+
+C
+i
+=
+(
+P
+i
++
+K
+i
+)
+ 
+m
+o
+d
+ 
+26
+C 
+i
+​
+ =(P 
+i
+​
+ +K 
+i
+​
+ )mod26
+Example:
+
+Plaintext:  ATTACK
+Key:        LEMONL
+Each letter is shifted according to its corresponding key letter.
+
+Why is it polyalphabetic?
+
+Because the same plaintext letter can be encrypted into different ciphertext letters depending on the key position.
+
+D. One-Time Pad (OTP)
+Definition: A symmetric encryption technique that uses a truly random key of the same length as the message, used only once.
+
+Formula:
+
+C
+=
+P
+⊕
+K
+C=P⊕K
+Where XOR is performed on binary bits.
+
+Conditions for perfect secrecy:
+
+Key must be truly random.
+
+Key length must equal message length.
+
+Key must be used only once.
+
+Key must remain secret.
+
+Professor's question: Why is OTP theoretically unbreakable?
+
+A: Because when these conditions are satisfied, every possible plaintext has an equally plausible ciphertext interpretation, giving perfect secrecy.
+
+Disadvantage: Securely distributing and storing long random keys is difficult.
+
+E. Playfair Cipher
+Definition: Playfair is a polygraphic substitution cipher that encrypts pairs of letters using a 5×5 key matrix.
+
+Purpose: Encrypts two letters together instead of one letter at a time.
+
+Important rules:
+
+Create a 5×5 matrix using a keyword.
+
+Combine I and J in one cell.
+
+Divide plaintext into pairs.
+
+If a pair contains repeated letters, insert a filler such as X.
+
+Apply the same row, column or rectangle rule.
+
+Playfair Cipher — The Cipher Museum
+Three encryption rules:
+
+Same row: Take the letter to the right, wrapping around.
+
+Same column: Take the letter below, wrapping around.
+
+Different rows and columns: Use the rectangle rule, keeping the same rows and exchanging columns.
+
+Viva question: Why is Playfair stronger than Caesar?
+
+A: Playfair encrypts pairs of letters, making simple single-letter frequency analysis less effective.
+
+F. Hill Cipher
+Definition: Hill cipher is a polygraphic substitution cipher that uses matrix multiplication and modular arithmetic to encrypt blocks of letters.
+
+Formula:
+
+C
+=
+K
+P
+ 
+m
+o
+d
+ 
+26
+C=KPmod26
+Where:
+
+C = Ciphertext vector
+
+K = Key matrix
+
+P = Plaintext vector
+
+Important: The key matrix must be invertible modulo 26 to decrypt the message.
+
+Professor may ask: What is the purpose of determinant in Hill cipher?
+
+A: The determinant helps determine whether the key matrix has a modular inverse. It must be relatively prime to 26.
+
+2.6 DES – Data Encryption Standard
+PPT - What is a block cipher? PowerPoint Presentation, free download - ID:2392757
+Definition: DES is a symmetric block cipher that encrypts 64-bit data blocks using a 56-bit effective key.
+
+Important characteristics:
+
+Feature
+
+DES
+
+Block size
+
+64 bits
+
+Effective key size
+
+56 bits
+
+Rounds
+
+16
+
+Structure
+
+Feistel network
+
+Type
+
+Symmetric block cipher
+
+Working:
+
+Plaintext is divided into 64-bit blocks.
+
+Initial permutation is applied.
+
+Data is divided into left and right halves.
+
+16 Feistel rounds are performed.
+
+Final permutation produces ciphertext.
+
+What is a Feistel network?
+
+A structure that divides data into two halves and processes them through multiple rounds using round keys.
+
+Why is DES insecure today?
+
+Its 56-bit effective key is too short and can be brute-forced using modern computing resources.
+
+2.7 AES – Advanced Encryption Standard
+Cryptography — ECE568 Notes
+Definition: AES is a symmetric block cipher used to encrypt data securely using 128-bit blocks and key sizes of 128, 192 or 256 bits.
+
+Feature
+
+AES
+
+Block size
+
+128 bits
+
+Key sizes
+
+128, 192, 256 bits
+
+Rounds
+
+10, 12, 14
+
+Structure
+
+Substitution-Permutation Network
+
+Type
+
+Symmetric block cipher
+
+Four main AES transformations:
+
+SubBytes – Substitutes each byte using an S-box.
+
+ShiftRows – Shifts rows of the state matrix.
+
+MixColumns – Mixes data within columns.
+
+AddRoundKey – XORs state with the round key.
+
+Note: The final AES round does not perform MixColumns.
+
+Why is AES better than DES?
+
+A: AES supports much larger keys, has a 128-bit block size and is considered secure when correctly implemented.
+
+2.8 DES vs AES – Important comparison
+DES
+
+AES
+
+64-bit block
+
+128-bit block
+
+56-bit effective key
+
+128/192/256-bit key
+
+16 rounds
+
+10/12/14 rounds
+
+Feistel structure
+
+Substitution-Permutation structure
+
+Insecure against brute force
+
+Widely used and secure
+
+Older standard
+
+Modern standard
+
+2.9 Confusion and Diffusion
+Confusion: Makes the relationship between the key and ciphertext difficult to understand.
+
+Example: AES SubBytes.
+
+Diffusion: Spreads the influence of one plaintext bit across many ciphertext bits.
+
+Example: AES ShiftRows and MixColumns.
+
+Q. Why do modern block ciphers use both?
+
+A: To hide statistical patterns and make cryptanalysis more difficult.
+
+2.10 Chinese Remainder Theorem (CRT)
+Definition: CRT is a mathematical theorem that allows us to solve a system of simultaneous congruences when the moduli are pairwise coprime.
+
+Example:
+
+x
+≡
+2
+(
+m
+o
+d
+3
+)
+x≡2(mod3)
+x
+≡
+3
+(
+m
+o
+d
+5
+)
+x≡3(mod5)
+x
+≡
+2
+(
+m
+o
+d
+7
+)
+x≡2(mod7)
+The smallest positive solution is:
+
+x
+=
+23
+x=23
+​
+ 
+Check:
+
+23 mod 3 = 2
+
+23 mod 5 = 3
+
+23 mod 7 = 2
+
+Purpose in cryptography: CRT can speed up RSA decryption and signing operations.
+
+Professor may ask: What does pairwise coprime mean?
+
+A: Every pair of moduli has GCD equal to 1.
+
+Unit 2 – Strict professor's rapid-fire questions
+What is symmetric encryption?
+
+What is the key distribution problem?
+
+Difference between substitution and transposition?
+
+Why is Caesar cipher weak?
+
+Why is Vigenère called polyalphabetic?
+
+What makes OTP perfectly secure?
+
+Why should an OTP key never be reused?
+
+What is a polygraphic cipher?
+
+Why is a 5×5 matrix used in Playfair?
+
+Why must the Hill cipher key matrix be invertible?
+
+What is a block cipher?
+
+What is a Feistel structure?
+
+Why is DES insecure?
+
+What is the AES block size?
+
+What happens during MixColumns?
+
+Explain confusion and diffusion.
+
+What is CRT?
+
+How does CRT help RSA?
+
+Unit 3 – Public Key Cryptography
+High-priority viva unit 5 lecture hours · Section I
+
+The Cryptography Concept Journey — Asymmetric Encryption (Public Key Encryption) | by Shlomi Boutnaru, Ph.D. | Dec, 2025 | Medium
+3.1 Public key cryptography
+Definition: Public key cryptography, also called asymmetric cryptography, uses two mathematically related keys: a public key and a private key.
+
+Public key: Can be shared with everyone.
+
+Private key: Must remain secret.
+
+Purpose: Secure communication, key exchange and digital signatures.
+
+Example: RSA.
+
+How encryption works:
+
+Sender obtains receiver's public key.
+
+Sender encrypts the message using the receiver's public key.
+
+Receiver decrypts it using their private key.
+
+Important viva question: Why can't the sender use their own private key for confidentiality?
+
+A: Encryption with the sender's private key does not provide confidentiality because the corresponding public key is available to everyone. Private-key signing is used for digital signatures instead.
+
+3.2 Symmetric vs Asymmetric cryptography
+Symmetric
+
+Asymmetric
+
+One shared secret key
+
+Public and private key pair
+
+Faster
+
+Slower
+
+Key distribution is difficult
+
+Public key can be distributed
+
+AES, DES
+
+RSA, ECC
+
+Bulk data encryption
+
+Key exchange and signatures
+
+3.3 Mathematical background
+A. Modular Arithmetic
+Definition: Modular arithmetic is a mathematical system that deals with remainders after division.
+
+Formula:
+
+a
+ 
+m
+o
+d
+ 
+n
+=
+remainder
+amodn=remainder
+Example:
+
+17
+ 
+m
+o
+d
+ 
+5
+=
+2
+17mod5=2
+Real-world analogy: Clock arithmetic.
+
+If it is 10 o'clock and we add 5 hours, the clock shows 3.
+
+B. GCD – Greatest Common Divisor
+Definition: GCD is the greatest positive integer that divides two numbers exactly.
+
+Example:
+
+G
+C
+D
+(
+12
+,
+18
+)
+=
+6
+GCD(12,18)=6
+C. Euclid's Algorithm
+Definition: An efficient method to find the GCD of two integers using repeated division.
+
+Formula:
+
+G
+C
+D
+(
+a
+,
+b
+)
+=
+G
+C
+D
+(
+b
+,
+a
+ 
+m
+o
+d
+ 
+b
+)
+GCD(a,b)=GCD(b,amodb)
+Example:
+
+1071 = 2 × 462 + 147
+462  = 3 × 147 + 21
+147  = 7 × 21 + 0
+Therefore:
+
+G
+C
+D
+(
+1071
+,
+462
+)
+=
+21
+GCD(1071,462)=21
+Purpose: Used in RSA key generation and finding modular inverses.
+
+D. Modular Inverse
+Definition: The modular inverse of a number a modulo n is a number b such that:
+
+a
+×
+b
+≡
+1
+(
+m
+o
+d
+n
+)
+a×b≡1(modn)
+Example:
+
+3
+×
+7
+=
+21
+3×7=21
+21
+ 
+m
+o
+d
+ 
+10
+=
+1
+21mod10=1
+Therefore, the inverse of 3 modulo 10 is 7.
+
+Important condition:
+
+G
+C
+D
+(
+a
+,
+n
+)
+=
+1
+GCD(a,n)=1
+E. Prime Numbers
+Definition: A prime number is a positive integer greater than 1 that has exactly two positive factors: 1 and itself.
+
+Examples: 2, 3, 5, 7, 11.
+
+Why are prime numbers important in RSA?
+
+A: RSA uses the product of two large prime numbers. Multiplying them is easy, but factoring the product into its original large primes is computationally difficult.
+
+F. Random Numbers
+Definition: Random numbers are unpredictable values used in cryptographic operations.
+
+Purpose:
+
+Generate cryptographic keys.
+
+Generate nonces.
+
+Prevent replay attacks.
+
+Support secure protocols.
+
+Q. Why should cryptographic random numbers be unpredictable?
+
+A: Predictable keys or nonces can allow attackers to compromise encryption or authentication.
+
+3.4 RSA Algorithm
+Modern Cryptography — The Cipher Museum
+Definition: RSA is an asymmetric cryptographic algorithm based on the mathematical difficulty of factoring large composite numbers.
+
+RSA stands for Rivest, Shamir and Adleman.
+
+RSA key generation steps
+Select two large prime numbers p and q.
+
+Calculate:
+
+n
+=
+p
+×
+q
+n=p×q
+3. Calculate Euler's totient:
+
+ϕ
+(
+n
+)
+=
+(
+p
+−
+1
+)
+(
+q
+−
+1
+)
+ϕ(n)=(p−1)(q−1)
+4. Select public exponent e such that:
+
+G
+C
+D
+(
+e
+,
+ϕ
+(
+n
+)
+)
+=
+1
+GCD(e,ϕ(n))=1
+5. Calculate private exponent d:
+
+d
+×
+e
+≡
+1
+(
+m
+o
+d
+ϕ
+(
+n
+)
+)
+d×e≡1(modϕ(n))
+Public key = (e, n).
+
+Private key = (d, n).
+
+RSA numerical example
+Let:
+
+p
+=
+3
+,
+q
+=
+11
+p=3,q=11
+Step 1:
+
+n
+=
+3
+×
+11
+=
+33
+n=3×11=33
+Step 2:
+
+ϕ
+(
+n
+)
+=
+2
+×
+10
+=
+20
+ϕ(n)=2×10=20
+Step 3: Choose e = 3.
+
+G
+C
+D
+(
+3
+,
+20
+)
+=
+1
+GCD(3,20)=1
+Step 4: Find d.
+
+3
+d
+≡
+1
+(
+m
+o
+d
+20
+)
+3d≡1(mod20)
+Therefore:
+
+d
+=
+7
+d=7
+Final keys
+Public key = (3, 33)
+
+Private key = (7, 33)
+
+RSA Encryption
+Formula:
+
+C
+=
+M
+e
+ 
+m
+o
+d
+ 
+n
+C=M 
+e
+ modn
+Take M = 4.
+
+C
+=
+4
+3
+ 
+m
+o
+d
+ 
+33
+C=4 
+3
+ mod33
+C
+=
+64
+ 
+m
+o
+d
+ 
+33
+=
+31
+C=64mod33=31
+Ciphertext = 31.
+
+RSA Decryption
+Formula:
+
+M
+=
+C
+d
+ 
+m
+o
+d
+ 
+n
+M=C 
+d
+ modn
+M
+=
+31
+7
+ 
+m
+o
+d
+ 
+33
+=
+4
+M=31 
+7
+ mod33=4
+Original message recovered = 4.
+
+Important viva questions
+
+Q. Why should p and q be prime?
+
+A. RSA relies on the difficulty of factoring the product of two large primes.
+
+Q. What is the role of Euler's totient?
+
+A. It helps calculate the private key exponent.
+
+Q. What is the public key?
+
+A. The combination of public exponent e and modulus n.
+
+Q. What is the private key?
+
+A. The combination of private exponent d and modulus n.
+
+Q. Can RSA encrypt large files efficiently?
+
+A. RSA is relatively slow and has message-size limitations, so hybrid encryption is generally used. RSA can protect a symmetric session key, while AES encrypts the actual data.
+
+3.5 Attacks on RSA
+Important attacks:
+
+Attack
+
+Meaning
+
+Brute-force attack
+
+Trying possible private keys
+
+Factoring attack
+
+Factoring n into p and q
+
+Chosen plaintext attack
+
+Attacker chooses plaintexts and observes ciphertexts
+
+Timing attack
+
+Uses execution-time differences to infer secrets
+
+Padding oracle attack
+
+Uses padding error responses to reveal information
+
+Q. What makes RSA secure?
+
+A: The computational difficulty of factoring a sufficiently large modulus, when RSA is implemented with appropriate padding and secure key generation.
+
+3.6 Diffie-Hellman Key Exchange
+What is Public Key Cryptography? | Twilio
+Definition: Diffie-Hellman is a key exchange algorithm that allows two parties to establish a common secret over an insecure communication channel.
+
+Purpose: To establish a shared secret key without directly transmitting the secret.
+
+Working steps
+Suppose public values are:
+
+p
+=
+23
+,
+g
+=
+5
+p=23,g=5
+Alice selects private value:
+
+a
+=
+6
+a=6
+Bob selects private value:
+
+b
+=
+15
+b=15
+Alice calculates:
+
+A
+=
+g
+a
+ 
+m
+o
+d
+ 
+p
+A=g 
+a
+ modp
+A
+=
+5
+6
+ 
+m
+o
+d
+ 
+23
+=
+8
+A=5 
+6
+ mod23=8
+Bob calculates:
+
+B
+=
+g
+b
+ 
+m
+o
+d
+ 
+p
+B=g 
+b
+ modp
+B
+=
+5
+15
+ 
+m
+o
+d
+ 
+23
+=
+19
+B=5 
+15
+ mod23=19
+They exchange A and B.
+
+Alice calculates:
+
+K
+=
+B
+a
+ 
+m
+o
+d
+ 
+p
+K=B 
+a
+ modp
+K
+=
+19
+6
+ 
+m
+o
+d
+ 
+23
+=
+2
+K=19 
+6
+ mod23=2
+Bob calculates:
+
+K
+=
+A
+b
+ 
+m
+o
+d
+ 
+p
+K=A 
+b
+ modp
+K
+=
+8
+15
+ 
+m
+o
+d
+ 
+23
+=
+2
+K=8 
+15
+ mod23=2
+Shared secret = 2
+Both parties independently calculate the same shared secret.
+
+Q. Does Diffie-Hellman directly encrypt messages?
+
+A: No. It establishes a shared secret that can be used to derive an encryption key.
+
+Q. What is the main weakness of basic Diffie-Hellman?
+
+A: It is vulnerable to a Man-in-the-Middle attack if the exchanged public values are not authenticated.
+
+Man-in-the-Middle Attack
+Definition: An attacker secretly positions themselves between two communicating parties and intercepts or modifies their communication.
+
+Example: Alice believes she is exchanging a key with Bob, but an attacker establishes separate keys with both.
+
+Prevention: Digital signatures, certificates and authenticated key exchange.
+
+3.7 Elliptic Curve Cryptography (ECC)
+Elliptic Curve Cryptography (ECC)
+Definition: ECC is a public key cryptography technique based on the mathematical properties of elliptic curves over finite fields.
+
+Purpose: Provides strong security using relatively small keys.
+
+General elliptic curve equation:
+
+y
+2
+=
+x
+3
++
+a
+x
++
+b
+y 
+2
+ =x 
+3
+ +ax+b
+For cryptographic use, the curve is generally defined over a finite field and must satisfy the required mathematical conditions.
+
+Important operations:
+
+Point addition – Adding two points on the curve.
+
+Point doubling – Adding a point to itself.
+
+Scalar multiplication – Repeated addition of a point.
+
+Q. What is scalar multiplication?
+
+A: Multiplying an elliptic curve point P by an integer k, represented as kP.
+
+Q. Why is ECC preferred in many modern systems?
+
+A: It provides comparable security to RSA with smaller key sizes, which can reduce storage and computational overhead.
+
+3.8 ECDH – Elliptic Curve Diffie-Hellman
+Definition: ECDH is a key exchange mechanism that uses elliptic curve mathematics to establish a shared secret between two parties.
+
+Q. Difference between DH and ECDH?
+
+A: DH uses modular exponentiation over finite fields, whereas ECDH uses elliptic curve point multiplication.
+
+Unit 3 – Strict professor's rapid-fire questions
+What is asymmetric cryptography?
+
+Why do we need two keys?
+
+What is modular arithmetic?
+
+Explain Euclid's algorithm.
+
+What is a modular inverse?
+
+Why are prime numbers important in RSA?
+
+Explain RSA key generation.
+
+Why must e and phi(n) be coprime?
+
+What is Euler's totient function?
+
+Can public keys be shared?
+
+What is a factoring attack?
+
+Explain Diffie-Hellman with an example.
+
+Why is Diffie-Hellman vulnerable to MITM?
+
+Does Diffie-Hellman provide authentication?
+
+What is an elliptic curve?
+
+What is point multiplication?
+
+What is ECDH?
+
+Why is ECC efficient compared with RSA?
+
+Unit 4 – Authentication and Access Control
+Very important conceptual unit 5 lecture hours · Section II
+
+CIA Triad, Authentication & Authorization in Cybersecurity (2026)
+4.1 Authentication
+Definition: Authentication is the process of verifying the identity of a user, device or system.
+
+Purpose: To ensure that the person accessing a system is genuine.
+
+Examples:
+
+Password authentication.
+
+OTP authentication.
+
+Fingerprint authentication.
+
+Face recognition.
+
+Q. Authentication vs Authorisation?
+
+Authentication
+
+Authorisation
+
+Verifies identity
+
+Determines permissions
+
+Who are you?
+
+What can you access?
+
+Login with password
+
+Access admin dashboard
+
+4.2 Message Authentication
+Definition: Message authentication is the process of verifying that a received message is genuine and has not been modified during transmission.
+
+Purpose:
+
+Verify message integrity.
+
+Verify message origin.
+
+Detect unauthorised modification.
+
+Example: A bank verifies that a transaction message has not been altered.
+
+MAC – Message Authentication Code
+Definition: MAC is a short authentication value generated from a message and a shared secret key.
+
+Working:
+
+Sender calculates MAC using message and secret key.
+
+Sender sends message and MAC.
+
+Receiver calculates a new MAC using the same key.
+
+Receiver compares both MAC values.
+
+If they match, the message passes the integrity and shared-key origin check.
+
+Q. Does MAC provide confidentiality?
+
+A: No. MAC provides message integrity and authentication, but it does not encrypt the message.
+
+4.3 Hash Functions
+Cryptography: Explaining SHA-512. This is intended to give you a basic… | by Zaid Khaishagi | Medium
+Definition: A cryptographic hash function converts input data of arbitrary length into a fixed-length output called a hash or message digest.
+
+Example: A file is passed through SHA-512 to generate a 512-bit hash.
+
+Purpose:
+
+File integrity verification.
+
+Password storage systems.
+
+Digital signatures.
+
+Message authentication when combined with a secret key, such as HMAC.
+
+Properties of hash functions
+Property
+
+Simple definition
+
+Fixed length
+
+Output length remains fixed
+
+One-way
+
+Computationally infeasible to recover input
+
+Preimage resistance
+
+Difficult to find an input for a given hash
+
+Second-preimage resistance
+
+Difficult to find another input with the same hash as a given input
+
+Collision resistance
+
+Difficult to find any two different inputs with the same hash
+
+Avalanche effect
+
+Small input change produces a significantly different hash
+
+Professor's question: Can we decrypt a hash?
+
+A: No. A cryptographic hash is designed to be one-way, unlike encryption.
+
+Q. Is hashing the same as encryption?
+
+A: No. Encryption is reversible using a key, whereas hashing is designed to be irreversible.
+
+4.4 MD5
+Definition: MD5 (Message Digest Algorithm 5) is a cryptographic hash function that produces a 128-bit hash value.
+
+Important characteristics:
+
+Digest size: 128 bits.
+
+Block size: 512 bits.
+
+Word size: 32 bits.
+
+Processing: 64 steps in 4 rounds.
+
+Designed by: Ron Rivest.
+
+Example: Generating a checksum for a file.
+
+Is MD5 secure?
+
+A: No. MD5 is considered cryptographically broken because practical collision attacks exist. It should not be used for security-sensitive integrity or digital signature applications.
+
+4.5 SHA-512
+Definition: SHA-512 is a member of the SHA-2 family of cryptographic hash functions that generates a 512-bit message digest.
+
+Important characteristics:
+
+Feature
+
+SHA-512
+
+Digest size
+
+512 bits
+
+Block size
+
+1024 bits
+
+Word size
+
+64 bits
+
+Rounds
+
+80
+
+Family
+
+SHA-2
+
+How SHA-512 works
+Message padding is performed.
+
+Message is divided into 1024-bit blocks.
+
+Eight 64-bit initial hash values are used.
+
+Each block is processed through 80 rounds.
+
+The final 512-bit hash is generated.
+
+Q. Why is SHA-512 better than MD5?
+
+A: SHA-512 has a larger digest size and is designed with stronger security. MD5 has known practical collision weaknesses.
+
+MD5 vs SHA-512
+MD5
+
+SHA-512
+
+128-bit output
+
+512-bit output
+
+512-bit block
+
+1024-bit block
+
+32-bit words
+
+64-bit words
+
+64 steps
+
+80 rounds
+
+Broken
+
+Considered secure
+
+4.6 One-Way and Mutual Authentication
+One-way authentication: Only one party verifies its identity to another party.
+
+Example: A user logs into a website using a password.
+
+Mutual authentication: Both communicating parties verify each other's identities.
+
+Example: A client and server authenticate each other using certificates.
+
+One-way
+
+Mutual
+
+One party proves identity
+
+Both parties prove identity
+
+Simpler
+
+More secure against impersonation when correctly implemented
+
+Basic login
+
+Certificate-based client-server authentication
+
+Q. Why do we need mutual authentication?
+
+A: To ensure that both communicating parties are genuine and to reduce impersonation and MITM risks.
+
+4.7 Replay Attack, Nonce and Timestamp
+Replay attack: An attacker captures a valid communication message and sends it again later to gain unauthorised access or repeat an operation.
+
+Example: Reusing a captured authentication request.
+
+Nonce: A nonce is a number used only once in a protocol to make each communication unique.
+
+Timestamp: A timestamp records the time when a message is created or sent.
+
+Q. How can replay attacks be prevented?
+
+A: Using nonces, timestamps, sequence numbers and appropriate authentication checks.
+
+4.8 Needham–Schroeder Protocol
+Definition: Needham–Schroeder is an authentication protocol that uses a trusted Key Distribution Centre (KDC) to help two parties establish a shared session key.
+
+Purpose: To establish secure communication and authenticate communicating parties.
+
+Main entities
+A – Sender.
+
+B – Receiver.
+
+KDC – Trusted Key Distribution Centre.
+
+Ks – Session key.
+
+N1 and N2 – Nonces.
+
+Working steps
+A requests communication with B from KDC.
+
+KDC generates a session key and sends it securely to A, including a ticket for B.
+
+A forwards B's ticket.
+
+B challenges A using a nonce encrypted with the session key.
+
+A responds with the required nonce transformation.
+
+The two parties establish confidence that they share the session key.
+
+Important viva question: What is the weakness of Needham–Schroeder?
+
+A: The original symmetric-key protocol can be vulnerable to a replay attack involving an old session key ticket if an attacker obtains that old key.
+
+How can this be improved?
+
+A: Timestamps and ticket expiration, as used in Kerberos, help prevent replay of old tickets.
+
+4.9 Kerberos Authentication
+Kerberos Authentication 101: Understanding the Essentials of the Kerberos Security Protocol -- Redmondmag.com
+Definition: Kerberos is a network authentication protocol that uses secret-key cryptography and tickets to authenticate users and services over an insecure network.
+
+Purpose: Secure authentication and Single Sign-On (SSO).
+
+Important components
+Component
+
+Meaning
+
+Client
+
+User requesting a service
+
+AS
+
+Authentication Server
+
+TGS
+
+Ticket Granting Server
+
+TGT
+
+Ticket Granting Ticket
+
+Service Server
+
+Server providing the requested service
+
+KDC
+
+Key Distribution Centre, which includes AS and TGS
+
+Working of Kerberos
+User logs in and requests authentication from AS.
+
+AS verifies the user and issues a Ticket Granting Ticket (TGT).
+
+Client presents TGT to TGS to request a service ticket.
+
+TGS issues a service ticket.
+
+Client presents the service ticket to the application server.
+
+Server verifies the ticket and grants access.
+
+Advantages:
+
+Single Sign-On.
+
+Password is not repeatedly transmitted over the network.
+
+Tickets have timestamps and expiry.
+
+Mutual authentication can be supported.
+
+Professor's questions
+
+Q. What is SSO?
+
+A: Single Sign-On allows a user to authenticate once and access multiple authorised services without logging in separately to each one.
+
+Q. What is TGT?
+
+A: A Ticket Granting Ticket is issued by the Authentication Server and used to request service tickets from TGS.
+
+Q. What is the role of KDC?
+
+A: It acts as a trusted authority for authentication and session key distribution.
+
+Q. What is the difference between TGT and service ticket?
+
+A: TGT is used to request service tickets from TGS, while a service ticket is presented to a particular application server.
+
+4.10 X.509 Authentication Service
+Definition: X.509 is a standard that defines the format of digital certificates used to establish identities and support public-key authentication.
+
+A digital certificate typically contains:
+
+Subject name.
+
+Subject public key.
+
+Issuer name.
+
+Serial number.
+
+Validity period.
+
+CA's digital signature.
+
+Purpose: To establish trust between communicating parties using digital certificates.
+
+Example: When you visit an HTTPS website, the browser checks the website's certificate.
+
+Q. Who issues a digital certificate?
+
+A: A trusted Certificate Authority (CA).
+
+4.11 PKI – Public Key Infrastructure
+Definition: PKI is a framework of technologies, policies, procedures and trusted authorities used to manage digital certificates and public-key cryptography.
+
+Main components
+Certificate Authority (CA): Issues and signs certificates.
+
+Registration Authority (RA): Verifies identity before certificate issuance.
+
+Digital certificate: Connects an identity with a public key.
+
+Certificate repository: Stores certificates.
+
+Certificate revocation mechanisms: Identify certificates that should no longer be trusted.
+
+Q. What is the difference between X.509 and PKI?
+
+A: X.509 defines the certificate format and related standards, whereas PKI is the broader infrastructure that manages certificates and trust.
+
+4.12 Digital Signature
+Definition: A digital signature is a cryptographic mechanism used to verify the authenticity and integrity of a digital message or document.
+
+Working
+Sender calculates the hash of the message.
+
+Sender signs the hash using their private key.
+
+Receiver calculates the hash of the received message.
+
+Receiver verifies the signature using the sender's public key.
+
+Matching verification confirms integrity and supports sender authentication.
+
+Purpose:
+
+Authentication.
+
+Integrity.
+
+Non-repudiation, subject to correct identity and key management.
+
+Q. Does a digital signature provide confidentiality?
+
+A: No. It provides authenticity and integrity, not confidentiality.
+
+4.13 Access Control in Operating Systems
+Definition: Access control is the process of determining which users or processes are permitted to access specific resources and perform particular operations.
+
+Three important models:
+
+A. DAC – Discretionary Access Control
+Definition: The resource owner decides who can access the resource and what permissions they receive.
+
+Example: A file owner gives another user read permission.
+
+B. MAC – Mandatory Access Control
+Definition: Access is controlled by a central security policy using security labels and classifications.
+
+Example: Military data classified as Confidential, Secret or Top Secret.
+
+C. RBAC – Role-Based Access Control
+Definition: Access permissions are assigned according to a user's organisational role.
+
+Example:
+
+Admin – Full access.
+
+Manager – Report access.
+
+Employee – Limited access.
+
+DAC vs MAC vs RBAC
+DAC
+
+MAC
+
+RBAC
+
+Owner decides
+
+Central policy decides
+
+Role decides
+
+Flexible
+
+Strict
+
+Organisation-based
+
+File sharing
+
+Military systems
+
+Company systems
+
+Owner-controlled
+
+Label-based
+
+Permission-by-role
+
+Strict professor's questions
+
+Q. Which model is more restrictive?
+
+A: MAC generally provides more centrally controlled and restrictive access.
+
+Q. What is the principle of least privilege?
+
+A: Give each user or process only the minimum permissions required to perform its task.
+
+Q. Can a user have multiple roles in RBAC?
+
+A: Yes, if the organisation's role and permission policies allow it.
+
+Unit 4 – Strict professor's rapid-fire questions
+What is authentication?
+
+Authentication vs authorisation?
+
+What is message authentication?
+
+What is a MAC?
+
+Does MAC provide confidentiality?
+
+What is a hash function?
+
+Can a hash be decrypted?
+
+Explain the avalanche effect.
+
+Why is MD5 insecure?
+
+What is the output size of SHA-512?
+
+Difference between one-way and mutual authentication?
+
+What is a replay attack?
+
+What is a nonce?
+
+Explain Needham–Schroeder.
+
+What is Kerberos?
+
+Explain TGT and TGS.
+
+What is Single Sign-On?
+
+What is an X.509 certificate?
+
+What is PKI?
+
+CA vs RA?
+
+What is a digital signature?
+
+Does a digital signature provide confidentiality?
+
+Explain DAC, MAC and RBAC.
+
+What is least privilege?
+
+Unit 5 – Security Applications and Design
+Very important for practical examples 5 lecture hours · Section II
+
+Understanding IPsec vs SSL/TLS - Network Security Protocols | somaz
+5.1 Denial of Service (DoS)
+Definition: A Denial of Service attack attempts to make a computer, server or network unavailable to legitimate users by overwhelming or disrupting its resources.
+
+Example: An attacker sends a huge number of requests to a college website, making it unavailable.
+
+Purpose: Disrupt service availability.
+
+Prevention:
+
+Rate limiting.
+
+Traffic filtering.
+
+Firewalls.
+
+Load balancing.
+
+DDoS protection services.
+
+5.2 Distributed Denial of Service (DDoS)
+Definition: DDoS is an attack in which multiple compromised devices simultaneously send traffic to a target to make it unavailable.
+
+Botnet: A collection of compromised devices controlled by an attacker.
+
+DoS vs DDoS
+DoS
+
+DDoS
+
+Usually one attacking source
+
+Multiple attacking sources
+
+Easier to identify the source
+
+Harder to identify and filter sources
+
+Comparatively limited scale
+
+Can generate massive traffic
+
+One system or source
+
+Often a botnet
+
+Q. What is a botnet?
+
+A: A network of compromised devices controlled remotely by an attacker.
+
+5.3 Session Hijacking
+Definition: Session hijacking is an attack in which an attacker steals or predicts a valid session identifier and uses it to impersonate an authenticated user.
+
+How it works:
+
+User logs into a website.
+
+Server creates a session ID.
+
+Attacker steals or guesses the session ID.
+
+Attacker uses it to access the victim's session.
+
+Example: An attacker steals a session cookie and gains access to a logged-in account.
+
+Prevention:
+
+HTTPS.
+
+Secure and HttpOnly cookies.
+
+Strong random session IDs.
+
+Session ID regeneration after login.
+
+Session expiration and logout.
+
+Q. What is a session ID?
+
+A: A unique identifier used by a server to maintain a user's session across multiple requests.
+
+5.4 ARP Spoofing
+Definition: ARP spoofing is a LAN-based attack in which an attacker sends forged ARP messages to associate their MAC address with another device's IP address.
+
+Purpose: To redirect or intercept network traffic.
+
+Example: An attacker tricks a victim's computer into associating the gateway IP address with the attacker's MAC address.
+
+Prevention:
+
+Dynamic ARP Inspection.
+
+Static ARP entries for important systems.
+
+Network monitoring.
+
+End-to-end encryption.
+
+Q. What is ARP?
+
+A: Address Resolution Protocol maps an IPv4 address to a MAC address within a local network.
+
+Q. Does ARP provide authentication?
+
+A: No. Traditional ARP does not authenticate ARP replies, which makes spoofing possible.
+
+5.5 Pharming Attack
+Definition: Pharming is an attack that redirects users from legitimate websites to fraudulent websites by manipulating DNS information or local host configuration.
+
+Example: You type your genuine bank website address, but due to DNS poisoning, you are redirected to a fake banking site.
+
+Prevention:
+
+DNSSEC.
+
+Trusted DNS resolvers.
+
+Secure router and hosts-file configuration.
+
+HTTPS certificate verification.
+
+Phishing vs Pharming
+Phishing
+
+Pharming
+
+Tricks users through fraudulent communication
+
+Redirects users to fraudulent websites
+
+Often uses fake links
+
+Can manipulate DNS or hosts file
+
+User may click a malicious link
+
+User may type the correct URL
+
+Social engineering is common
+
+DNS or configuration manipulation
+
+5.6 Dictionary Attack
+Definition: A dictionary attack is a password attack in which an attacker tries commonly used passwords and words from a predefined list.
+
+Example: Trying passwords such as password123, admin123 and common names.
+
+Prevention:
+
+Long and unique passphrases.
+
+MFA.
+
+Account lockout or rate limiting.
+
+Salted password hashing using deliberately slow password-hashing algorithms.
+
+Dictionary attack vs Brute-force attack
+
+Dictionary: Tries likely passwords from a list.
+
+Brute force: Tries combinations systematically.
+
+5.7 Network Layer Security – IPsec
+Crypto map based IPsec VPN fundamentals - negotiation and configuration - Cisco Community
+Definition: IPsec (Internet Protocol Security) is a collection of protocols that provides security at the IP/network layer.
+
+Purpose:
+
+Confidentiality.
+
+Integrity.
+
+Authentication.
+
+Anti-replay protection.
+
+Applications: VPNs and secure communication between branch offices.
+
+Main components of IPsec
+1. AH – Authentication Header
+
+Provides:
+
+Data origin authentication.
+
+Integrity.
+
+Anti-replay protection.
+
+Important: AH does not provide encryption and confidentiality.
+
+2. ESP – Encapsulating Security Payload
+
+Provides:
+
+Confidentiality through encryption.
+
+Optional integrity and authentication.
+
+Anti-replay protection.
+
+3. SA – Security Association
+
+A Security Association defines the security parameters, such as algorithms and keys, used to protect communication.
+
+4. IKE – Internet Key Exchange
+
+IKE negotiates security associations and establishes cryptographic keys for IPsec communication.
+
+IPsec modes
+Difference betweenTunnel Mode vs. Transport Mode in VPN | by Ram Dixit | Medium
+Transport mode
+
+Tunnel mode
+
+Protects IP payload
+
+Protects the entire original IP packet
+
+Original IP header remains visible
+
+New outer IP header is added
+
+Commonly host-to-host
+
+Commonly gateway-to-gateway VPN
+
+Less encapsulation
+
+More encapsulation
+
+Q. Which mode is commonly used in site-to-site VPNs?
+
+A: Tunnel mode.
+
+Q. Does AH encrypt data?
+
+A: No.
+
+Q. Difference between AH and ESP?
+
+A: AH provides authentication and integrity without encryption, whereas ESP provides encryption and can also provide authentication and integrity.
+
+IPsec in IPv4 and IPv6
+IPv4: IPsec is an optional security framework.
+
+IPv6: IPsec support was designed into the IPv6 architecture, using AH and ESP extension headers.
+
+Important: IPv6 does not mean every packet is automatically encrypted.
+
+5.8 Transport Layer Security – SSL and TLS
+SSL/TLS & Encryption: Symmetric vs Asymmetric keys, Certificate Authorities, Mutual TLS (mTLS) - DEV Community
+SSL – Secure Sockets Layer
+
+SSL is an older cryptographic protocol designed to provide secure communication between clients and servers.
+
+TLS – Transport Layer Security
+
+TLS is the successor to SSL and provides secure communication using encryption, authentication and integrity protection.
+
+Purpose:
+
+Secure client-server communication.
+
+Prevent eavesdropping.
+
+Detect data modification.
+
+Authenticate servers using certificates.
+
+Basic TLS handshake
+Client sends ClientHello with supported versions and cipher suites.
+
+Server responds with ServerHello and its certificate.
+
+Client verifies the server certificate.
+
+Both sides establish shared session keys through the negotiated key exchange.
+
+Secure encrypted communication begins.
+
+Q. Why is TLS called a hybrid cryptographic protocol?
+
+A: Because it uses asymmetric cryptography for authentication and/or key establishment and symmetric cryptography for efficient bulk data encryption.
+
+Q. SSL vs TLS?
+
+A: TLS is the newer and more secure successor to SSL. SSL versions are obsolete and should not be used.
+
+5.9 Application Layer Security
+Application layer security protects communication and data at the application level.
+
+Important protocols and technologies:
+
+A. HTTPS
+Definition: HTTPS is HTTP communication protected using TLS.
+
+Purpose: Secure communication between a browser and website.
+
+Example: Online banking websites.
+
+Important: HTTPS protects data in transit, but it does not guarantee that the website itself is honest or malware-free.
+
+B. S/MIME
+Definition: S/MIME (Secure/Multipurpose Internet Mail Extensions) is a standard used to secure email through encryption and digital signatures.
+
+Purpose:
+
+Email confidentiality.
+
+Email integrity.
+
+Sender authentication.
+
+Example: A company sends a digitally signed and encrypted email.
+
+C. PGP
+Definition: PGP (Pretty Good Privacy) is a system used to secure emails and files using encryption, hashing and digital signatures.
+
+How PGP works:
+
+Sending:
+
+Calculate message hash.
+
+Sign the hash using sender's private key.
+
+Compress the message and signature.
+
+Encrypt using a symmetric session key.
+
+Encrypt the session key using the recipient's public key.
+
+Receiving:
+
+Decrypt session key using recipient's private key.
+
+Decrypt the message.
+
+Verify sender's signature using sender's public key.
+
+Q. Why does PGP use both symmetric and asymmetric encryption?
+
+A: Symmetric encryption is fast for message encryption, while asymmetric encryption securely protects the session key and supports digital signatures.
+
+D. Honeypot
+What is a Honeypot - Bitdefender InfoZone
+Definition: A honeypot is a decoy computer system or service designed to attract attackers and observe their behaviour.
+
+Purpose:
+
+Detect suspicious activity.
+
+Collect threat intelligence.
+
+Study attacker techniques.
+
+Provide early warnings.
+
+Example: A fake server that looks like a vulnerable database server but contains no genuine business data.
+
+Q. Is a honeypot used to directly protect the production server?
+
+A: Not directly. It is mainly used for detection, monitoring and research. It must be isolated from real systems.
+
+5.10 Security Design Principles
+A. End-to-End Security
+Definition: End-to-end security means protecting information from the original sender to the final receiver rather than relying only on intermediate network devices.
+
+Example: End-to-end encrypted messaging.
+
+B. Security Composability
+Definition: Security composability means that independently secure components should remain secure when combined into a larger system, subject to their interfaces and assumptions.
+
+Example: A secure login module combined with an insecure database connection can still make the entire application insecure.
+
+C. Open Design
+Definition: Open design means system security should not depend on keeping the design or algorithm secret; it should depend on protecting the secret keys.
+
+Example: AES is publicly documented, but security depends on secret keys.
+
+This is related to Kerckhoffs's principle.
+
+D. Cost and Trade-offs
+Definition: Security design requires balancing security requirements against implementation cost, system performance and usability.
+
+Example: Stronger authentication may improve security but can add login steps for users.
+
+Q. Why is no system 100% secure?
+
+A: Because every system has limitations, potential vulnerabilities, implementation risks and changing threats. Security is an ongoing process.
+
+Unit 5 – Strict professor's rapid-fire questions
+DoS vs DDoS?
+
+What is a botnet?
+
+What is session hijacking?
+
+What is a session cookie?
+
+What is ARP spoofing?
+
+What is the role of ARP?
+
+What is pharming?
+
+Phishing vs pharming?
+
+Dictionary attack vs brute force?
+
+What is IPsec?
+
+What are AH and ESP?
+
+Does AH encrypt packets?
+
+What is a Security Association?
+
+What is IKE?
+
+Transport mode vs tunnel mode?
+
+How does IPsec work in IPv4 and IPv6?
+
+SSL vs TLS?
+
+Explain the TLS handshake.
+
+Why is TLS a hybrid protocol?
+
+What is HTTPS?
+
+S/MIME vs PGP?
+
+What is a honeypot?
+
+What is end-to-end security?
+
+Explain open design.
+
+Why is security composability important?
+
+Unit 6 – Cyber Security and Digital Forensics
+Easy to score with examples 4 lecture hours · Section II
+
+Analyzing Historical Digital Evidence: A Step-by-Step Guide
+6.1 Cyber Security
+Definition: Cybersecurity is the practice of protecting computers, networks, applications and digital information against cyber threats and unauthorised access.
+
+Purpose:
+
+Protect data.
+
+Prevent cyberattacks.
+
+Maintain privacy.
+
+Ensure business continuity.
+
+Protect digital infrastructure.
+
+Example: A bank uses firewalls, encryption, MFA and monitoring to protect customer information.
+
+6.2 Cyber Attack
+Definition: A cyberattack is a deliberate attempt to compromise the confidentiality, integrity or availability of a computer system, network or data.
+
+Examples:
+
+Phishing.
+
+Ransomware.
+
+DDoS.
+
+SQL injection.
+
+Data theft.
+
+6.3 Stages of a Cyber Attack
+What Is the Cyber Kill Chain? | Trend Micro (UK)
+Your Unit 6 notes explain seven stages.
+
+Stage
+
+Definition
+
+Example
+
+1. Reconnaissance
+
+Gathering information about the target
+
+Studying a company's website
+
+2. Weaponisation
+
+Preparing malicious tools or exploits
+
+Preparing malware
+
+3. Delivery
+
+Sending the malicious content
+
+Phishing email
+
+4. Exploitation
+
+Triggering a vulnerability
+
+Exploiting outdated software
+
+5. Installation
+
+Installing malicious software or a backdoor
+
+Installing remote access malware
+
+6. Command and Control
+
+Establishing remote control communication
+
+Malware contacting attacker server
+
+7. Actions on Objectives
+
+Performing the intended attack
+
+Data theft or encryption
+
+Q. Which is the first stage?
+
+A: Reconnaissance.
+
+Q. What is the difference between delivery and exploitation?
+
+A: Delivery is the process of sending malicious content to the target. Exploitation is when the vulnerability is triggered.
+
+6.4 Cyber Reconnaissance
+Definition: Cyber reconnaissance is the process of collecting information about a target system, organisation or network before an attack or security assessment.
+
+Two types:
+
+A. Passive Reconnaissance
+Information is collected without directly interacting with the target's systems.
+
+Examples:
+
+Public websites.
+
+Social media.
+
+Public records.
+
+Domain information.
+
+Public DNS information.
+
+Advantage: Difficult to detect.
+
+B. Active Reconnaissance
+Information is collected by directly interacting with the target's systems.
+
+Examples:
+
+Port scanning.
+
+Ping sweeps.
+
+Vulnerability scanning.
+
+Difference:
+
+Passive
+
+Active
+
+No direct target probing
+
+Direct target interaction
+
+Uses publicly available information
+
+Uses direct technical probes
+
+Harder to detect
+
+May leave logs
+
+Example: Website research
+
+Example: Port scan
+
+Q. Is port scanning active or passive?
+
+A: Active reconnaissance.
+
+Q. Why is reconnaissance performed?
+
+A: To understand the target's infrastructure, exposed services and possible weaknesses.
+
+6.5 Crimes in Cyberspace
+Definition: Cybercrime refers to illegal activities carried out using computers, digital devices or networks.
+
+Classification of cybercrime
+Target
+
+Examples
+
+Individuals
+
+Identity theft, cyberstalking, online fraud
+
+Property
+
+Data theft, software piracy, ransomware
+
+Organisations
+
+Data breaches, service disruption, espionage
+
+Society
+
+Cyberterrorism, attacks on utilities, disinformation
+
+Global cybercrime trends
+According to your unit notes, major trends include:
+
+Ransomware-as-a-Service.
+
+Phishing and business email fraud.
+
+Attacks through suppliers and software updates.
+
+Attacks on mobile phones, cloud systems and smart devices.
+
+Q. Why is cybercrime increasing?
+
+A: Due to low cost, high potential rewards, global reach, widespread internet use and difficulty in tracing offenders.
+
+6.6 E-commerce Security
+Definition: E-commerce security refers to the methods and technologies used to protect online transactions, customer information and payment systems.
+
+Purpose: To ensure safe online shopping and financial transactions.
+
+Requirements and mechanisms
+Security requirement
+
+Mechanism
+
+Example
+
+Genuine website
+
+HTTPS certificate
+
+Verified shopping website
+
+Private payment
+
+TLS encryption
+
+Secure card transaction
+
+Genuine customer
+
+Password and OTP
+
+Customer login
+
+Proof of purchase
+
+Digital signature and receipt
+
+Digital invoice
+
+Safe card storage
+
+Tokenisation and encryption
+
+Payment token
+
+Main threats
+Phishing.
+
+Fake shopping websites.
+
+Card skimming.
+
+Payment fraud.
+
+Account takeover.
+
+Q. What is tokenisation?
+
+A: Tokenisation replaces sensitive information, such as card numbers, with a non-sensitive token that can be used for payment processing.
+
+Q. Why is HTTPS important in e-commerce?
+
+A: It protects communication between the customer's browser and the website through TLS encryption and server authentication.
+
+6.7 Digital Forensics
+The Process of Imaging Hard Drives in Digital Forensics
+Definition: Digital forensics is the scientific process of identifying, preserving, analysing and presenting digital evidence related to an incident or crime.
+
+Purpose:
+
+Investigate cybercrimes.
+
+Recover deleted information.
+
+Identify attack sources and methods.
+
+Establish timelines.
+
+Provide evidence for legal proceedings.
+
+Example: Investigating a company laptop to identify who accessed confidential files.
+
+Locard's Exchange Principle
+Definition: Every contact leaves a trace.
+
+In digital forensics, attackers may leave:
+
+Login records.
+
+IP addresses.
+
+Timestamps.
+
+File modifications.
+
+Browser history.
+
+Deleted file traces.
+
+6.8 Branches of Digital Forensics
+Branch
+
+Definition
+
+Example
+
+Digital forensics
+
+Broad examination of digital evidence
+
+Investigating a cyber incident
+
+Computer forensics
+
+Examining computer systems, storage and logs
+
+Recovering deleted files
+
+Mobile forensics
+
+Examining mobile device data
+
+Recovering messages and call logs
+
+Cyber forensics
+
+Examining network and cyber incident evidence
+
+Analysing network traffic
+
+Facebook forensics
+
+Examining relevant Facebook-related digital evidence
+
+Analysing posts, chats and login records
+
+Q. Computer forensics vs Mobile forensics?
+
+A: Computer forensics focuses on computers and storage devices, whereas mobile forensics focuses on smartphones, mobile applications and associated data.
+
+6.9 Digital Forensics Process
+What Is Incident Response? - Palo Alto Networks
+Your notes describe five major steps.
+
+1. Identification
+Definition: Finding devices and data sources that may contain relevant evidence.
+
+Example: Identifying the suspect's laptop and mobile phone.
+
+2. Preservation
+Definition: Protecting evidence from modification, deletion or contamination.
+
+Example: Creating a forensic disk image and recording its hash.
+
+3. Analysis
+Definition: Examining the preserved evidence to discover useful information.
+
+Example: Recovering deleted files and analysing timestamps.
+
+4. Documentation
+Definition: Recording every action, observation and finding during the investigation.
+
+Example: Maintaining an investigation report.
+
+5. Presentation
+Definition: Presenting the findings and evidence in a clear and understandable manner.
+
+Example: Submitting a forensic report in court.
+
+Q. Why is preservation important?
+
+A: Because digital evidence must remain reliable and unchanged so that investigation results can be trusted.
+
+6.10 Chain of Custody
+Definition: Chain of custody is the documented record of who collected, handled, transferred, stored and examined digital evidence.
+
+Purpose: To establish the authenticity and integrity of evidence.
+
+Example:
+
+Investigator collects a laptop.
+
+Records the date, time and device details.
+
+Creates a forensic image.
+
+Records its hash.
+
+Transfers it securely to another forensic examiner.
+
+Documents each transfer.
+
+Q. Why is chain of custody important?
+
+A: It demonstrates that evidence has been properly handled and has not been tampered with.
+
+6.11 Hashing in Digital Forensics
+Definition: Hashing is used to generate a fixed-length fingerprint of digital evidence to check whether its contents have changed.
+
+Example:
+
+An investigator calculates the SHA-256 hash of a disk image before and after transfer.
+
+If the hashes match, it provides evidence that the contents are unchanged.
+
+Q. Why is hashing used instead of encryption in forensic integrity checks?
+
+A: Hashing creates a fingerprint for comparison, while encryption is primarily used to protect confidentiality.
+
+Unit 6 – Strict professor's rapid-fire questions
+What is cybersecurity?
+
+What is a cyberattack?
+
+Explain the seven stages of a cyberattack.
+
+What is reconnaissance?
+
+Active vs passive reconnaissance?
+
+Is social media research passive reconnaissance?
+
+Is port scanning active reconnaissance?
+
+Classify cybercrime.
+
+What is ransomware-as-a-service?
+
+What is business email compromise?
+
+What is e-commerce security?
+
+What is tokenisation?
+
+What is digital forensics?
+
+What is Locard's Exchange Principle?
+
+What is the difference between computer and mobile forensics?
+
+Explain Facebook forensics.
+
+What are the five stages of digital forensics?
+
+What is chain of custody?
+
+Why is evidence preservation important?
+
+Why is hashing used in digital forensics?
+
+6.12 Advanced forensic concepts your professor may ask
+A. Write Blocker
+Definition: A write blocker is a hardware or software tool that prevents modification of the original storage device during forensic examination.
+
+Purpose: To preserve original evidence.
+
+B. Forensic Imaging
+Definition: Forensic imaging is the process of creating an exact bit-by-bit copy of a storage device for investigation.
+
+Important: Investigators should examine the forensic copy rather than directly modifying the original device.
+
+C. Order of Volatility
+Definition: Order of volatility means collecting evidence according to how quickly it can disappear or change.
+
+Typical order:
+
+CPU registers and cache.
+
+RAM and running processes.
+
+Network connections and temporary state.
+
+Disk data.
+
+Backups and archived information.
+
+Q. Why collect RAM before disk data?
+
+A: RAM is volatile. Its contents can disappear when the system loses power.
+
+D. Computer Forensics – Where evidence is found
+Deleted files and unallocated space.
+
+File timestamps and metadata.
+
+Browser history.
+
+System logs and registry.
+
+Memory and running processes.
+
+Tools mentioned in your notes:
+
+Autopsy.
+
+EnCase.
+
+Disk imaging tools.
+
+Write blockers.
+
+E. Mobile Forensics
+Evidence includes:
+
+Call logs.
+
+Messages and chat applications.
+
+Photos with timestamps and location information.
+
+Application data.
+
+Cloud backups.
+
+Challenges:
+
+Encryption.
+
+Screen locks.
+
+Different mobile operating systems.
+
+Remote wipe.
+
+F. Facebook Forensics
+Definition: Facebook forensics is the examination of Facebook-related digital evidence for investigation purposes.
+
+Evidence includes:
+
+Profiles.
+
+Posts and comments.
+
+Photos.
+
+Messages.
+
+Friends and groups.
+
+Login timestamps.
+
+Devices and IP addresses.
+
+Sources include the suspect's device, publicly available pages and provider records obtained through appropriate legal processes.
+
+G. Cyber Forensics
+Definition: Cyber forensics involves investigating cyber incidents by examining network and system-related digital evidence.
+
+Evidence includes:
+
+Firewall logs.
+
+Router logs.
+
+Server logs.
+
+Network traffic.
+
+Email headers.
+
+Purpose: Identify where an attack originated, what happened and where data may have been transferred.
+
+6.13 Case Study – WannaCry Ransomware (2017)
+WannaCry ransomware attack on UK hospitals reveal security gaps in NZ | RNZ News
+Your Unit 6 PDF includes this case study.
+
+Question
+
+Answer
+
+Target
+
+Unpatched Windows computers worldwide
+
+Entry
+
+Vulnerability in Windows file sharing
+
+Spread
+
+Worm-like self-propagation
+
+Impact
+
+Files encrypted for ransom
+
+Major disruption
+
+Hospitals in the UK
+
+CIA property affected
+
+Availability
+
+Evidence
+
+Malware samples, network logs and ransom payment addresses
+
+Prevention
+
+Security patching, backups and network segmentation
+
+Professor may ask: Why was WannaCry considered both ransomware and a worm?
+
+A: It encrypted files and demanded ransom like ransomware, but it also spread automatically across vulnerable systems like a worm.
+
+Q. What could have prevented WannaCry?
+
+A: Installing the security patch, maintaining backups and using network segmentation could have reduced its impact and spread.
+
+Unit 6 – Additional strict professor questions
+What is a write blocker?
+
+What is forensic imaging?
+
+What is order of volatility?
+
+Why should the original device not be directly examined?
+
+What is a bit-by-bit copy?
+
+What evidence can be recovered from RAM?
+
+What is unallocated disk space?
+
+What is mobile remote wipe?
+
+What evidence is available in Facebook forensics?
+
+What is the difference between cyber forensics and computer forensics?
+
+Why are timestamps important?
+
+Explain WannaCry.
+
+Why was WannaCry a worm?
+
+What is the purpose of network segmentation?
+
+Most important comparisons – All six units
+These are particularly useful because strict examiners often ask you to differentiate between similar concepts.
+
+Concepts
+
+Main difference
+
+Threat vs Vulnerability
+
+Potential danger vs system weakness
+
+Active vs Passive attack
+
+Changes/disrupts vs observes
+
+Virus vs Worm
+
+Host-dependent vs standalone self-spreading
+
+Phishing vs Pharming
+
+Fraudulent communication vs redirection
+
+Encryption vs Hashing
+
+Reversible with key vs one-way
+
+Symmetric vs Asymmetric
+
+Shared key vs key pair
+
+Substitution vs Transposition
+
+Replace letters vs rearrange letters
+
+DES vs AES
+
+56-bit effective key vs 128/192/256-bit keys
+
+RSA vs Diffie-Hellman
+
+Encryption/signatures and key establishment vs key establishment
+
+DH vs ECDH
+
+Modular arithmetic vs elliptic curve mathematics
+
+Hash vs MAC
+
+No secret key vs shared secret key
+
+MAC vs Digital Signature
+
+Shared-key authentication vs private/public-key verification
+
+Authentication vs Authorisation
+
+Identity vs permissions
+
+DAC vs MAC vs RBAC
+
+Owner vs policy vs role
+
+DoS vs DDoS
+
+Single source vs distributed sources
+
+ARP vs DNS
+
+IP-to-MAC mapping vs domain-to-IP resolution
+
+IPsec vs TLS
+
+Network-layer vs transport/application communication protection
+
+AH vs ESP
+
+No encryption vs encryption and optional authentication
+
+Transport vs Tunnel mode
+
+Original IP payload protection vs entire original packet protection
+
+S/MIME vs PGP
+
+CA-based trust vs web of trust
+
+Computer vs Mobile Forensics
+
+Computer evidence vs mobile evidence
+
+Passive vs Active Reconnaissance
+
+No direct probing vs direct probing
+
+Important numerical and algorithmic questions
+Do not skip these. A professor may ask you to solve one on the board.
+
+Unit 2 – Private key cryptography
+
+Caesar encryption and decryption.
+
+Rail Fence cipher.
+
+Columnar transposition.
+
+Vigenère cipher.
+
+Playfair matrix and encryption rules.
+
+Hill cipher matrix multiplication.
+
+DES and AES structure.
+
+Chinese Remainder Theorem.
+
+Unit 3 – Public key cryptography
+
+Modular arithmetic.
+
+GCD using Euclid's algorithm.
+
+Modular inverse.
+
+RSA key generation.
+
+RSA encryption and decryption.
+
+Diffie-Hellman shared secret.
+
+Basic elliptic curve point operations.
+
+Practical scenario-based viva
+Your professor may give you a situation instead of directly asking a definition.
+
+Professor's scenario
+
+Correct concept
+
+A student changes another student's marks in a database.
+
+Integrity violation
+
+A college website becomes unavailable due to massive traffic.
+
+DDoS
+
+Someone intercepts unencrypted Wi-Fi packets.
+
+Sniffing
+
+A fake bank email asks for an OTP.
+
+Phishing
+
+A program crashes after receiving oversized input.
+
+Buffer overflow
+
+A website executes malicious JavaScript from a comment.
+
+XSS
+
+A user types a correct URL but reaches a fake website.
+
+Pharming
+
+An attacker steals a logged-in browser cookie.
+
+Session hijacking
+
+A company wants secure communication between branch offices.
+
+IPsec VPN
+
+Two users establish a secret without sending it directly.
+
+Diffie-Hellman
+
+A bank needs secure bulk-data encryption.
+
+AES
+
+A website proves its identity using a certificate.
+
+X.509 and PKI
+
+An employee receives access based on their job designation.
+
+RBAC
+
+An investigator needs to preserve a suspect's laptop.
+
+Digital forensics
+
+A fake server is created to observe hackers.
+
+Honeypot
+
+How to answer a strict professor
+Follow this simple four-part format for almost every question:
+
+Example: What is RSA?
+
+1. Definition: RSA is an asymmetric cryptographic algorithm.
+
+2. Purpose: It is used for public-key cryptography, including encryption and digital signatures.
+
+3. Working: It generates public and private keys using two large prime numbers.
+
+4. Example: RSA can be used to protect a symmetric session key during secure communication.
+
+This format makes your answer technically complete without unnecessarily lengthy explanations.
+
+My recommended preparation priority
+If time is limited, prepare in this order:
+
+Unit 3 – RSA, Diffie-Hellman, ECC and numerical problems.
+
+Unit 2 – All classical ciphers, DES, AES and CRT.
+
+Unit 4 – Hashing, Kerberos, Needham–Schroeder, PKI and access control.
+
+Unit 5 – IPsec, TLS, HTTPS and network attacks.
+
+Unit 1 – CIA, STRIDE and all common attacks.
+
+Unit 6 – Cyberattack lifecycle and digital forensics.
+
+This is a study priority based on the mathematical depth and conceptual coverage of your syllabus, not a prediction of actual viva marks.
+
+Let's test your viva preparation
+I recommend that we now conduct a mock viva in which I act as your strict professor.
+
+Mock Viva – Round 1
+
+Question 1 of 8
+What is the difference between encryption and hashing?
+Speak or type your viva answer here...
+
+My advice: Don't just read the notes. Speak every definition aloud, explain one real-world example and practise the follow-up questions. In particular, be prepared to solve RSA and Diffie-Hellman numericals on paper.
+
+The notes above follow your uploaded VIT syllabus and unit presentations, including the case study and forensic handling details. Some explanations have been expanded to make the viva answers easier to understand. 
+NIS_VIT(1).pdf
+ 
+NIS_VIT_Network Security · Unit 1 Introduction to Security.pdf
+ 
+NIS_VIT_Network Security · Unit 2 Introduction to Security.pdf
+ 
+NIS_VIT_Network Security · Unit 3 Introduction to Security.pdf
+ 
+NIS_VIT_Network Security · Unit 4 Introduction to Security.pdf
+ 
+NIS_VIT_Network Security · Unit 5 Introduction to Security.pdf
+ 
+NIS_VIT_Network Security · Unit 6 Introduction to Security.pdf
+
+
+
+suppos
+
