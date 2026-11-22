@@ -1,0 +1,608 @@
+entity_name,creation_date,batch_frequency,alert_status,master_business_scenario,check_definition_name,record_count,Ageing_Range_Out,Ageing_Range_Pend
+AXA GE,2026-11-18,RT,New,PEP,GE PEP DF,6,>24hr,<=21CD
+AXA AMFS,2026-11-18,Daily,Escalated,Group Compliance List,Group ComplianceList P DF,1,>1 and <=2WD,<=10CD
+AXA MAR,2025-12-20,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA MEX,2026-09-26,Daily,Escalated,PEP,MEX PEP DF,98,>2WD,>30 and <=60CD
+AXA HK,2025-07-12,Daily,Escalated,Sanction,Group Sanction M C DF,5,>2WD,>20CD
+AXA PH,2026-10-29,Daily,Escalated,PEP,PHI PEP DF,119,>2WD,<=21CD
+AXA HK,2025-07-12,Daily,New,Sanction,Group Sanction M P DF,531,>2WD,>20CD
+AXA HK,2025-07-19,Daily,Escalated,Sanction,HK Sanction L1 DF,6,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P DF,28,>1 and <=2WD,<=10CD
+AXA HK,2026-07-16,Daily,Escalated,Sanction,Group Sanction M I C FD,1,>2WD,>20CD
+AXA AMFS,2026-11-18,Daily,Escalated,PEP,IDN PEP DF,4,>1 and <=2WD,<=21CD
+AXA HK,2025-07-13,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA HK,2026-02-01,Daily,Escalated,PEP,HK PEP DF,14,>2WD,>60CD
+AXA HK,2026-10-02,Daily,Escalated,PEP,HK PEP DF,8,>2WD,>30 and <=60CD
+AXA MEX,2026-10-24,Daily,Escalated,Negative Media,MEX Other Lists L2 DF,2,>2WD,<=21CD
+AXA HK,2025-07-12,Daily,Escalated,Sanction,Group Sanction M P DF,3,>2WD,>20CD
+AXA HK,2025-09-24,Daily,Escalated,PEP,HK PEP DF,5,>2WD,>60CD
+AXA HK,2026-10-02,Daily,Escalated,Sanction,HK Sanction L1 DF,5,>2WD,>20CD
+AXA HK,2025-07-19,Daily,Escalated,PEP,HK PEP FD,27,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-02,Daily,Escalated,Sanction,Group Sanction M C FD,2,>2WD,>20CD
+AXA HK,2026-01-23,Daily,Escalated,PEP,HK PEP FD,3,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-12,Daily,Escalated,Sanction,Group Sanction M P DF,28,>2WD,>20CD
+AXA HK,2025-07-12,Daily,New,Sanction,HK Sanction L1 DF,1537,>2WD,>20CD
+AXA HK,2025-11-22,Daily,Escalated,PEP,HK PEP FD,4,>2WD,>60CD
+AXA MEX,2026-10-17,Daily,New,Negative Media,MEX Other Lists L2 DF,9,>2WD,>21 and <=30CD
+AXA HK,2025-07-12,Daily,Escalated,Sanction,HK Sanction L1 DF,19,>2WD,>20CD
+AXA HK,2026-03-05,Daily,Escalated,PEP,HK PEP FD,27,>2WD,>60CD
+AXA HK,2026-03-05,Daily,Escalated,PEP,HK PEP DF,9,>2WD,>60CD
+AXA MAR,2026-02-18,Daily,Escalated,PEP,Group PEP FD,24,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-09-10,Daily,Escalated,Sanction,Group Sanction M C FD,32,>2WD,>20CD
+AXA MAR,2026-05-08,Daily,Escalated,Sanction,Group Sanction M C FD,12,>2WD,>20CD
+AXA HK,2026-07-16,Daily,Escalated,PEP,HK PEP DF,5,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-09-26,Daily,Escalated,Sanction,PARAA Sanction L1 DF,4,>2WD,>20CD
+AXA PH,2026-10-30,Daily,Escalated,PEP,PHI PEP FD,5,>2WD,<=21CD
+AXA HK,2025-08-22,Daily,Escalated,PEP,HK PEP FD,2,>2WD,>60CD
+AXA THLI,2026-11-17,Daily,Escalated,PEP,THA PEP DF,15,>2WD,<=21CD
+AXA TUR,2026-11-17,Daily,Escalated,Negative Media,TUR NM DF,6,>2WD,<=21CD
+AXA HK,2025-07-17,Daily,Escalated,Sanction,HK Sanction L1 DF,9,>2WD,>20CD
+AXA MAR,2026-04-28,Daily,Escalated,Sanction,Group Sanction M P FD,94,>2WD,>20CD
+AXA HK,2025-07-12,Daily,New,PEP,HK PEP DF,20854,>2WD,>60CD
+AXA HK,2025-07-20,Daily,Escalated,Sanction,HK Sanction L1 FD,3,>2WD,>20CD
+AXA MAR,2026-10-10,Daily,Escalated,Sanction,Group Sanction M P FD,5,>2WD,>20CD
+AXA HK,2026-08-12,Daily,Escalated,PEP,HK PEP FD,10,>2WD,>60CD
+AXA MEX,2026-10-24,Daily,Escalated,PEP,MEX PEP DF,91,>2WD,<=21CD
+AXA MAR,2026-03-14,Daily,Escalated,Sanction,Group Sanction M P FD,74,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-09,Daily,Escalated,Sanction,Group Sanction M C FD,17,>2WD,>20CD
+AXA MAR,2025-12-31,Daily,Escalated,PEP,Group PEP FD,3,>2WD,>60CD
+AXA HK,2026-08-19,Daily,Escalated,PEP,HK PEP FD,5,>2WD,>60CD
+AXA HK,2026-04-27,Daily,Escalated,PEP,HK PEP FD,13,>2WD,>60CD
+AXA HK,2026-08-30,Daily,Escalated,Sanction,HK Sanction L1 DF,9,>2WD,>20CD
+AXA HK,2025-08-23,Daily,New,Sanction,Group Sanction M P FD,2,>2WD,>20CD
+AXA MAR,2026-03-17,Daily,Escalated,PEP,Group PEP FD,7,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-10,Daily,Escalated,Sanction,Group Sanction M P DF,67,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-13,Daily,Escalated,Sanction,Group Sanction M P FD,20,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-09,Daily,Escalated,Sanction,Group Sanction M P DF,83,>2WD,>20CD
+AXA HK,2026-10-29,Daily,Escalated,PEP,HK PEP FD,7,>2WD,<=21CD
+AXA NGA,2026-11-17,Daily,Escalated,Sanction,Group Sanction M P FD,3,>2WD,<=10CD
+AXA MAR,2026-03-14,Daily,Escalated,PEP,Group PEP FD,4,>2WD,>60CD
+AXA MAR,2026-03-15,Daily,Escalated,Sanction,Group Sanction M P FD,11,>2WD,>20CD
+AXA HK,2025-07-14,Daily,Escalated,Sanction,Group Sanction M C FD,2,>2WD,>20CD
+AXA MAR,2026-01-12,Daily,Escalated,Sanction,Group Sanction M P FD,8,>2WD,>20CD
+AXA MAR,2026-05-28,Daily,Escalated,Sanction,Group Sanction M P DF,89,>2WD,>20CD
+AXA NGA,2026-11-18,Daily,Escalated,PEP,NGA PEP DF,2,>1 and <=2WD,<=21CD
+AXA HK,2025-08-23,Daily,Escalated,PEP,HK PEP FD,14,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-08,Daily,Escalated,Sanction,Group Sanction M P FD,16,>2WD,>20CD
+AXA MAR,2026-09-13,Daily,Escalated,Sanction,Group Sanction M P FD,4,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-13,Daily,Escalated,Sanction,Group Sanction M P DF,6,>2WD,>20CD
+AXA HK,2025-07-13,Daily,Escalated,Sanction,HK Sanction L1 DF,31,>2WD,>20CD
+AXA HK,2025-12-13,Daily,Escalated,PEP,HK PEP FD,12,>2WD,>60CD
+AXA MAR,2025-12-19,Daily,Escalated,Sanction,MAR Sanction L1 DF,49,>2WD,>20CD
+AXA MAR,2026-01-14,Daily,Escalated,Sanction,Group Sanction M P FD,26,>2WD,>20CD
+AXA HK,2026-11-18,Daily,Escalated,PEP,HK PEP FD,22,>1 and <=2WD,<=21CD
+AXA HK,2025-07-12,Daily,Escalated,PEP,HK PEP DF,726,>2WD,>60CD
+AXA MAR,2026-02-23,Daily,Escalated,Sanction,Group Sanction M P DF,26,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-11-18,Daily,Escalated,Sanction,Group Sanction HR Countries DF,8,>1 and <=2WD,<=10CD
+AXA MAR,2026-10-04,Daily,Escalated,PEP,Group PEP DF,252,>2WD,>30 and <=60CD
+AXA MAR,2026-02-18,Daily,Escalated,Sanction,Group Sanction M P DF,3,>2WD,>20CD
+AXA MAR,2026-03-18,Daily,Escalated,Sanction,Group Sanction M P FD,42,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-12,Daily,Escalated,Sanction,Group Sanction M C FD,19,>2WD,>20CD
+AXA MEX,2026-10-10,Daily,Escalated,PEP,MEX PEP DF,193,>2WD,>30 and <=60CD
+AXA ASSISTANCE EU AFR,2026-10-10,Daily,Escalated,Sanction,Group Sanction M C FD,56,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-17,Daily,Escalated,Sanction,Group Sanction M P DF,869,>2WD,>20CD
+AXA MEX,2026-10-24,Daily,Escalated,Internal Blacklist,MEX BlackList FD,5,>2WD,>20CD
+AXA MAR,2026-03-25,Daily,Escalated,Sanction,Group Sanction M P FD,30,>2WD,>20CD
+AXA MAR,2026-03-20,Daily,Escalated,Sanction,Group Sanction M P FD,10,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-12,Daily,Escalated,Sanction,PARAA Sanction L1 DF,3,>2WD,>20CD
+AXA MAR,2026-01-25,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA Belgium Insurance,2026-11-18,Daily,Escalated,High Risk Countries,Group AML HR Countries DF,5,>1 and <=2WD,<=10CD
+AXA MAR,2026-10-04,Daily,Escalated,Sanction,MAR Sanction L1 DF,15,>2WD,>20CD
+AXA HK,2025-12-17,Daily,Escalated,PEP,HK PEP FD,11,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-03,Daily,Escalated,Sanction,Group Sanction M P DF,23,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-11,Daily,Escalated,Sanction,Group Sanction M P DF,105,>2WD,>20CD
+AXA PH,2026-11-17,Daily,Escalated,PEP,PHI PEP FD,3,>2WD,<=21CD
+AXA HK,2026-01-25,Daily,Escalated,Sanction,HK Sanction L1 FD,2,>2WD,>20CD
+AXA HK,2026-08-26,Daily,Escalated,Sanction,HK Sanction L1 DF,2,>2WD,>20CD
+AXA MEX,2026-10-17,Daily,Escalated,PEP,MEX PEP DF,223,>2WD,>21 and <=30CD
+AXA ASSISTANCE EU AFR,2026-10-17,Daily,Escalated,Sanction,Group Sanction HR Countries DF,13,>2WD,>20CD
+AXA HK,2025-07-17,Daily,New,Sanction,Group Sanction M P DF,20,>2WD,>20CD
+AXA MAR,2026-04-25,Daily,Escalated,Sanction,Group Sanction M P FD,213,>2WD,>20CD
+AXA HK,2026-06-27,Daily,Escalated,PEP,HK PEP FD,31,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-28,Daily,Escalated,Sanction,Group Sanction M C DF,2,>2WD,>10 and <=20CD
+AXA MAGI,2026-11-18,Daily,Escalated,PEP,IDN PEP DF,18,>1 and <=2WD,<=21CD
+AXA MAR,2026-01-25,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA MAR,2026-05-28,Daily,Escalated,PEP,Group PEP DF,42,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-24,Daily,Escalated,Sanction,Group Sanction M P DF,35,>2WD,>20CD
+AXA MAR,2026-01-07,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA MAR,2026-01-22,Daily,Escalated,Sanction,Group Sanction M P FD,59,>2WD,>20CD
+AXA MAR,2026-02-21,Daily,Escalated,Group Compliance List,Group ComplianceList C DF,60,>2WD,>20CD
+AXA MEX,2026-10-24,Daily,New,PEP,MEX PEP DF,102,>2WD,<=21CD
+AXA HK,2025-08-23,Daily,Escalated,Sanction,Group Sanction M P FD,6,>2WD,>20CD
+AXA HK,2026-04-26,Daily,Escalated,PEP,HK PEP DF,9,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-18,Daily,Escalated,Sanction,Group Sanction M C DF,14,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P FD,36,>1 and <=2WD,<=10CD
+AXA HK,2025-11-26,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-02,Daily,Escalated,Sanction,Group Sanction M C DF,5,>2WD,>20CD
+AXA MAR,2025-12-19,Daily,Escalated,Sanction,Group Sanction M P DF,1585,>2WD,>20CD
+AXA MAR,2026-03-12,Daily,Escalated,Sanction,Group Sanction M P FD,58,>2WD,>20CD
+AXA MAR,2026-01-22,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA MAR,2026-02-21,Daily,Escalated,Group Compliance List,Group ComplianceList P DF,14,>2WD,>20CD
+AXA MAR,2026-10-04,Daily,Escalated,Sanction,Group Sanction M P FD,5,>2WD,>20CD
+AXA MAR,2025-12-19,Daily,Escalated,PEP,Group PEP DF,401,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-26,Daily,Escalated,Sanction,Group Sanction M C FD,20,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-08,Daily,Escalated,Sanction,Group Sanction M C FD,23,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-04,Daily,Escalated,Sanction,Group Sanction M P DF,158,>2WD,>20CD
+AXA HK,2026-07-18,Daily,Escalated,PEP,HK PEP FD,47,>2WD,>60CD
+AXA MAR,2025-12-30,Daily,Escalated,PEP,Group PEP FD,10,>2WD,>60CD
+AXA HK,2026-07-16,Daily,Escalated,PEP,HK PEP FD,22,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-21,Daily,Escalated,Sanction,Group Sanction M P DF,72,>2WD,>20CD
+AXA HK,2026-08-30,Daily,Escalated,PEP,HK PEP FD,7,>2WD,>60CD
+AXA MAR,2026-10-11,Daily,Escalated,PEP,Group PEP DF,3,>2WD,>30 and <=60CD
+AXA ASSISTANCE EU AFR,2026-09-26,Daily,Escalated,Sanction,Group Sanction M P DF,280,>2WD,>20CD
+AXA MAR,2026-01-21,Daily,Escalated,Sanction,Group Sanction M C FD,2,>2WD,>20CD
+AXA MAR,2026-02-19,Daily,Escalated,Sanction,Group Sanction M P FD,137,>2WD,>20CD
+AXA HK,2025-11-22,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA MAR,2026-03-21,Daily,Escalated,PEP,Group PEP FD,7,>2WD,>60CD
+AXA MAR,2026-05-28,Daily,Escalated,Sanction,Group Sanction HR Countries DF,15,>2WD,>20CD
+AXA HK,2026-06-26,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA HK,2026-07-04,Daily,Escalated,PEP,HK PEP FD,36,>2WD,>60CD
+AXA HK,2026-07-18,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA MAR,2026-02-13,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA MAR,2026-03-12,Daily,Escalated,Sanction,Group Sanction M P DF,65,>2WD,>20CD
+AXA MEX,2026-09-26,Daily,Escalated,PEP,MEX PEP FD,2,>2WD,>30 and <=60CD
+AXA ASSISTANCE EU AFR,2026-10-11,Daily,Escalated,Sanction,PARAA Sanction L1 FD,3,>2WD,>20CD
+AXA MAGI,2026-11-18,Daily,Escalated,PEP,IDN PEP FD,3,>1 and <=2WD,<=21CD
+AXA MAR,2026-05-28,Daily,Escalated,Group Compliance List,Group ComplianceList P DF,7,>2WD,>20CD
+AXA MAGI,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P DF,6,>1 and <=2WD,<=10CD
+AXA MAR,2026-05-28,Daily,Escalated,Sanction,Group Sanction M C DF,7,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-28,Daily,Escalated,Sanction,Group Sanction M P DF,15,>2WD,>10 and <=20CD
+AXA HK,2025-07-17,Daily,New,Sanction,HK Sanction L1 FD,3,>2WD,>20CD
+AXA MAR,2026-02-21,Daily,Escalated,Sanction,MAR Sanction L1 DF,16,>2WD,>20CD
+AXA MAR,2025-12-31,Daily,Escalated,Sanction,Group Sanction M P FD,16,>2WD,>20CD
+AXA HK,2026-07-16,Daily,Escalated,Sanction,HK Sanction L1 FD,6,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-09,Daily,Escalated,Sanction,Group Sanction M P FD,190,>2WD,>20CD
+AXA HK,2026-10-02,Daily,Escalated,Group Compliance List,Group ComplianceList P FD,13,>2WD,>20CD
+AXA MEX,2026-10-31,Daily,New,PEP,MEX PEP FD,3,>2WD,<=21CD
+AXA HK,2025-07-13,Daily,Escalated,PEP,HK PEP DF,271,>2WD,>60CD
+AXA HK,2025-07-17,Daily,New,Sanction,HK Sanction L1 DF,240,>2WD,>20CD
+AXA MAR,2026-01-01,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-08,Daily,Escalated,Sanction,Group Sanction M P DF,358,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-21,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA AMFS,2026-11-18,Daily,Escalated,PEP,IDN PEP FD,4,>1 and <=2WD,<=21CD
+AXA HK,2026-03-01,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA HK,2025-11-01,Daily,Escalated,PEP,HK PEP FD,2,>2WD,>60CD
+AXA MAR,2026-01-07,Daily,Escalated,Sanction,Group Sanction M P FD,9,>2WD,>20CD
+AXA HK,2026-01-17,Daily,Escalated,PEP,HK PEP FD,5,>2WD,>60CD
+AXA HK,2026-01-17,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA HK,2026-02-27,Daily,Escalated,PEP,HK PEP DF,5,>2WD,>60CD
+AXA HK,2026-06-24,Daily,Escalated,PEP,HK PEP FD,28,>2WD,>60CD
+AXA MEX,2026-10-17,Daily,New,PEP,MEX PEP DF,36,>2WD,>21 and <=30CD
+AXA HK,2025-07-20,Daily,New,Sanction,HK Sanction L1 FD,3,>2WD,>20CD
+AXA MAR,2026-01-08,Daily,Escalated,Sanction,Group Sanction M P FD,37,>2WD,>20CD
+AXA CIV,2026-11-18,Daily,Escalated,PEP,Group PEP FD,2,>1 and <=2WD,<=21CD
+AXA ASSISTANCE EU AFR,2026-10-04,Daily,Escalated,Sanction,Group Sanction M C DF,29,>2WD,>20CD
+AXA MAR,2025-12-19,Daily,Escalated,Sanction,Group Sanction M C DF,1171,>2WD,>20CD
+AXA MAR,2026-05-21,Daily,Escalated,Sanction,Group Sanction M P FD,193,>2WD,>20CD
+AXA MAR,2026-03-13,Daily,Escalated,Sanction,Group Sanction M P FD,10,>2WD,>20CD
+AXA HK,2026-08-12,Daily,Escalated,Sanction,HK Sanction L1 DF,35,>2WD,>20CD
+AXA MAR,2025-12-20,Daily,Escalated,PEP,Group PEP DF,6,>2WD,>60CD
+AXA MAR,2026-02-21,Daily,Escalated,Sanction,Group Sanction M P DF,271,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-09,Daily,Escalated,Sanction,Group Sanction M C DF,5,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-08,Daily,Escalated,Sanction,Group Sanction M C DF,20,>2WD,>20CD
+AXA MAR,2026-01-09,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA MEX,2026-11-18,RT,Escalated,PEP,MEX PEP DF,7,>24hr,<=21CD
+AXA MAR,2025-12-23,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA HK,2026-08-12,Daily,Escalated,PEP,HK PEP DF,59,>2WD,>60CD
+AXA HK,2025-07-13,Daily,Escalated,Sanction,Group Sanction M C DF,41,>2WD,>20CD
+AXA ESP,2026-11-09,RT,Under Investigation - Case Rejected,High Risk Countries,Group ABC HR Countries 2 DF,1,>24hr,<=10CD
+AXA Belgium Insurance,2026-11-18,Daily,Escalated,PEP,ABE PEP DF,5,>1 and <=2WD,<=21CD
+AXA MAR,2026-02-18,Daily,Escalated,Sanction,Group Sanction M P FD,95,>2WD,>20CD
+AXA HK,2026-08-22,Daily,Escalated,PEP,HK PEP FD,30,>2WD,>60CD
+AXA MAR,2026-02-21,Daily,Escalated,PEP,Group PEP DF,916,>2WD,>60CD
+AXA MAR,2026-09-12,Daily,Escalated,Sanction,Group Sanction M P FD,39,>2WD,>20CD
+AXA MAR,2025-12-19,Daily,Escalated,Group Compliance List,Group ComplianceList C DF,70,>2WD,>20CD
+AXA MAR,2026-01-01,Daily,Escalated,Group Compliance List,Group ComplianceList P FD,3,>2WD,>20CD
+AXA MAR,2026-03-12,Daily,Escalated,Sanction,MAR Sanction L1 DF,8,>2WD,>20CD
+AXA MEX,2026-10-31,Daily,Escalated,PEP,MEX PEP DF,97,>2WD,<=21CD
+AXA MAR,2026-10-31,Daily,Escalated,Sanction,Group Sanction M P FD,7,>2WD,>10 and <=20CD
+AXA MAR,2026-01-08,Daily,Escalated,Sanction,Group Sanction M C FD,8,>2WD,>20CD
+AXA HK,2026-03-14,Daily,Escalated,PEP,HK PEP FD,23,>2WD,>60CD
+AXA MEX,2026-10-17,Daily,Escalated,Negative Media,MEX Other Lists L2 DF,7,>2WD,>21 and <=30CD
+AXA MAR,2025-12-24,Daily,Escalated,Sanction,Group Sanction M P FD,3,>2WD,>20CD
+AXA HK,2026-01-24,Daily,Escalated,Sanction,Group Sanction M P FD,3,>2WD,>20CD
+AXA HK,2026-06-27,Daily,Escalated,PEP,HK PEP DF,43,>2WD,>60CD
+AXA MEX,2026-10-24,Daily,New,Negative Media,MEX Other Lists L2 DF,6,>2WD,<=21CD
+AXA ASSISTANCE EU AFR,2026-08-15,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA HK,2026-10-29,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>10 and <=20CD
+AXA GE,2026-11-18,RT,New,Sanction,Group Sanction M P DF,3,>24hr,<=10CD
+AXA MAR,2026-10-11,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA MEX,2026-10-31,Daily,New,PEP,MEX PEP DF,120,>2WD,<=21CD
+AXA ASSISTANCE EU AFR,2026-10-17,Daily,Escalated,Sanction,Group Sanction M P FD,40,>2WD,>20CD
+AXA MAR,2025-12-21,Daily,Escalated,Sanction,Group Sanction HR Countries DF,2,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-09-10,Daily,Escalated,Sanction,Group Sanction M P DF,131,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-09-26,Daily,Escalated,Sanction,Group Sanction M C DF,10,>2WD,>20CD
+AXA MAR,2026-10-04,Daily,Escalated,Sanction,Group Sanction M P DF,226,>2WD,>20CD
+AXA HK,2025-07-13,Daily,New,PEP,HK PEP DF,6872,>2WD,>60CD
+AXA HK,2025-07-17,Daily,New,PEP,HK PEP FD,185,>2WD,>60CD
+AXA HK,2025-07-17,Daily,New,PEP,HK PEP DF,515,>2WD,>60CD
+AXA MAR,2026-05-28,Daily,Escalated,Group Compliance List,Group ComplianceList C DF,2,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-08,Daily,Escalated,Sanction,Group Sanction M P DF,44,>2WD,>20CD
+AXA HK,2026-11-18,Daily,Escalated,Sanction,HK Sanction L1 FD,17,>1 and <=2WD,<=10CD
+AXA ASSISTANCE EU AFR,2026-10-04,Daily,Escalated,Sanction,Group Sanction M P FD,35,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-11,Daily,Escalated,Sanction,Group Sanction HR Countries DF,4,>2WD,>20CD
+AXA HK,2025-07-22,Daily,Escalated,Sanction,HK Sanction L1 FD,2,>2WD,>20CD
+AXA HK,2026-11-18,Daily,Escalated,Sanction,Group Sanction M C DF,1,>1 and <=2WD,<=10CD
+AXA AFI,2026-11-17,Daily,Escalated,PEP,IDN PEP FD,1,>2WD,<=21CD
+AXA ASSISTANCE EU AFR,2026-08-12,Daily,Escalated,Sanction,Group Sanction M P FD,17,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-18,Daily,Escalated,Sanction,Group Sanction M P DF,13,>2WD,>20CD
+AXA HK,2026-08-28,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA HK,2026-11-17,Daily,Escalated,PEP,HK PEP FD,6,>2WD,<=21CD
+AXA GE,2025-11-20,Daily,Under Investigation - Case Rejected,Sanction,Group Sanction HR Countries DF,89,>2WD,>20CD
+AXA HK,2025-07-25,Daily,Escalated,PEP,HK PEP FD,5,>2WD,>60CD
+AXA MEX,2026-09-13,Daily,Escalated,PEP,MEX PEP DF,286,>2WD,>30 and <=60CD
+AXA ASSISTANCE EU AFR,2026-09-26,Daily,Escalated,Sanction,Group Sanction M P FD,17,>2WD,>20CD
+AXA HK,2026-03-14,Daily,Escalated,PEP,HK PEP DF,10,>2WD,>60CD
+AXA HK,2026-10-02,Daily,Escalated,Sanction,HK Sanction L1 FD,5,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-10,Daily,Escalated,Sanction,Group Sanction HR Countries DF,13,>2WD,>20CD
+AXA HK,2026-03-15,Daily,Escalated,PEP,HK PEP DF,9,>2WD,>60CD
+AXA MEX,2026-10-31,Daily,Escalated,Negative Media,MEX Other Lists L2 DF,3,>2WD,<=21CD
+AXA HK,2025-07-17,Daily,Escalated,Sanction,Group Sanction M P DF,10,>2WD,>20CD
+AXA MAR,2026-05-28,Daily,Escalated,Sanction,MAR Sanction L1 DF,1,>2WD,>20CD
+AXA MAR,2026-01-13,Daily,Escalated,Sanction,Group Sanction M P FD,31,>2WD,>20CD
+AXA HK,2026-08-12,Daily,Escalated,Sanction,Group Sanction M P DF,6,>2WD,>20CD
+AXA HK,2026-08-28,Daily,Escalated,PEP,HK PEP FD,7,>2WD,>60CD
+AXA HK,2025-07-22,Daily,Escalated,PEP,HK PEP FD,13,>2WD,>60CD
+AXA MAR,2026-03-11,Daily,Escalated,Group Compliance List,Group ComplianceList C DF,12,>2WD,>20CD
+AXA MAR,2026-05-21,Daily,Escalated,Sanction,Group Sanction M C FD,2,>2WD,>20CD
+AXA HK,2026-01-31,Daily,Escalated,PEP,HK PEP FD,12,>2WD,>60CD
+AXA TUR,2026-11-17,Daily,Escalated,Sanction,Group Sanction M P DF,7,>2WD,<=10CD
+AXA MAR,2026-10-04,Daily,Escalated,Group Compliance List,Group ComplianceList P DF,9,>2WD,>20CD
+AXA HK,2025-08-23,Daily,New,PEP,HK PEP FD,47,>2WD,>60CD
+AXA MAR,2026-02-21,Daily,Escalated,Sanction,Group Sanction M C DF,28,>2WD,>20CD
+AXA MEX,2026-09-19,Daily,Escalated,PEP,MEX PEP DF,244,>2WD,>30 and <=60CD
+AXA MEX,2026-10-31,Daily,New,Negative Media,MEX NM DF,1,>2WD,<=21CD
+AXA HK,2026-11-18,Daily,Escalated,PEP,HK PEP DF,2,>1 and <=2WD,<=21CD
+AXA HK,2025-12-16,Daily,Escalated,PEP,HK PEP FD,35,>2WD,>60CD
+AXA HK,2026-08-19,Daily,Escalated,Sanction,Group Sanction M C DF,2,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-26,Daily,Escalated,Sanction,Group Sanction M P FD,12,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-11,Daily,Escalated,Sanction,PARAA Sanction L1 DF,2,>2WD,>20CD
+AXA HK,2026-03-15,Daily,Escalated,PEP,HK PEP FD,4,>2WD,>60CD
+AXA MEX,2026-09-19,Daily,Escalated,Negative Media,MEX Other Lists L2 DF,13,>2WD,>30 and <=60CD
+AXA MAR,2026-04-25,Daily,Escalated,Sanction,Group Sanction M C FD,1374,>2WD,>20CD
+AXA HK,2026-07-26,Daily,Escalated,Sanction,HK Sanction L1 DF,2,>2WD,>20CD
+AXA MAR,2026-05-28,Daily,Escalated,Sanction,Group Sanction M P FD,5,>2WD,>20CD
+AXA MAR,2026-08-22,Daily,Escalated,Sanction,Group Sanction M P FD,4,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-28,Daily,Escalated,Sanction,Group Sanction M P FD,19,>2WD,>10 and <=20CD
+AXA HK,2026-10-29,Daily,Escalated,Sanction,HK Sanction L1 DF,6,>2WD,>10 and <=20CD
+AXA HK,2026-04-26,Daily,Escalated,PEP,HK PEP FD,23,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-22,Daily,Escalated,Sanction,Group Sanction M P DF,52,>2WD,>20CD
+AXA HK,2026-08-29,Daily,Escalated,PEP,HK PEP FD,12,>2WD,>60CD
+AXA MEX,2026-09-13,Daily,Escalated,Negative Media,MEX Other Lists L2 DF,19,>2WD,>30 and <=60CD
+AXA MAR,2026-01-09,Daily,Escalated,Sanction,Group Sanction M P FD,58,>2WD,>20CD
+AXA HK,2026-02-28,Daily,Escalated,PEP,HK PEP DF,3,>2WD,>60CD
+AXA HK,2025-08-23,Daily,New,Sanction,HK Sanction L1 DF,3,>2WD,>20CD
+AXA HK,2025-07-17,Daily,Escalated,PEP,HK PEP DF,76,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-09-29,Daily,Escalated,Sanction,Group Sanction M C FD,63,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-23,Daily,Escalated,Sanction,PARAA Sanction L1 DF,1,>2WD,>20CD
+AXA MAR,2026-05-06,Daily,Escalated,Sanction,Group Sanction M P FD,7,>2WD,>20CD
+AXA TUR,2026-11-17,Daily,Escalated,Sanction,Group Sanction M C DF,19,>2WD,<=10CD
+AXA MAR,2026-01-23,Daily,Escalated,Sanction,Group Sanction M P FD,53,>2WD,>20CD
+AXA HK,2026-08-30,Daily,Escalated,PEP,HK PEP DF,29,>2WD,>60CD
+AXA HK,2025-07-20,Daily,Escalated,PEP,HK PEP FD,20,>2WD,>60CD
+AXA MAR,2026-01-10,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA MAR,2026-05-22,Daily,Escalated,Sanction,Group Sanction M P FD,2,>2WD,>20CD
+AXA HK,2025-11-01,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA HK,2025-11-26,Daily,Escalated,PEP,HK PEP FD,6,>2WD,>60CD
+AXA MAR,2026-03-19,Daily,Escalated,Sanction,Group Sanction M P FD,36,>2WD,>20CD
+AXA MAR,2026-01-25,Daily,Escalated,Group Compliance List,Group ComplianceList P DF,2,>2WD,>20CD
+AXA TUR,2026-11-17,Daily,Escalated,PEP,Group PEP DF,6,>2WD,<=21CD
+AXA MAR,2026-01-24,Daily,Escalated,Sanction,Group Sanction M P FD,20,>2WD,>20CD
+AXA MAR,2026-03-12,Daily,Escalated,PEP,Group PEP DF,60,>2WD,>60CD
+AXA HK,2025-07-18,Daily,Escalated,PEP,HK PEP FD,22,>2WD,>60CD
+AXA MAR,2026-01-10,Daily,Escalated,Sanction,Group Sanction M P FD,49,>2WD,>20CD
+AXA HK,2025-07-24,Daily,Escalated,PEP,HK PEP FD,2,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-18,Daily,Escalated,Sanction,Group Sanction M P FD,9,>2WD,>20CD
+AXA MEX,2026-10-17,Daily,Escalated,Internal Blacklist,MEX BlackList DF,15,>2WD,>20CD
+AXA MEX,2026-10-31,Daily,New,Negative Media,MEX Other Lists L2 DF,10,>2WD,<=21CD
+AXA THGI,2026-11-18,Daily,Escalated,PEP,Group PEP FD,2,>1 and <=2WD,<=21CD
+AXA HK,2025-12-20,Daily,Escalated,PEP,HK PEP DF,4,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-09,Daily,Escalated,Sanction,Group Sanction M P DF,15,>2WD,>20CD
+AXA MAR,2025-12-19,Daily,Escalated,Group Compliance List,Group ComplianceList P DF,96,>2WD,>20CD
+AXA MAR,2026-01-20,Daily,Escalated,Sanction,Group Sanction M P FD,18,>2WD,>20CD
+AXA MAR,2026-03-11,Daily,Escalated,Sanction,Group Sanction M P FD,41,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-17,Daily,Escalated,Sanction,PARAA Sanction L1 DF,25,>2WD,>20CD
+AXA HK,2026-10-29,Daily,Escalated,Sanction,HK Sanction L1 FD,5,>2WD,>10 and <=20CD
+AXA HK,2025-08-23,Daily,New,PEP,HK PEP DF,5,>2WD,>60CD
+AXA MAR,2026-02-23,Daily,Escalated,PEP,Group PEP DF,49,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-11,Daily,Escalated,Sanction,Group Sanction M P FD,6,>2WD,>20CD
+AXA HK,2025-07-14,Daily,Escalated,PEP,HK PEP FD,14,>2WD,>60CD
+AXA MAR,2026-01-21,Daily,Escalated,Sanction,Group Sanction M P FD,300,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-02,Daily,Escalated,Sanction,Group Sanction M P DF,28,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-22,Daily,Escalated,Sanction,Group Sanction M P FD,38,>2WD,>20CD
+AXA MAR,2025-12-19,Daily,Escalated,Sanction,Group Sanction HR Countries DF,18,>2WD,>20CD
+AXA MAR,2026-03-21,Daily,Escalated,Sanction,Group Sanction M P FD,11,>2WD,>20CD
+AXA MAR,2026-03-17,Daily,Escalated,Sanction,Group Sanction M P FD,43,>2WD,>20CD
+AXA MEX,2026-10-10,Daily,Escalated,Negative Media,MEX Other Lists L2 DF,10,>2WD,>30 and <=60CD
+AXA HK,2025-07-14,Daily,Escalated,Sanction,HK Sanction L1 FD,5,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-09-10,Daily,Escalated,Sanction,Group Sanction M P FD,15,>2WD,>20CD
+AXA HK,2025-07-13,Daily,New,Sanction,Group Sanction M P DF,421,>2WD,>20CD
+AXA HK,2026-01-18,Daily,Escalated,PEP,HK PEP FD,2,>2WD,>60CD
+AXA MAR,2026-02-21,Daily,Escalated,Sanction,Group Sanction M P FD,70,>2WD,>20CD
+AXA HK,2026-06-24,Daily,Escalated,PEP,HK PEP DF,9,>2WD,>60CD
+AXA HK,2025-07-19,Daily,Escalated,PEP,HK PEP DF,4,>2WD,>60CD
+AXA MAR,2026-01-23,Daily,Escalated,Sanction,Group Sanction M C FD,6,>2WD,>20CD
+AXA MAR,2026-05-28,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-10,Daily,Escalated,Sanction,Group Sanction M P FD,168,>2WD,>20CD
+AXA HK,2025-07-22,Daily,Escalated,Sanction,HK Sanction L1 DF,2,>2WD,>20CD
+AXA MAR,2026-02-14,Daily,Escalated,Sanction,Group Sanction M P FD,80,>2WD,>20CD
+AXA HK,2025-07-13,Daily,New,Sanction,HK Sanction L1 DF,1641,>2WD,>20CD
+AXA HK,2025-07-23,Daily,Escalated,PEP,HK PEP FD,28,>2WD,>60CD
+AXA GE,2026-02-06,Daily,Under Investigation - Case Rejected,Group Compliance List,Group ComplianceList C DF,4,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-07,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA MAR,2026-03-16,Daily,Escalated,Sanction,Group Sanction M P FD,2,>2WD,>20CD
+AXA MAR,2026-01-14,Daily,Escalated,PEP,Group PEP DF,2,>2WD,>60CD
+AXA HK,2026-01-27,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA MAR,2026-06-05,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA MAR,2025-12-20,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA MAR,2026-02-21,Daily,Escalated,Sanction,Group Sanction HR Countries DF,4,>2WD,>20CD
+AXA HK,2025-07-13,Daily,New,Sanction,Group Sanction M C DF,5,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-22,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA MAR,2026-03-12,Daily,Escalated,Group Compliance List,Group ComplianceList P DF,5,>2WD,>20CD
+AXA HK,2025-07-16,Daily,Escalated,PEP,HK PEP FD,9,>2WD,>60CD
+AXA HK,2026-08-19,Daily,Escalated,PEP,HK PEP DF,4,>2WD,>60CD
+AXA MAR,2026-01-09,Daily,Escalated,PEP,Group PEP FD,5,>2WD,>60CD
+AXA MAR,2026-01-10,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2026-01-31,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA MAR,2026-01-11,Daily,Escalated,PEP,Group PEP DF,2,>2WD,>60CD
+AXA HK,2026-08-30,Daily,Escalated,Sanction,HK Sanction L1 FD,2,>2WD,>20CD
+AXA CIV,2025-12-19,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-08,Daily,Escalated,Sanction,Group Sanction M P FD,4,>2WD,>20CD
+AXA HK,2026-02-01,Daily,Escalated,PEP,HK PEP FD,5,>2WD,>60CD
+AXA HK,2025-07-15,Daily,Escalated,PEP,HK PEP FD,2,>2WD,>60CD
+AXA HK,2026-08-26,Daily,Escalated,PEP,HK PEP FD,9,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-09-10,Daily,Escalated,Sanction,PARAA Sanction L1 FD,1,>2WD,>20CD
+AXA MAR,2026-06-10,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-09,Daily,Escalated,Sanction,PARAA Sanction L1 DF,2,>2WD,>20CD
+AXA HK,2025-07-20,Daily,New,PEP,HK PEP FD,5,>2WD,>60CD
+AXA HK,2025-12-14,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA HK,2026-08-22,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA HK,2026-06-27,Daily,Escalated,Sanction,HK Sanction L1 DF,3,>2WD,>20CD
+AXA HK,2025-07-22,Daily,Escalated,PEP,HK PEP DF,3,>2WD,>60CD
+AXA MAR,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P DF,3,>1 and <=2WD,<=10CD
+AXA HK,2026-08-28,Daily,Escalated,Sanction,HK Sanction L1 FD,2,>2WD,>20CD
+AXA MAR,2026-08-30,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA HK,2026-06-27,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-13,Daily,Escalated,Sanction,Group Sanction M C FD,3,>2WD,>20CD
+AXA AFI,2026-11-18,Daily,Escalated,PEP,IDN PEP FD,3,>1 and <=2WD,<=21CD
+AXA MAR,2026-01-04,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA HK,2026-11-18,Daily,Escalated,Sanction,Group Sanction V C FD,1,>1 and <=2WD,<=10CD
+AXA MAR,2026-10-31,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>10 and <=20CD
+AXA ESP,2026-11-13,RT,Under Investigation - Case Rejected,High Risk Countries,Group ABC HR Countries 2 DF,1,>24hr,<=10CD
+AXA MAR,2025-12-29,Daily,Escalated,Sanction,Group Sanction M P FD,2,>2WD,>20CD
+AXA MAR,2026-01-07,Daily,Escalated,Sanction,Group Sanction M P DF,3,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-14,Daily,Escalated,Sanction,Group Sanction M P FD,5,>2WD,>20CD
+AXA CLP PART,2026-11-18,Daily,Escalated,High Risk Countries,Group AML HR Countries DF,2,>1 and <=2WD,<=10CD
+AXA Belgium Insurance,2026-11-17,Daily,Escalated,PEP,ABE PEP DF,2,>2WD,<=21CD
+AXA CLP PART,2026-11-18,Daily,Escalated,PEP,PARCLP PEP DF,1,>1 and <=2WD,<=21CD
+AXA ASSISTANCE EU AFR,2026-10-08,Daily,Escalated,Sanction,PARAA Sanction L1 DF,8,>2WD,>20CD
+AXA MAR,2025-12-31,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA HK,2025-11-08,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-17,Daily,Escalated,Sanction,PARAA Sanction L1 FD,2,>2WD,>20CD
+AXA MAR,2026-01-23,Daily,Escalated,Sanction,MAR Sanction L1 FD,6,>2WD,>20CD
+AXA PH,2026-11-18,Daily,Escalated,PEP,PHI PEP FD,2,>1 and <=2WD,<=21CD
+AXA HK,2026-05-01,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA HK,2026-01-24,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA MEX,2026-10-10,Daily,Escalated,Internal Blacklist,MEX BlackList DF,5,>2WD,>20CD
+AXA MAR,2026-03-31,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA HK,2026-08-28,Daily,Escalated,Sanction,Group Sanction M I C FD,1,>2WD,>20CD
+AXA MEX,2026-10-17,Daily,Escalated,Internal Blacklist,MEX BlackList FD,12,>2WD,>20CD
+AXA HK,2025-07-17,Daily,Escalated,PEP,HK PEP FD,6,>2WD,>60CD
+AXA MAR,2026-01-28,Daily,Escalated,Sanction,Group Sanction M P FD,2,>2WD,>20CD
+AXA NGA,2026-11-18,Daily,Escalated,Negative Media,NGA NM DF,1,>1 and <=2WD,<=21CD
+AXA HK,2025-12-20,Daily,Escalated,PEP,HK PEP FD,13,>2WD,>60CD
+AXA MAR,2026-02-21,Daily,Escalated,PEP,Group PEP FD,5,>2WD,>60CD
+AXA MAR,2026-01-22,Daily,Escalated,Sanction,MAR Sanction L1 FD,6,>2WD,>20CD
+AXA HK,2025-07-13,Daily,Escalated,Sanction,Group Sanction V C DF,2,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-03,Daily,Escalated,Sanction,Group Sanction M P FD,2,>2WD,>20CD
+AXA HK,2025-08-23,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA HK,2026-08-12,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA HK,2026-08-12,Daily,Escalated,Sanction,HK Sanction L1 FD,3,>2WD,>20CD
+AXA MAR,2026-09-14,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA MEX,2026-10-24,Daily,Escalated,Internal Blacklist,MEX BlackList DF,7,>2WD,>20CD
+AXA MAR,2025-12-30,Daily,Escalated,Sanction,Group Sanction M P FD,3,>2WD,>20CD
+AXA CLP PART,2026-11-18,Daily,Escalated,PEP,PARCLP PEP FD,8,>1 and <=2WD,<=21CD
+AXA MAGI,2026-11-17,Daily,Escalated,PEP,IDN PEP DF,2,>2WD,<=21CD
+AXA HK,2026-11-18,Daily,Escalated,Sanction,HK Sanction L1 DF,3,>1 and <=2WD,<=10CD
+AXA HK,2026-08-19,Daily,Escalated,Sanction,HK Sanction L1 DF,1,>2WD,>20CD
+AXA MAR,2026-08-22,Daily,Escalated,PEP,Group PEP FD,5,>2WD,>60CD
+AXA MEX,2026-09-19,Daily,Escalated,PEP,MEX PEP FD,2,>2WD,>30 and <=60CD
+AXA ESP,2026-11-18,Daily,Escalated,Internal Blacklist,ESP Blacklist DF,1,>1 and <=2WD,<=10CD
+AXA HK,2026-07-26,Daily,Escalated,Sanction,Group Sanction M C FD,2,>2WD,>20CD
+AXA GE,2025-11-19,Daily,Under Investigation - Case Rejected,Sanction,Group Sanction HR Countries DF,20,>2WD,>20CD
+AXA AMFS,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P DF,2,>1 and <=2WD,<=10CD
+AXA COL,2026-11-18,Daily,Escalated,PEP,COL PEP DF,1,>1 and <=2WD,<=21CD
+AXA UK DP,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P FD,1,>1 and <=2WD,<=10CD
+AXA HK,2026-10-29,Daily,Escalated,PEP,HK PEP DF,6,>2WD,<=21CD
+AXA HK,2026-08-30,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA MAR,2026-01-03,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA MAR,2026-06-18,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA COL,2026-11-18,RT,Escalated,PEP,COL PEP DF,1,>24hr,<=21CD
+AXA MAR,2025-12-31,Daily,Escalated,Group Compliance List,Group ComplianceList P FD,2,>2WD,>20CD
+AXA MAR,2026-01-24,Daily,Escalated,PEP,Group PEP FD,2,>2WD,>60CD
+AXA HK,2026-01-23,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA HK,2026-04-19,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA HK,2026-08-29,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA MEX,2026-10-31,Daily,Escalated,PEP,MEX PEP FD,2,>2WD,<=21CD
+AXA EGY,2026-11-17,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,<=10CD
+AXA IM,2026-11-18,Daily,Escalated,PEP,IM PEP FD,2,>1 and <=2WD,<=21CD
+AXA MEX,2026-09-26,Daily,Escalated,Negative Media,MEX Other Lists L2 DF,4,>2WD,>30 and <=60CD
+AXA HK,2026-10-10,Daily,Escalated,Sanction,Group Sanction M I C DF,1,>2WD,>20CD
+AXA HK,2025-07-19,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2026-07-16,Daily,Escalated,Sanction,HK Sanction L1 DF,5,>2WD,>20CD
+AXA ASSISTANCE US CAN,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P FD,2,>1 and <=2WD,<=10CD
+AXA MAR,2026-01-01,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA ALG,2026-11-03,Daily,Escalated,PEP,Group PEP DF,1,>2WD,<=21CD
+AXA GE,2026-01-06,Daily,Under Investigation - Case Rejected,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA MAR,2025-12-25,Daily,Escalated,Sanction,Group Sanction M P FD,2,>2WD,>20CD
+AXA HK,2026-07-26,Daily,Escalated,PEP,HK PEP FD,4,>2WD,>60CD
+AXA MAR,2026-04-02,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA HK,2026-08-28,Daily,Escalated,Sanction,HK Sanction L1 DF,2,>2WD,>20CD
+AXA HK,2025-07-17,Daily,Escalated,Sanction,Group Sanction M C DF,3,>2WD,>20CD
+AXA HK,2026-04-18,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-15,Daily,Escalated,Sanction,Group Sanction M P FD,2,>2WD,>20CD
+AXA MAR,2026-08-19,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA MAR,2026-01-21,Daily,Escalated,Sanction,MAR Sanction L1 FD,2,>2WD,>20CD
+AXA UK DP,2026-11-18,Daily,Escalated,Sanction,UKI Sanction L1 DF,2,>1 and <=2WD,<=10CD
+AXA HK,2025-09-24,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA EGY,2026-11-18,Daily,Escalated,PEP,Group PEP FD,1,>1 and <=2WD,<=21CD
+AXA MAR,2026-06-25,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-26,Daily,Escalated,Sanction,Group Sanction M P DF,3,>2WD,>20CD
+AXA HK,2025-09-02,Daily,Escalated,PEP,HK PEP FD,3,>2WD,>60CD
+AXA SEN,2026-07-28,Daily,Under Investigation - Case Rejected,PEP,Group PEP FD,1,>2WD,>60CD
+AXA MAR,2026-11-17,Daily,Escalated,PEP,Group PEP DF,1,>2WD,<=21CD
+AXA HK,2025-07-19,Daily,Escalated,Sanction,Group Sanction V C DF,1,>2WD,>20CD
+AXA HK,2026-08-12,Daily,Escalated,Sanction,Group Sanction M C DF,2,>2WD,>20CD
+AXA HK,2025-11-23,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-09-10,Daily,Escalated,Sanction,Group Sanction M C DF,3,>2WD,>20CD
+AXA HK,2025-10-02,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA THGI,2026-11-07,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>10 and <=20CD
+AXA ASSISTANCE EU AFR,2026-11-18,Daily,Escalated,Sanction,PARAA Sanction L1 DF,2,>1 and <=2WD,<=10CD
+AXA ASSISTANCE EU AFR,2026-08-22,Daily,Escalated,Sanction,Group Sanction M C FD,2,>2WD,>20CD
+AXA MAR,2026-11-17,Daily,Escalated,PEP,Group PEP FD,1,>2WD,<=21CD
+AXA HK,2026-03-01,Daily,Escalated,PEP,HK PEP FD,5,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-17,Daily,Escalated,Sanction,Group Sanction M C DF,14,>2WD,>20CD
+AXA MAR,2026-01-02,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2026-03-29,Daily,Escalated,PEP,HK PEP DF,3,>2WD,>60CD
+AXA ESP,2024-12-19,Daily,Reopened,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA AMFS,2026-11-17,Daily,Escalated,PEP,IDN PEP FD,1,>2WD,<=21CD
+AXA HK,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P DF,1,>1 and <=2WD,<=10CD
+AXA MAR,2026-01-09,Daily,Escalated,PEP,Group PEP DF,3,>2WD,>60CD
+AXA HK,2026-08-26,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-13,Daily,Escalated,Sanction,PARAA Sanction L1 FD,3,>2WD,>20CD
+AXA MAR,2026-05-21,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA HK,2026-08-30,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA MAR,2025-12-24,Daily,Escalated,Group Compliance List,Group ComplianceList C DF,1,>2WD,>20CD
+AXA MAR,2026-01-23,Daily,Escalated,PEP,Group PEP FD,3,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-10,Daily,Escalated,Sanction,PARAA Sanction L1 DF,4,>2WD,>20CD
+AXA HK,2026-07-22,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA MAR,2026-01-28,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA HK,2026-07-26,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA Ireland,2026-11-18,Daily,Escalated,Sanction,UKI Sanction L1 DF,2,>1 and <=2WD,<=10CD
+AXA THLI,2026-11-18,Daily,Escalated,PEP,THA PEP DF,2,>1 and <=2WD,<=21CD
+AXA HK,2026-04-27,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA AMFS,2024-12-19,Daily,Reopened,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA MAR,2026-01-02,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA MAR,2026-02-23,Daily,Escalated,Group Compliance List,Group ComplianceList P DF,4,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-09-29,Daily,Escalated,Sanction,Group Sanction M P FD,3,>2WD,>20CD
+AXA MAR,2026-01-24,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA UK CLPI,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P FD,1,>1 and <=2WD,<=10CD
+AXA HK,2026-01-24,Daily,Escalated,PEP,HK PEP DF,3,>2WD,>60CD
+AXA HK,2026-07-04,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA HK,2026-10-02,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2026-02-27,Daily,Escalated,PEP,HK PEP FD,3,>2WD,>60CD
+AXA MAR,2026-01-05,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA HK,2026-08-26,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA MAR,2026-10-09,Daily,Escalated,Sanction,Group Sanction M P FD,8,>2WD,>20CD
+AXA HK,2025-07-13,Daily,New,Sanction,Group Sanction V C DF,1,>2WD,>20CD
+AXA HK,2025-11-30,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-09,Daily,Escalated,Sanction,PARAA Sanction L1 FD,1,>2WD,>20CD
+AXA MAR,2026-10-30,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>10 and <=20CD
+AXA HK,2025-08-07,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA HK,2025-08-27,Daily,Escalated,PEP,HK PEP FD,2,>2WD,>60CD
+AXA MAR,2026-01-14,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA MAR,2026-01-07,Daily,Escalated,Sanction,Group Sanction M C FD,2,>2WD,>20CD
+AXA MAR,2025-12-28,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA MAR,2026-08-22,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2026-11-17,Daily,Escalated,Sanction,HK Sanction L1 DF,1,>2WD,<=10CD
+AXA HK,2026-09-03,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>30 and <=60CD
+AXA MAR,2026-03-12,Daily,Escalated,Sanction,Group Sanction M C DF,2,>2WD,>20CD
+AXA HK,2025-08-23,Daily,Escalated,Sanction,HK Sanction L1 DF,1,>2WD,>20CD
+AXA MAR,2026-02-23,Daily,Escalated,Sanction,MAR Sanction L1 DF,2,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-08,Daily,Escalated,Sanction,Group Sanction M C DF,2,>2WD,>20CD
+AXA MAR,2025-12-28,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA MAR,2026-03-22,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA MAR,2026-01-12,Daily,Escalated,Sanction,Group Sanction M P DF,2,>2WD,>20CD
+AXA MAR,2026-01-21,Daily,Escalated,PEP,Group PEP FD,3,>2WD,>60CD
+AXA THLI,2026-11-17,Daily,Escalated,Internal Blacklist,THA Blacklist DF,1,>2WD,<=10CD
+AXA HK,2026-08-19,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA MAR,2026-01-27,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA MAR,2026-01-30,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2025-08-08,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA HK,2026-02-18,Daily,Escalated,PEP,HK PEP DF,2,>2WD,>60CD
+AXA MAR,2026-06-10,Daily,Escalated,Sanction,Group Sanction M P FD,5,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-08-21,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA MAR,2026-01-08,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2026-02-06,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-28,Daily,Escalated,Sanction,PARAA Sanction L1 DF,3,>2WD,>10 and <=20CD
+AXA HK,2025-08-23,Daily,New,Sanction,HK Sanction L1 FD,1,>2WD,>20CD
+AXA IM,2026-11-18,Daily,Escalated,High Risk Countries,Group AML HR Countries DF,1,>1 and <=2WD,<=10CD
+AXA MAR,2026-01-30,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA MAR,2026-03-11,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2026-01-11,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA MAR,2026-09-26,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA HK,2025-08-17,Daily,Escalated,PEP,HK PEP FD,2,>2WD,>60CD
+AXA HK,2026-08-29,Daily,Escalated,Sanction,HK Sanction L1 DF,1,>2WD,>20CD
+AXA GE,2026-02-25,Daily,Under Investigation - Case Rejected,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA HK,2026-07-18,Daily,Escalated,Sanction,Group Sanction M I C FD,1,>2WD,>20CD
+AXA GO,2026-11-18,Daily,Escalated,High Risk Countries,Group ABC HR Countries 1 DF,1,>1 and <=2WD,<=10CD
+AXA MAR,2025-12-21,Daily,Escalated,PEP,Group PEP DF,2,>2WD,>60CD
+AXA MAR,2026-03-19,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA HK,2025-08-23,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA HK,2026-08-26,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-08-12,Daily,Escalated,Sanction,PARAA Sanction L1 FD,1,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-09-10,Daily,Escalated,Sanction,PARAA Sanction L1 DF,1,>2WD,>20CD
+AXA MAGI,2026-11-18,Daily,Escalated,Sanction,IDN Sanction L1 DF,2,>1 and <=2WD,<=10CD
+AXA MAR,2026-01-15,Daily,Escalated,Sanction,MAR Sanction L1 FD,1,>2WD,>20CD
+AXA MAR,2026-09-12,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA MAR,2026-01-04,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA HK,2025-07-12,Daily,New,Sanction,Group Sanction M I P DF,1,>2WD,>20CD
+AXA MAR,2026-02-18,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA MAR,2026-09-14,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-09-29,Daily,Under Investigation - Case Rejected,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA MAR,2025-12-26,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA MAR,2025-12-19,Daily,Under Investigation - Case Rejected,Negative Media,MAR NM DF,1,>2WD,>60CD
+AXA MAR,2026-08-07,Daily,Escalated,Sanction,Group Sanction M P FD,2,>2WD,>20CD
+AXA UK CLPI,2026-11-18,Daily,Escalated,Sanction,Group Sanction M I P FD,1,>1 and <=2WD,<=10CD
+AXA Belgium Insurance,2026-11-18,Daily,Escalated,PEP,ABE PEP FD,2,>1 and <=2WD,<=21CD
+AXA MAR,2026-03-26,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA HK,2025-08-21,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA MAR,2026-08-07,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA HK,2026-11-18,Daily,Escalated,Sanction,Group Sanction M I C FD,3,>1 and <=2WD,<=10CD
+AXA MAR,2026-10-28,Daily,Escalated,PEP,Group PEP FD,1,>2WD,<=21CD
+AXA CMR,2026-11-18,Daily,Escalated,PEP,Group PEP FD,2,>1 and <=2WD,<=21CD
+AXA THGI,2024-12-19,Daily,Reopened,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA HK,2025-10-26,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA HK,2026-05-02,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA AFI,2024-12-18,Daily,Reopened,Sanction,Group Sanction M C FD,1,>2WD,>20CD
+AXA HK,2025-07-17,Daily,New,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA MAR,2026-01-03,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA Ireland,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P FD,1,>1 and <=2WD,<=10CD
+AXA HK,2026-04-25,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA NGA,2026-11-18,Daily,Escalated,Sanction,Group Sanction M P DF,1,>1 and <=2WD,<=10CD
+AXA HK,2026-04-19,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA MAR,2025-12-31,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-29,Daily,Escalated,Sanction,Group Sanction M C FD,1,>2WD,>10 and <=20CD
+AXA MAR,2026-01-01,Daily,Escalated,Group Compliance List,Group ComplianceList C FD,1,>2WD,>20CD
+AXA HK,2025-12-17,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA MAR,2026-05-06,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA HK,2026-07-26,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-04,Daily,Escalated,Sanction,PARAA Sanction L1 DF,1,>2WD,>20CD
+AXA HK,2025-08-09,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA GE,2026-01-09,Daily,Under Investigation - Case Rejected,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA UK DP,2026-11-18,Daily,Escalated,Sanction,Group Sanction M I P FD,1,>1 and <=2WD,<=10CD
+AXA HK,2026-04-18,Daily,Escalated,PEP,HK PEP FD,2,>2WD,>60CD
+AXA MAR,2025-12-28,Daily,Escalated,PEP,Group PEP DF,1,>2WD,>60CD
+AXA HK,2026-07-18,Daily,Escalated,Sanction,HK Sanction L1 DF,1,>2WD,>20CD
+AXA HK,2026-07-04,Daily,Escalated,Sanction,HK Sanction L1 FD,1,>2WD,>20CD
+AXA HK,2025-11-29,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA HK,2025-09-08,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA ASSISTANCE EU AFR,2026-10-10,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA MEX,2026-09-13,Daily,Escalated,PEP,MEX PEP FD,1,>2WD,>30 and <=60CD
+AXA AMFS,2026-11-17,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,<=10CD
+AXA MAR,2026-01-26,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2026-07-04,Daily,Escalated,PEP,HK PEP DF,1,>2WD,>60CD
+AXA TUR,2026-11-17,Daily,Escalated,Group Blacklist,Group BlackList C DF,1,>2WD,<=10CD
+AXA MAR,2026-01-07,Daily,Escalated,PEP,Group PEP FD,1,>2WD,>60CD
+AXA MAR,2026-08-13,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-10-09,Daily,Escalated,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA HK,2026-07-18,Daily,Escalated,Sanction,HK Sanction L1 FD,1,>2WD,>20CD
+AXA ASSISTANCE EU AFR,2026-09-29,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA HK,2026-09-09,Daily,Escalated,Sanction,HK Sanction L1 FD,1,>2WD,>20CD
+AXA HK,2026-07-04,Daily,Escalated,Sanction,Group Sanction M P FD,1,>2WD,>20CD
+AXA MAR,2025-12-29,Daily,Escalated,Sanction,Group Sanction M P DF,1,>2WD,>20CD
+AXA GE,2025-11-22,Daily,Under Investigation - Case Rejected,Sanction,Group Sanction HR Countries DF,1,>2WD,>20CD
+AXA HK,2025-08-15,Daily,Escalated,PEP,HK PEP FD,1,>2WD,>60CD
+AXA HK,2025-07-12,Daily,New,Sanction,Group Sanction M C DF,1,>2WD,>20CD
+AXA MEX,2026-10-31,Daily,Escalated,Internal Blacklist,MEX BlackList DF,1,>2WD,>10 and <=20CD
+AXA HK,2026-08-12,Daily,Escalated,Sanction,Group Sanction V C DF,1,>2WD,>20CD
